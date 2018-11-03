@@ -1,0 +1,1248 @@
+{% set page = 'ck-kernel-functions' %}
+{% set title = 'Shared CK kernel functions and configurations' %}
+{% extends 'ck.html' %}
+
+{% block content %}
+
+    <div class="container pt80 pb50">
+        <div class="row justify-content-md-center">
+            <div class="col col-lg-12 text">
+
+
+
+We encourage you to reuse these portable productivity functions (Python 2.6+ and 3+) from the CK modules or in your own Python scripts:
+
+<pre>
+    import ck.kernel as ck
+
+    ck.out("Hello world")
+
+    r=ck.access({"action":"ls", "module_uoa":"env", "out":"con"})
+    if r["return"]>0: ck.err(r)
+    print (r["lst"])
+
+    r=ck.load_json_file({"json_file":"my_file.json", "dict":{"test":"yes"}})
+    if r["return"]>0: return r
+
+    r=ck.save_text_file({"text_file":"my_file.txt", "string":"test=yes\n"})
+    if r["return"]>0: return r
+
+</pre>
+See <a href="https://github.com/ctuning/ck/wiki">CK documentation for further details</a>.
+<p>
+<table cellpadding="4" border="1" style="border-collapse: collapse; border: 1px solid black;">
+ <tr>
+  <td nowrap><b>#</b></td>
+  <td nowrap><b>Function name</b></td>
+  <td nowrap><b>Note and API</b></td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="access">1</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L9434"><b>ck.access(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Universal access to all CK functions (Unified JSON/dictionary API)</i>
+<p>
+<pre>
+    Input:  Can be dictionary or string (string will be converted to dictionary)
+
+            {
+               action
+
+               module_uoa or CID -> converted to cid
+                 or
+               (cid1)            -  if doesn't have = and doesn't start from -- or - or @ -> appended to cids[]
+               (cid2)            -  if doesn't have = and doesn't start from -- or - or @ -> appended to cids[]
+               (cid3)            -  if doesn't have = and doesn't start from -- or - or @ -> appended to cids[]
+                 or
+               (repo_uoa)
+               (module_uoa)
+               (data_uoa)
+
+               (out=type)     Module output
+                              == ''              - none
+                              == 'con'           - console interaction (if from CMD, default)
+                              == 'json'          - return dict as json to console
+                              == 'json_with_sep' - separation line and return dict as json to console
+                              == 'json_file'     - return dict as json to file
+
+               (out_file)     Output file if out=='json_file'
+
+               (con_encoding) - force encoding for IO
+               (ck_profile)   - if 'yes', profile CK
+
+               INPUT TO A GIVEN FUNCTION
+
+
+               NOTE: If INPUT is a string and it will be converted to INPUT dictionary as follows (the same as CK command line):
+
+                     ck key1=value1    -> converted to {key1:value1}
+
+                        -key10         -> converted to {key10:"yes"}
+                        -key11=value11 -> converted to {key11:value11}
+
+                        --key12         -> converted to {key12:"yes"}
+                        --key13=value13 -> converted to {key13:value13}
+
+
+                     @file_json         -> JSON from this file will be merged with INPUT
+                     @@                 -> CK will ask user ot enter manually JSON from console and merge with INPUT
+                     @@key              -> Enter JSON manually from console and merge with INPUT under this key
+
+                     @@@cmd_json        -> convert string to JSON (special format) and merge with INPUT
+
+                     -- xyz             -> add everything after -- to "unparsed_cmd" key in INPUT
+
+                     When string is converted to INPUT dictionary, "cmd" variable is set to True
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+              OUTPUT FROM A GIVEN FUNCTION
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="cid">2</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L5284"><b>ck.cid(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Common action: get CID from current path or given CID (module_uid:data_uid)</i>
+<p>
+<pre>
+    Input:  {
+              (repo_uoa)   - repo UOA
+              (module_uoa) - module UOA
+              (data_uoa)   - data UOA
+
+                 If above is empty, detect in current path !
+
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+              Output from from 'detect_cid_in_current_path' function
+
+              data_uoa     - data UOA
+              module_uoa   - module UOA
+              (repo_uoa)   - repo UOA
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="compare_dicts">3</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L7898"><b>ck.compare_dicts(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Compare 2 dictionaries (recursively)</i>
+<p>
+<pre>
+    Input:  {
+              dict1         - dictionary 1
+              dict2         - dictionary 2
+              (ignore_case) - ignore case of letters
+
+              Note that if dict1 and dict2 has lists, the results will be as follows:
+
+              * dict1={"key":['a','b','c']}
+                dict2={"key":['a','b']}
+                EQUAL
+
+              * dict1={"key":['a','b']}
+                dict2={"key":['a','b','c']}
+                NOT EQUAL
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+              equal        - if 'yes' dictionaries are equal
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="compare_flat_dicts">4</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L7992"><b>ck.compare_flat_dicts(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Compare two flat dictionaries</i>
+<p>
+<pre>
+    Input:  {
+              dict1            - dictionary 1
+              dict2            - dictionary 2
+              (ignore_case)    - ignore case of letters
+              (space_as_none)  - if 'yes', consider "" as None
+              (keys_to_ignore) - list of keys to ignore (can be wildcards)
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+              equal        - if 'yes' dictionaries are equal
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="convert_file_to_upload_string">5</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L1871"><b>ck.convert_file_to_upload_string(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Convert file to upload string</i>
+<p>
+<pre>
+    Input:  {
+              filename - file name to convert
+            }
+
+    Output: {
+              return              - return code =  0, if successful
+                                                >  0, if error
+              (error)             - error text if return > 0
+              file_content_base64 - string that can be transmitted through Internet
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="convert_iso_time">6</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L700"><b>ck.convert_iso_time(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Converting iso text time to datetime object</i>
+<p>
+<pre>
+    Input:  {
+              iso_datetime - iso date time
+            }
+
+    Output: { 
+              return         - return code =  0, if successful
+                                           >  0, if error
+              (error)        - error text if return > 0
+              (datetime_obj) - datetime object
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="convert_json_str_to_dict">7</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L1304"><b>ck.convert_json_str_to_dict(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Convert string of a special format to json</i>
+<p>
+<pre>
+    Input:  {
+              str                      - string (use ' instead of ", i.e. {'a':'b'} 
+                                         to avoid issues in CMD in Windows and Linux!)
+
+              (skip_quote_replacement) - if 'yes', do not make above replacement
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+              dict         - dict from json file
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="convert_str_key_to_int">8</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L776"><b>ck.convert_str_key_to_int(key)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Safe convert dict str keys to int to be sorted</i>
+<p>
+<pre>
+    Input:  {
+              text - text to print
+            }
+
+    Output: {
+              return       - return code =  0
+
+              string       - input string
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="convert_str_tags_to_list">9</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L958"><b>ck.convert_str_tags_to_list(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Convert string to list</i>
+<p>
+<pre>
+    Input:  either a list, or a string of comma-separated tags.
+
+    Output: If i is a list, it's returned.
+            If i is a string, the list of tags it represents is returned 
+            (each tag is stripped of leading and trailing whitespace).
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="convert_upload_string_to_file">10</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L1912"><b>ck.convert_upload_string_to_file(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Convert upload string to file</i>
+<p>
+<pre>
+    Input:  {
+              file_content_base64 - string transmitted through Internet
+              (filename)          - file name to write (if empty, generate tmp file)
+            }
+
+    Output: {
+              return              - return code =  0, if successful
+                                                >  0, if error
+              (error)             - error text if return > 0
+              filename            - filename with full path
+              filename_ext        - filename extension
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="copy_to_clipboard">11</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L1765"><b>ck.copy_to_clipboard(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Copy string to clipboard if supported by OS (requires Tk)</i>
+<p>
+<pre>
+    Input:  {
+              string - string to copy
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="debug_out">12</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L377"><b>ck.debug_out(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Universal debug print of a dictionary (removing unprintable parts)</i>
+<p>
+<pre>
+    Input:  i - dictionary
+
+    Output: return = 0
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="dump_json">13</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L1592"><b>ck.dump_json(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Dump json to sring</i>
+<p>
+<pre>
+    Input:  {
+              dict          - dictionary
+              (skip_indent) - if 'yes', skip indent
+              (sort_keys)   - if 'yes', sort keys
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+
+              string       - json string (in utf8)
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="dumps_json">14</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L1569"><b>ck.dumps_json(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Deprecated: Dump json to sring (left for compatibility with older kernel - should eventually remove it) - see 'dump_json'</i>
+<p>
+<pre>
+    Input:  {
+              dict          - dictionary
+              (skip_indent) - if 'yes', skip indent
+              (sort_keys)   - if 'yes', sort keys
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+
+              string       - json string (in utf8)
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="eout">15</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L408"><b>ck.eout(s)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Universal print of unicode error string in utf8 that supports Python 2.x and 3.x to stderr</i>
+<p>
+<pre>
+    Input:  s - unicode string to print
+
+    Output: Nothing
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="err">16</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L445"><b>ck.err(r)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Universal error print and exit</i>
+<p>
+<pre>
+    Input:  {
+              return - return code
+              error - error text
+            }
+
+    Output: Nothing; quits program
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="find_path_to_repo">17</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L2669"><b>ck.find_path_to_repo(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Find path to a given repo</i>
+<p>
+<pre>
+    Input:  {
+              (repo_uoa) - repo UOA; if empty, get the default repo
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                           16, if repo not found (may be warning)
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+              dict         - dict from cache
+              path         - path to repo
+
+              repo_uoa     - repo UOA
+              repo_uid     - repo UID
+              repo_alias   - repo alias
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="find_string_in_dict_or_list">18</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L8065"><b>ck.find_string_in_dict_or_list(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Find string in dict</i>
+<p>
+<pre>
+    Input:  {
+              dict            - dictionary 1
+              (search_string) - search string
+              (ignore_case)   - ignore case of letters
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+              found        - if 'yes', string found
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="flatten_dict">19</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L3905"><b>ck.flatten_dict(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Convert dictionary into CK flat format</i>
+<p>
+<pre>
+    Any list item is converted to @number=value
+    Any dict item is converted to #key=value
+    # is always added at the beginning 
+
+    Input:  {
+              dict         - python dictionary
+
+              (prefix)     - prefix (for recursion)
+
+              (prune_keys) - list of keys to prune (can have wildcards)
+            }
+
+    Output: {
+              return  - return code =  0, if successful
+                                    >  0, if error
+              (error) - error text if return > 0
+              dict    - flattened dictionary
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="flatten_dict_internal_check_key">20</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L3973"><b>ck.flatten_dict_internal_check_key(prefix, pk)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Convert dictionary into CK flat format (internal, used for recursion)</i>
+<p>
+<pre>
+    Input:  {
+              dict  - dictionary
+              key   - flat key
+            }
+
+    Output: {
+              return  - return code =  0, if successful
+                                    >  0, if error
+              (error) - error text if return > 0
+              value   - value or None, if doesn't exist
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="gen_tmp_file">21</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L1093"><b>ck.gen_tmp_file(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Generate temporary files</i>
+<p>
+<pre>
+    Input:  {
+              (suffix)     - temp file suffix
+              (prefix)     - temp file prefix
+              (remove_dir) - if 'yes', remove dir
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+              file_name    - temp file name 
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="gen_uid">22</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L1188"><b>ck.gen_uid(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Generate CK UID</i>
+<p>
+<pre>
+    Input:  {}
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+              data_uid     - UID in string format (16 characters 0..9,a..f)
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="get_by_flat_key">23</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L3998"><b>ck.get_by_flat_key(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Get value from dict by flat key</i>
+<p>
+<pre>
+    Input:  {
+              dict  - dictionary
+              key   - flat key
+            }
+
+    Output: {
+              return  - return code =  0, if successful
+                                    >  0, if error
+              (error) - error text if return > 0
+              value   - value or None, if doesn't exist
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="get_current_date_time">24</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L4317"><b>ck.get_current_date_time(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Get current date and time</i>
+<p>
+<pre>
+    Input:  {}
+
+    Output: {
+              return       - return code =  0
+
+              array        - array with date and time
+              iso_datetime - date and time in ISO format
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="get_from_dicts">25</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L671"><b>ck.get_from_dicts(dict1, key, default_value, dict2, extra='')</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Get value from one dict, remove it from there and move to another</i>
+<p>
+<pre>
+    Input:  dict1         - first check in this dict (and remove if there)
+            key           - key in dict1
+            default_value - default value if not found
+            dict2         - then check from here
+
+    Output: value
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="get_os_ck">26</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L1130"><b>ck.get_os_ck(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Get host platform (currently win or linux) and OS bits</i>
+<p>
+<pre>
+    Input:  {
+              (bits)      - force OS bits
+            }
+
+    Output: {
+              return      - return code =  0
+              platform    - 'win' or 'linux'
+              bits        - OS bits in string: 32 or 64
+              python_bits - Python installation bits in string: 32 or 64
+
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="get_version">27</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L1063"><b>ck.get_version(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Get CK version</i>
+<p>
+<pre>
+    Input:  {}
+
+    Output: {
+              return       - return code =  0
+
+              version      - list starting from major version number
+              version_str  - version string
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="inp">28</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L787"><b>ck.inp(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Universal input of unicode string in utf8 that supports Python 2.x and 3.x</i>
+<p>
+<pre>
+    Input:  {
+              text - text to print
+            }
+
+    Output: {
+              return       - return code =  0
+
+              string       - input string
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="input_json">29</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L1962"><b>ck.input_json(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Input JSON from console (double enter to finish)</i>
+<p>
+<pre>
+    Input:  {
+              text - text to print
+            }
+
+    Output: {
+              return              - return code =  0, if successful
+                                                >  0, if error
+              (error)             - error text if return > 0
+
+              string
+              dict                - parsed JSON
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="is_uid">30</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L1219"><b>ck.is_uid(str)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Check if string is CK UID</i>
+<p>
+<pre>
+    Input:  string to check
+
+    Output: True if UID, otherwise False
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="is_uoa">31</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L1242"><b>ck.is_uoa(str)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Check if string is correct CK UOA(i.e. does not have special characters including *, ?)</i>
+<p>
+<pre>
+    Input:  string to check
+
+    Output: True if allowed UOA, False otherwise
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="jerr">32</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L468"><b>ck.jerr(r)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Universal error print for Jupyter Notebook with raise KeyboardInterrupt</i>
+<p>
+<pre>
+    Input:  {
+              return - return code
+              error - error text
+            }
+
+    Output: Nothing; quits program
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="list_files">33</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L8986"><b>ck.list_files(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>List files in a given entry</i>
+<p>
+<pre>
+    Input:  {
+              (repo_uoa)   
+              (module_uoa) 
+              (data_uoa)  
+
+              parameters for function 'list_all_files'
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+              Output of list all files
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="load_json_file">34</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L1340"><b>ck.load_json_file(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Load json from file into dict</i>
+<p>
+<pre>
+    Input:  {
+              json_file - name of file with json
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         = 16, if file not found (may be warning)
+                                         >  0, if error
+              (error)  - error text if return > 0
+
+              dict     - dict from json file
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="load_module_from_path">35</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L3020"><b>ck.load_module_from_path(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Load (CK) python module</i>
+<p>
+<pre>
+    Input:  {
+              path             - module path
+              module_code_name - module name
+              (cfg)            - configuration of the module if exists ...
+              (skip_init)      - if 'yes', skip init
+              (data_uoa)       - module UOA (useful when printing error)
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+              code         - python code object
+              path         - full path to the module
+              cuid         - internal UID of the module
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="load_text_file">36</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L1437"><b>ck.load_text_file(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Load text file into string</i>
+<p>
+<pre>
+    Input:  {
+              text_file           - name of text file
+              (keep_as_bin)       - if 'yes', return only bin
+              (encoding)          - by default 'utf8', however sometimes we use utf16
+
+              (split_to_list)     - if 'yes', split to list
+
+              (convert_to_dict)   - if 'yes', split to list and convert to dict
+              (str_split)         - if !='', use as separator of keys/values when converting to dict
+              (remove_quotes)     - if 'yes', remove quotes from values when converting to dict
+
+              (delete_after_read) - if 'yes', delete file after read (useful when reading tmp files)
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         = 16, if file not found (may be warning)
+                                         >  0, if error
+              (error)  - error text if return > 0
+
+              bin      - bin
+              (string) - loaded text (with removed \r)
+              (lst)    - if split_to_list=='yes', return as list
+              (dict)   - if convert_to_dict=='yes', return as dict
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="load_yaml_file">37</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L1389"><b>ck.load_yaml_file(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Load YAML from file into dict</i>
+<p>
+<pre>
+    Input:  {
+              yaml_file - name of YAML file
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         = 16, if file not found (may be warning)
+                                         >  0, if error
+              (error)  - error text if return > 0
+
+              dict     - dict from YAML file
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="merge_dicts">38</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L1832"><b>ck.merge_dicts(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Merge intelligently dict1 with dict2 key by key in contrast with dict1.update(dict2)</i>
+<p>
+<pre>
+    Input:  {
+              dict1 - merge this dict with dict2 (will be directly modified!)
+              dict2 - dict
+
+    Output: {
+              return       - return code =  0, if successful
+
+              dict1        - output dict
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="out">39</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L340"><b>ck.out(s)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Universal print of unicode string in utf8 that supports Python 2.x and 3.x</i>
+<p>
+<pre>
+    Input:  s - unicode string to print
+
+    Output: Nothing
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="python_version">40</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L4487"><b>ck.python_version(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Action: print python version used by CK</i>
+<p>
+<pre>
+    Input:  {}
+
+    Output: {
+               version - sys.version
+               version_info - sys.version_info
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="restore_flattened_dict">41</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L4125"><b>ck.restore_flattened_dict(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Restore flattened dict</i>
+<p>
+<pre>
+    Input:  {
+              dict - flattened dict
+            }
+
+    Output: {
+              return  - return code =  0, if successful
+                                    >  0, if error
+              (error) - error text if return > 0
+              dict    - restored dict
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="run_and_get_stdout">42</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L624"><b>ck.run_and_get_stdout(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Run command and get stdout</i>
+<p>
+<pre>
+  Input:  {
+            cmd       - list of command line arguments, starting with the command itself
+            (shell)   - if 'yes', reuse shell environment
+          }
+
+  Output: {
+            return       - return code =  0, if successful
+                                       >  0, if error
+                                       =  8, if timeout
+            (error)      - error text if return > 0
+
+            return_code  - return code from app
+
+            stdout       - string, standard output of the command
+          }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="safe_float">43</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L490"><b>ck.safe_float(i,d)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Support function for safe float (useful for sorting function)</i>
+<p>
+<pre>
+    Input:  {
+              cmd       - command line
+              (timeout) - timeout in seconds (granularity 0.01 sec) - may cause overheads ...
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+                                         =  8, if timeout
+              (error)      - error text if return > 0
+
+              return_code  - return code from app
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="safe_get_val_from_list">44</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L518"><b>ck.safe_get_val_from_list(lst, index, default_value)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Support function to get value from list without error if out of bounds(useful for various sorting)</i>
+<p>
+<pre>
+    Input:  {
+              cmd       - command line
+              (timeout) - timeout in seconds (granularity 0.01 sec) - may cause overheads ...
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+                                         =  8, if timeout
+              (error)      - error text if return > 0
+
+              return_code  - return code from app
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="safe_int">45</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L504"><b>ck.safe_int(i,d)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Support function for safe int (useful for sorting function)</i>
+<p>
+<pre>
+    Input:  {
+              cmd       - command line
+              (timeout) - timeout in seconds (granularity 0.01 sec) - may cause overheads ...
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+                                         =  8, if timeout
+              (error)      - error text if return > 0
+
+              return_code  - return code from app
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="save_json_to_file">46</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L1631"><b>ck.save_json_to_file(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Save dict as json file</i>
+<p>
+<pre>
+    Input:  {
+              json_file    - file name
+              dict         - dict to save
+              (sort_keys)  - if 'yes', sort keys
+              (safe)       - if 'yes', ignore non-JSON values (only for Debugging - changes original dict!)
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="save_text_file">47</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L1709"><b>ck.save_text_file(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>save string into text file</i>
+<p>
+<pre>
+    Input:  {
+              text_file - name of text file
+              string    - string to write (with removed \r)
+              (append)  - if 'yes', append
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)  - error text if return > 0
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="save_yaml_to_file">48</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L1676"><b>ck.save_yaml_to_file(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Save dict as yaml file</i>
+<p>
+<pre>
+    Input:  {
+              yaml_file   - file name
+              dict        - dict to save
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="select">49</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L832"><b>ck.select(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users (advanced version available in module "choice")</i></b></td>
+  <td nowrap valign="top"><i>Universal selector of dictionary entry</i>
+<p>
+<pre>
+    Input:  {
+              dict             - dict with values being dicts with 'name' as string to display and 'sort' as int (for ordering)
+              (title)          - print title
+              (error_if_empty) - if 'yes' and Enter, make error
+              (skip_sort)      - if 'yes', do not sort array
+            }
+
+    Output: {
+              return       - return code =  0
+
+              string       - selected dictionary key
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="select_uoa">50</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L897"><b>ck.select_uoa(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users (advanced version available in module "choice")</i></b></td>
+  <td nowrap valign="top"><i>Universal UOA selector</i>
+<p>
+<pre>
+    Input:  {
+              choices      - list from search function
+              (skip_enter) - if 'yes', do not select 0 when user presses Enter
+              (skip_sort)  - if 'yes', do not sort array
+            }
+
+    Output: {
+              return  - return code =  0, if successful
+                                    >  0, if error
+              (error) - error text if return > 0
+              choice  - data UOA
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="set_by_flat_key">51</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L4057"><b>ck.set_by_flat_key(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Set value in array using flattened key</i>
+<p>
+<pre>
+
+    Input:  {
+              dict            - dict (it will be directly changed!)
+              key             - flat key (or not if doesn't start with #)
+              value           - value to set
+            }
+
+    Output: {
+              return  - return code =  0, if successful
+                                    >  0, if error
+              (error) - error text if return > 0
+              dict    - modified dict
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="substitute_str_in_file">52</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L1530"><b>ck.substitute_str_in_file(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Substitute string in file</i>
+<p>
+<pre>
+    Input:  {
+              filename - file
+              string1  - string to be replaced
+              string2  - replace string
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         = 16, if file not found
+                                         >  0, if error
+              (error)  - error text if return > 0
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="system_with_timeout">53</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L570"><b>ck.system_with_timeout(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Substituting os.system with possibility for time out</i>
+<p>
+<pre>
+    Input:  {
+              cmd       - command line
+              (timeout) - timeout in seconds (granularity 0.01 sec) - may cause overheads ...
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+                                         =  8, if timeout
+              (error)      - error text if return > 0
+
+              return_code  - return code from app
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="system_with_timeout_kill">54</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L530"><b>ck.system_with_timeout_kill(proc)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Support function for system_with_timeout</i>
+<p>
+<pre>
+    Input:  {
+              cmd       - command line
+              (timeout) - timeout in seconds (granularity 0.01 sec) - may cause overheads ...
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+                                         =  8, if timeout
+              (error)      - error text if return > 0
+
+              return_code  - return code from app
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="uid">55</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L4436"><b>ck.uid(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Action: generate CK UID</i>
+<p>
+<pre>
+    Input:  {}
+
+    Output: {
+              Output from 'gen_uid' function
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="unzip_file">56</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L8922"><b>ck.unzip_file(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>List files in a given entry</i>
+<p>
+<pre>
+    Input:  {
+              archive_file         - full path to zip file  
+              (path)               - path where unzip (current if empty)
+              (overwrite)          - if 'yes', overwrite
+              (delete_after_unzip) - if 'yes', delete original zip file after unzipping
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+              skipped       - list of files which was not overwritten
+           }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="version">57</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L4461"><b>ck.version(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for end users</i></b></td>
+  <td nowrap valign="top"><i>Action: print CK version</i>
+<p>
+<pre>
+    Input:  {}
+
+    Output: {
+              output from function 'get_version'
+            }
+
+</pre>
+</td>
+ </tr>
+</table>
+ 
+
+      </div>
+     </div>
+    </div>
+
+    <br>
+
+    {% endblock %}
+
+

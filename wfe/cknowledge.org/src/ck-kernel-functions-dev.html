@@ -1,0 +1,1988 @@
+{% set page = 'ck-kernel-functions' %}
+{% set title = 'Shared CK kernel functions and configurations' %}
+{% extends 'ck.html' %}
+
+{% block content %}
+
+    <div class="container pt80 pb50">
+        <div class="row justify-content-md-center">
+            <div class="col col-lg-12 text">
+
+
+
+We encourage you to reuse these portable productivity functions (Python 2.6+ and 3+) from the CK modules or in your own Python scripts:
+
+<pre>
+    import ck.kernel as ck
+
+    ck.out("Hello world")
+
+    r=ck.access({"action":"ls", "module_uoa":"env", "out":"con"})
+    if r["return"]>0: ck.err(r)
+    print (r["lst"])
+
+    r=ck.load_json_file({"json_file":"my_file.json", "dict":{"test":"yes"}})
+    if r["return"]>0: return r
+
+    r=ck.save_text_file({"text_file":"my_file.txt", "string":"test=yes\n"})
+    if r["return"]>0: return r
+
+</pre>
+See <a href="https://github.com/ctuning/ck/wiki">CK documentation for further details</a>.
+<p>
+<table cellpadding="4" border="1" style="border-collapse: collapse; border: 1px solid black;">
+ <tr>
+  <td nowrap><b>#</b></td>
+  <td nowrap><b>Function name</b></td>
+  <td nowrap><b>Note and API</b></td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="access_index_server">1</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L8185"><b>ck.access_index_server(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Access index server</i>
+<p>
+<pre>
+    Input:  {
+              request        - request type ('PUT', 'DELETE', 'TEST')
+              (path)         - path  
+              (dict)         - query as dict to send
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+              dict         - returned dict
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="add">2</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L5687"><b>ck.add(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Common action: add data (module) meta-description to a repository</i>
+<p>
+<pre>
+    Input:  {
+              (repo_uoa)             - repo UOA
+              module_uoa             - module UOA
+              data_uoa               - data UOA
+              (data_uid)             - data UID (if uoa is an alias)
+              (data_name)            - user friendly data name
+
+              (dict_from_cid)        -
+              (dict_from_repo_uoa)   - 
+              (dict_from_module_uoa) - 
+              (dict_from_data_uoa)   - if present, pre-load dict 
+                                       from this (module_uoa):data_uoa (analog of copy)
+
+              (update)               - if == 'yes' and entry exists, update it
+
+              (dict)                 - meta description to record
+              (substitute)           - if 'yes' and update=='yes' substitute dictionaries, otherwise merge!
+
+              (desc)                 - description of an entry (gradually adding API description in flat format)
+
+              (extra_json_files)     - dict with extra json files to save to entry (key is a filename)
+
+              (tags)                 - list or comma separated list of tags to add to entry
+
+              (info)                 - entry info to record - normally, should not use it!
+              (extra_info)           - enforce extra info such as
+                                          author
+                                          author_email
+                                          author_webpage
+                                          license
+                                          copyright
+                                       If not specified then taken from kernel (prefix 'default_')
+
+              (updates)              - entry updates info to record - normally, should not use it!
+              (ignore_update)        - if 'yes', do not add info about update
+
+              (ask)                  - if 'yes', ask questions, otherwise silent
+
+              (unlock_uid)           - unlock UID if was previously locked
+
+              (sort_keys)            - by default, 'yes'
+
+              (share)                - if 'yes', try to add via GIT
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                           16, if entry already exists
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+              Output from the 'create_entry' function
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="add_action">3</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L8301"><b>ck.add_action(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Add action to a module</i>
+<p>
+<pre>
+    Input:  {
+              (repo_uoa)                  - repo UOA
+              module_uoa                  - normally should be 'module' already
+              data_uoa                    - UOA of the module to be created
+
+              func                        - action
+              (desc)                      - desc
+              (for_web)                   - if 'yes', can be used to output html
+
+              (skip_appending_dummy_code) - if 'yes', do not append code
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+               Output of 'update' function
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="add_index">4</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L9189"><b>ck.add_index(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>add index</i>
+<p>
+<pre>
+
+    Input:  {
+              (repo_uoa)   - repo UOA with wild cards
+              (module_uoa) - module UOA with wild cards
+              (data_uoa)   - data UOA with wild cards
+
+              (print_full)         - if 'yes', show CID (repo_uoa:module_uoa:data_uoa)
+
+              (print_time) - if 'yes'. print elapse time at the end
+
+              (time_out)   - in sec. (default -1, i.e. no timeout)
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="browser">5</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L4924"><b>ck.browser(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Special function: open webbrowser with API, if exists</i>
+<p>
+<pre>
+    Input:  {
+              (template)   - use this web template
+              (repo_uoa)   -
+              (module_uoa) - 
+              (data_uoa)   - view a given entry
+              (extra_url)  - extra URL
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="cd">6</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L5577"><b>ck.cd(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Common action: print 'cd {path to CID}'</i>
+<p>
+<pre>
+    Input:  {
+              (repo_uoa)  - repo UOA
+              module_uoa  - module UOA
+              data_uoa    - data UOA
+                 or
+              cid
+
+            }
+
+    Output: { 
+              Output of the 'load' function 
+
+              string - prepared string 'cd {path to entry}'
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="cdc">7</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L5656"><b>ck.cdc(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Common action: print 'cd {path to CID} and copy to clipboard'</i>
+<p>
+<pre>
+    Input:  {
+              (repo_uoa)  - repo UOA
+              module_uoa  - module UOA
+              data_uoa    - data UOA
+                 or
+              cid
+
+            }
+
+    Output: { 
+              Output of the 'load' function 
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="check_lock">8</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L4260"><b>ck.check_lock(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Check if locked and unlock if needed</i>
+<p>
+<pre>
+    Input:  {
+              path               - path to be locked
+              (unlock_uid)       - UID of the lock to release it
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         = 32, lock UID is not matching
+                                         >  0, if error
+              (error)      - error text if return > 0
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="check_version">9</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L4598"><b>ck.check_version(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Compare versions</i>
+<p>
+<pre>
+    Input:  {
+              version      - your version (string)
+            }
+
+    Output: {
+              return          - return code =  0
+
+              ok              - if 'yes', your CK kernel version is outdated
+              current_version - your CK kernel version
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="check_writing">10</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L986"><b>ck.check_writing(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Check writing possibility</i>
+<p>
+<pre>
+    Input:  {
+              (module_uoa)
+              (module_uid)
+
+              (repo_uoa)
+              (repo_uid)
+              (repo_dict)
+
+              (delete)     - if 'yes', check if global delete operation is allowed
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+              (repo_dict)  - repo cfg if available
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="convert_ck_list_to_dict">11</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L2011"><b>ck.convert_ck_list_to_dict(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Convert CK list to CK dict with unicode in UTF-8 (unification of interfaces)</i>
+<p>
+<pre>
+    Input:  [ 
+              CK list: see 'action' function from this kernel
+            ]
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+              ck_dict      - {
+                               "action":action
+                               "cid":module_uoa or CID (x means that it may not be really CID 
+                                       and has to be processed specially
+                               "cids":[cid1, cid2, cid3, ...]
+                               "key1":value1
+                               "key2":value2
+                               ...
+                               "key10":""
+                               "key11":value11
+                               keys/values from file_json; if file extension is .tmp, 
+                                                           it will be deleted after read!
+                               keys/values from cmd_json
+                               "unparsed":unparsed_cmd
+                             }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="convert_cm_to_ck">12</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L9038"><b>ck.convert_cm_to_ck(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for internal use</i></b></td>
+  <td nowrap valign="top"><i>convert_cm_to_ck</i>
+<p>
+<pre>
+
+    Input:  {
+              (repo_uoa)   - repo UOA with wild cards
+              (module_uoa) - module UOA with wild cards
+              (data_uoa)   - data UOA with wild cards
+
+              (print_full) - if 'yes', show CID (repo_uoa:module_uoa:data_uoa)
+
+              (print_time) - if 'yes'. print elapse time at the end
+
+              (ignore_update) - if 'yes', do not add info about update
+
+              (time_out)   - in sec. (default -1, i.e. no timeout)
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="convert_entry_to_cid">13</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L4653"><b>ck.convert_entry_to_cid(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Convert info about entry to CID</i>
+<p>
+<pre>
+    Input:  {
+               (repo_uoa)   - Repo UOA
+               (repo_uid)   - Repo UID
+               (module_uoa) - Module UOA
+               (module_uid) - Module UID
+               (data_uoa)   - Data UOA
+               (data_uid)   - Data UID
+            }
+
+    Output: {
+              return       - return code =  0
+
+              cuoa         - module_uoa:data_uoa           (substituted with ? if can't find)
+              cid          - module_uid:data_uid           (substituted with ? if can't find)
+              xcuoa        - repo_uoa:module_uoa:data_uoa  (substituted with ? if can't find)
+              xcid         - repo_uid:module_uid:data_uid  (substituted with ? if can't find)
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="copy">14</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L6898"><b>ck.copy(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Common action: copy (or move) data entry</i>
+<p>
+<pre>
+    Input:  { See 'cp' function }
+    Output: { See 'cp' function }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="copy_path_to_clipboard">15</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L5341"><b>ck.copy_path_to_clipboard(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Copy current path to clipboard (productivity function)</i>
+<p>
+<pre>
+    Input:  {
+              (add_quotes) - if 'yes', add quotes
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="cp">16</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L6715"><b>ck.cp(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Common action: copy (or move) data entry</i>
+<p>
+<pre>
+    Input:  {
+              (repo_uoa)       - repo UOA
+              module_uoa       - module UOA
+              data_uoa         - data UOA
+
+              xcids[0]         - {'repo_uoa', 'module_uoa', 'data_uoa'} - new CID
+                 or
+              (new_repo_uoa)   - new repo UOA
+              (new_module_uoa) - new module UOA
+              new_data_uoa     - new data alias
+              (new_data_uid)   - new data UID (leave empty to generate new one)
+
+              (move)           - if 'yes', remove old
+              (keep_old_uid)   - if 'yes', keep old UID
+
+              (without_files)  - if 'yes', do not move/copy files
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+              Output of 'add' function
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="create_entry">17</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L3668"><b>ck.create_entry(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Create an UOA entry in a given path</i>
+<p>
+<pre>
+    Input:  {
+              path       - path where to create an entry
+              (data_uoa) - data UOA
+              (data_uid) - if uoa is an alias, we can force data UID
+
+              (force)    - if 'yes', force creation even if directory already exists
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                           16, if data entry already exists
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+              path         - path to data entry
+              data_uid     - data UID (from UOA)
+              data_alias   - data alias (from UOA)
+              data_uoa     - data alias or data uid if data alias==''
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="delete">18</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L6458"><b>ck.delete(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Common action: delete data (module) entry -> calls rm function</i>
+<p>
+<pre>
+    Input:  { See rm function }
+    Output: { See rm function }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="delete_alias">19</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L3805"><b>ck.delete_alias(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Delete entry alias from path</i>
+<p>
+<pre>
+    Input:  {
+              path         - path to the entry
+              data_uid     - data UID
+              (data_alias) - data alias
+              (repo_dict)  - repo cfg if available to check sync
+              (share)      - if 'yes', try to rm via GIT
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="delete_directory">20</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L3878"><b>ck.delete_directory(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Delete a given directory with subdirectories (be careful)</i>
+<p>
+<pre>
+    Input:  {
+              path - path to delete
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="delete_file">21</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L6994"><b>ck.delete_file(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Common action: delete file from an entry</i>
+<p>
+<pre>
+    Input:  {
+              (repo_uoa)  - repo UOA
+              module_uoa  - module UOA
+              data_uoa    - data UOA
+
+              filename    - filename to delete including relative path
+              (force)     - if 'yes', force deleting without questions
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="delete_index">22</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L9333"><b>ck.delete_index(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>delete index</i>
+<p>
+<pre>
+
+    Input:  {
+              (repo_uoa)   - repo UOA with wild cards
+              (module_uoa) - module UOA with wild cards
+              (data_uoa)   - data UOA with wild cards
+
+              (print_time) - if 'yes'. print elapse time at the end
+
+              (time_out)   - in sec. (default -1, i.e. no timeout)
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="detect_cid_in_current_path">23</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L4351"><b>ck.detect_cid_in_current_path(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Detect CID of the current directory (repository entry)</i>
+<p>
+<pre>
+    Input:  {
+              (path)     - path, otherwise current directory
+            }
+
+    Output: {
+              return         - return code =  0, if successful
+                                           >  0, if error
+              (error)        - error text if return > 0
+
+              repo_uoa       - repo UOA
+              repo_uid       - repo UID
+              repo_alias     - repo alias
+              (module_uoa)   - module UOA
+              (module_uid)   - module UID
+              (module_alias) - module alias
+              (data_uoa)     - data UOA
+              (data_uid)     - data UID
+              (data_alias)   - data alias
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="edit">24</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L6175"><b>ck.edit(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Common action: edit data meta-description through external editor</i>
+<p>
+<pre>
+    Input:  {
+              (repo_uoa)             - repo UOA
+              module_uoa             - module UOA
+              data_uoa               - data UOA
+
+              (ignore_update)        - (default==yes) if 'yes', do not add info about update
+              (sort_keys)            - (default==yes) if 'yes', sort keys
+
+              (edit_desc)            - if 'yes', edit description rather than meta 
+                                       (useful for compiler descriptions)
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="filter_add_index">25</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L9299"><b>ck.filter_add_index(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>add index filter</i>
+<p>
+<pre>
+
+    Input:  {
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="filter_convert_cm_to_ck">26</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L9103"><b>ck.filter_convert_cm_to_ck(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for internal use</i></b></td>
+  <td nowrap valign="top"><i>convet cm to ck filter</i>
+<p>
+<pre>
+
+    Input:  {
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="filter_delete_index">27</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L9384"><b>ck.filter_delete_index(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>add index filter</i>
+<p>
+<pre>
+
+    Input:  {
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="find">28</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L5498"><b>ck.find(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Common action: find data (module) - uses 'load' function</i>
+<p>
+<pre>
+    Input:  {
+              (repo_uoa)  - repo UOA
+              module_uoa  - module UOA
+              data_uoa    - data UOA
+            }
+
+    Output: { 
+              Output of the 'load' function 
+
+              number_of_entries - total number of found entries
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="find_path_to_data">29</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L2743"><b>ck.find_path_to_data(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Find path to data (first search in default repo, then local one and then all other repos)</i>
+<p>
+<pre>
+    Input:  {
+              (repo_uoa) - repo UOA
+              module_uoa - module UOA
+              data_uoa   - data UOA
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                           16, if data not found (may be warning)
+                                         >  0, if error
+              (error)      - error text if return > 0
+              path         - path to data
+              path_module  - path to module entry with this entry
+              path_repo    - path to the repository of this entry
+              repo_uoa     - repo UOA 
+              repo_uid     - repo UID
+              repo_alias   - repo alias
+              module_uoa   - module UOA 
+              module_uid   - module UID
+              module_alias - module alias
+              uoa          - data UOA
+              uid          - data UID
+              alias        - data alias
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="find_path_to_entry">30</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L2858"><b>ck.find_path_to_entry(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Find path to an UOA entry (check UID or alias)</i>
+<p>
+<pre>
+    Input:  {
+              path     - path to a repository
+              data_uoa - data UOA
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                           16, if data not found (may be warning)
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+              path         - path to data entry
+              data_uid     - data uid (from UOA)
+              data_alias   - data alias (from UOA)
+              data_uoa     - data alias or data uid, if data alias==''
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="find_repo_by_path">31</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L2613"><b>ck.find_repo_by_path(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Find repo by path</i>
+<p>
+<pre>
+    Input:  {
+              path - path to repo
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                           16, if repo not found (may be warning)
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+              repo_uoa     - repo UOA
+              repo_uid     - repo UID
+              repo_alias   - repo alias
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="flatten_dict_internal">32</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L3945"><b>ck.flatten_dict_internal(a, aa, prefix, pk)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for internal use</i></b></td>
+  <td nowrap valign="top"><i>Convert dictionary into CK flat format (internal, used for recursion)</i>
+<p>
+<pre>
+    Input:  {
+              dict  - dictionary
+              key   - flat key
+            }
+
+    Output: {
+              return  - return code =  0, if successful
+                                    >  0, if error
+              (error) - error text if return > 0
+              value   - value or None, if doesn't exist
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="get_api">33</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L3493"><b>ck.get_api(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Print API from module for a given action #</i>
+<p>
+<pre>
+    Input:  {
+              (path)       - path to module, if comes from access function
+                or
+              (module_uoa) - if comes from CMD
+
+              (func)       - func for API
+
+              (out)  - output
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+              title        - title string
+              api          - api as string
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="guide">34</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L4974"><b>ck.guide(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Special function: open webbrowser with user/developer guide wiki</i>
+<p>
+<pre>
+    Input:  {}
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="help">35</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L4999"><b>ck.help(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Common action: print help for a given module</i>
+<p>
+<pre>
+    Input:  {
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+              help         - help text
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="info">36</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L5147"><b>ck.info(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Common action: print info about a given CK entry</i>
+<p>
+<pre>
+    Input:  {
+              (repo_uoa)
+              module_uoa
+              (data_uoa)
+            }
+
+    Output: {
+              Output of 'load' function
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="init">37</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L2169"><b>ck.init(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for internal use</i></b></td>
+  <td nowrap valign="top"><i>Init CK (current instance - has state!)</i>
+<p>
+<pre>
+    Input:  {}
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="list_actions">38</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L8526"><b>ck.list_actions(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>List actions in a module</i>
+<p>
+<pre>
+    Input:  {
+              (repo_uoa)   - repo UOA
+              (module_uoa) - module_uoa, if =="", use kernel
+              (data_uoa)  
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+              actions      - list of actions
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="list_all_files">39</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L2375"><b>ck.list_all_files(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>List all files recursively in a given directory</i>
+<p>
+<pre>
+    Input:  {
+              path               - top level path
+              (file_name)        - search for a specific file name
+              (pattern)          - return only files with this pattern
+              (path_ext)         - path extension (needed for recursion)
+              (limit)            - limit number of files (if directories with a large number of files)
+              (number)           - current number of files
+              (all)              - if 'yes' do not ignore special directories (like .cm)
+              (ignore_names)     - list of names to ignore
+              (ignore_symb_dirs) - if 'yes', ignore symbolically linked dirs 
+                                   (to avoid recursion such as in LLVM)
+              (add_path)         - if 'yes', add path
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+              list         - dictionary of all files:
+                               {"file_with_full_path":{"size":.., "path":..}
+              sizes        - sizes of files (the same order)
+              number       - number of files in a current directory (needed for recursion)
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="list_data">40</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L7097"><b>ck.list_data(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Common action: list data entries</i>
+<p>
+<pre>
+    Input:  {
+              (repo_uoa)           - repo UOA
+              (module_uoa)         - module UOA
+              (data_uoa)           - data UOA
+
+              (repo_uoa_list)      - list of repos to search
+              (module_uoa_list)    - list of module to search
+              (data_uoa_list)      - list of data to search
+
+              (filter_func)        - name of filter function
+              (filter_func_addr)   - address of filter function
+
+              (add_if_date_before) - add only entries with date before this date 
+              (add_if_date_after)  - add only entries with date after this date
+              (add_if_date)        - add only entries with this date
+
+              (ignore_update)      - if 'yes', do not add info about update (when updating in filter)
+
+              (search_by_name)     - search by name
+
+              (search_dict)        - search if this dict is a part of the entry
+
+              (ignore_case)        - ignore case when searching!
+
+              (print_time)         - if 'yes', print elapsed time at the end
+
+              (do_not_add_to_lst)  - if 'yes', do not add entries to lst
+
+              (time_out)           - in secs, default=30 (if -1, no timeout)
+
+              (limit_size)         - if !='' limit size
+
+              (print_full)         - if 'yes', show CID (repo_uoa:module_uoa:data_uoa)
+                  or
+              (all)
+
+              (print_uid)          - if 'yes', print UID in brackets
+
+              (print_name)         - if 'yes', print name (and add info to the list)
+                  or
+              (name)
+
+              (add_info)           - if 'yes', add info about entry to the list
+              (add_meta)           - if 'yes', add meta about entry to the list
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+              lst          - [{'repo_uoa', 'repo_uid',
+                               'module_uoa', 'module_uid', 
+                               'data_uoa','data_uid',
+                               'path' (,info) 
+                               }]
+
+              elapsed_time - elapsed time in string
+
+              (timed_out)  - if 'yes', timed out or limited by size
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="load">41</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L5371"><b>ck.load(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Common action: load data (module) meta description</i>
+<p>
+<pre>
+    Input:  {
+              (repo_uoa)              - repo UOA
+              module_uoa              - module UOA
+              data_uoa                - data UOA
+
+              (get_lock)              - if 'yes', lock this entry
+              (lock_retries)          - number of retries to aquire lock (default=5)
+              (lock_retry_delay)      - delay in seconds before trying to aquire lock again (default=10)
+              (lock_expire_time)      - number of seconds before lock expires (default=30)
+
+              (skip_updates)          - if 'yes', do not load updates
+              (skip_desc)             - if 'yes', do not load descriptions
+
+              (load_extra_json_files) - list of files to load from the entry
+
+              (unlock_uid)            - UID of the lock to release it
+
+              (min)                   - show minimum when output to console (i.e. meta and desc)
+
+              (create_if_not_found)   - if 'yes', create, if entry is not found - useful to create and lock entries
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+              dict         - entry meta description
+              (info)       - entry info
+              (updates)    - entry updates
+              (desc)       - entry description
+
+              path         - path to data entry
+              path_module  - path to module entry with this entry
+              path_repo    - path to the repository of this entry
+              repo_uoa     - repo UOA 
+              repo_uid     - repo UID
+              repo_alias   - repo alias
+              module_uoa   - module UOA 
+              module_uid   - module UID
+              module_alias - module alias
+              data_uoa     - data UOA
+              data_uid     - data UID
+              data_alias   - data alias
+              data_name    - user friendly name
+
+              (extra_json_files) - dict with extra json files (key is the filename from 'load_extra_json_files')
+
+              (lock_uid)   - unlock UID, if locked successfully
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="load_meta_from_path">42</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L2940"><b>ck.load_meta_from_path(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Load meta description from a path</i>
+<p>
+<pre>
+    Input:  {
+              path           - path to a data entry
+
+              (skip_updates) - if 'yes', do not load updates
+              (skip_desc)    - if 'yes', do not load descriptions
+            }
+
+    Output: {
+              return         - return code =  0, if successful
+                                           >  0, if error
+              (error)        - error text if return > 0
+
+              dict           - dict with meta description
+              path           - path to json file with meta description
+
+              (info)         - dict with info if exists
+              (path_info)    - path to json file with info
+
+              (updates)      - dict with updates if exists
+              (path_updates) - path to json file with updates
+              (path_desc)    - path to json file with API description
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="load_repo_info_from_cache">43</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L2553"><b>ck.load_repo_info_from_cache(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Load repo from cache</i>
+<p>
+<pre>
+    Input:  {
+              repo_uoa - repo_uoa
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                           16, if repo not found (may be warning)
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+              repo_uoa     - repo UOA
+              repo_uid     - repo UID
+              repo_alias   - repo alias
+
+              all other info from repo dict
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="move">44</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L6980"><b>ck.move(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Common action: move data entry</i>
+<p>
+<pre>
+    Input:  { See 'mv' function }
+    Output: { See 'mv' function }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="mv">45</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L6912"><b>ck.mv(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Common action: move data entry</i>
+<p>
+<pre>
+    Input:  {
+              (repo_uoa)    - repo UOA
+              module_uoa    - module UOA
+              data_uoa      - data UOA
+
+              xcids[0]         - {'repo_uoa', 'module_uoa', 'data_uoa'} - new CID
+                 or
+              (new_repo_uoa)   - new repo UOA
+              (new_module_uoa) - new module UOA
+              (new_data_uoa)   - new data alias
+              (new_data_uid)   - new data UID (leave empty to generate new one)
+
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+              Output of 'copy' function
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="parse_cid">46</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L3601"><b>ck.parse_cid(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Convert CID to dict and add missing parts in CID with current path if #</i>
+<p>
+<pre>
+    Input:  {
+              cid            - in format (REPO_UOA:)MODULE_UOA:DATA_UOA 
+              (cur_cid)      - output of function 'detect_cid_in_current_path'
+              (ignore_error) - if 'yes', ignore wrong format
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+              data_uoa     - data UOA
+              module_uoa   - module UOA
+              (repo_uoa)   - repo UOA
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="path">47</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L5243"><b>ck.path(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Common action: get CID from current path</i>
+<p>
+<pre>
+    Input:  {}
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+              Output from from 'detect_cid_in_current_path' function
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="perform_action">48</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L3263"><b>ck.perform_action(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Perform action (find module or use kernel)</i>
+<p>
+<pre>
+    Input:  {
+              all parameters from function 'access'
+
+              (web)         - if 'yes', called from the web
+
+              (common_func) - if 'yes', ignore search for modules 
+                                        and call common func from the CK kernel
+
+              (local)       - if 'yes', run locally even if remote repo ...
+            }
+
+    Output: {
+              return  - return code =  0, if successful
+                                         >  0, if error
+              (error) - error text if return > 0
+
+              (out)   - if action change output, return it
+              Output from the module/action
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="perform_remote_action">49</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L3113"><b>ck.perform_remote_action(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Perform remote action via CK web service</i>
+<p>
+<pre>
+    Input:  { See 'perform_action' function }
+    Output: { See 'perform_action' function }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="prepare_special_info_about_entry">50</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L1261"><b>ck.prepare_special_info_about_entry(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Prepare special info about entry (engine used, author, date, etc)</i>
+<p>
+<pre>
+    Input:  {
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+              dict         - dict with info
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="print_input">51</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L5116"><b>ck.print_input(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Common action: print input</i>
+<p>
+<pre>
+    Input:  {
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+              html         - input as JSON
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="pull">52</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L8588"><b>ck.pull(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Pull data</i>
+<p>
+<pre>
+    Input:  {
+              (repo_uoa)      - repo UOA, if needed
+              module_uoa      - module UOA 
+              data_uoa        - data UOA
+
+              (filename)      - filename (with path) (if empty, set archive to 'yes')
+                  or
+              (cid[0])
+                                if empty, create an archive of the entry
+              (archive)       - if 'yes' pull whole entry as zip archive using filename or ck_archive.zip
+              (all)           - if 'yes' and archive, add even special directories (.cm, .svn, .git, etc)
+
+
+              (out)           - if 'json' or 'json_file', encode file and return in r
+              (skip_writing)  - if 'yes', do not write file (not archive) to current directory
+
+              (pattern)       - return only files with this pattern
+              (patterns)      - multiple patterns (useful to pack mutiple points in experiments)
+
+              (encode_file)   - if 'yes', encode file
+
+              (skip_tmp)      - if 'yes', skip tmp files and directories
+            }
+
+    Output: {
+              return                - return code =  0, if successful
+                                                  >  0, if error
+              (error)               - error text if return > 0
+              (file_content_base64) - if i['to_json']=='yes', encoded file
+              (filename)            - filename to record locally
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="push">53</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L8770"><b>ck.push(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Push data</i>
+<p>
+<pre>
+    Input:  {
+              (repo_uoa)            - repo UOA, if needed
+              module_uoa            - module UOA 
+              data_uoa              - data UOA
+
+              (filename)            - local filename 
+                  or
+              (cid[0])
+
+              (extra_path)          - extra path inside entry (create if doesn't exist)
+
+              (file_content_base64) - if !='', take its content and record into filename
+
+              (archive)             - if 'yes' push to entry and unzip ...
+
+              (overwrite)           - if 'yes', overwrite files
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="pwiki">54</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L4820"><b>ck.pwiki(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Special function: open webbrowser with private discussion wiki page for collaborative R&DURL is taken from default kernel configuration cfg['private_wiki_data_web']</i>
+<p>
+<pre>
+    Input:  { 
+               (repo_uoa)
+               (module_uoa)
+               (data_uoa)
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="reload_repo_cache">55</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L2479"><b>ck.reload_repo_cache(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Reload repo cache</i>
+<p>
+<pre>
+    Input:  {
+              (force)      - if 'yes', force recaching
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="remove">56</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L6444"><b>ck.remove(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Common action: delete data (module) entry -> calls rm function</i>
+<p>
+<pre>
+    Input:  { See rm function }
+    Output: { See rm function }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="remove_action">57</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L8436"><b>ck.remove_action(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Remove action from a module</i>
+<p>
+<pre>
+    Input:  {
+              (repo_uoa)  - repo UOA
+              module_uoa  - normally should be 'module' already
+              data_uoa    - UOA of the module to be created
+
+              func        - action
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+               Output of 'update' function
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="ren">58</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L6472"><b>ck.ren(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Common action: rename data entry</i>
+<p>
+<pre>
+    Input:  {
+              (repo_uoa)         - repo UOA
+              module_uoa         - module UOA
+              data_uoa           - old data UOA
+
+              new_data_uoa       - new data alias
+                 or
+              new_data_uid       - new data UID (leave empty to keep old one)
+                 or
+              xcids[0]           - {'data_uoa'} - new data UOA
+
+              (new_uid)          - generate new UID
+
+              (remove_alias)     - if 'yes', remove alias
+
+              (add_uid_to_alias) - if 'yes', add UID to alias
+
+              (share)            - if 'yes', try to remove old entry via GIT and add new one
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="rename">59</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L6701"><b>ck.rename(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Common action: rename data entry -> calls 'ren' function</i>
+<p>
+<pre>
+    Input:  { See ren function }
+    Output: { See ren function }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="rm">60</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L6275"><b>ck.rm(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Common action: delete data (module) entry</i>
+<p>
+<pre>
+    Input:  {
+              (repo_uoa)      - repo UOA    ; can be wild cards
+              module_uoa      - module UOA  ; can be wild cards
+              data_uoa        - data UOA    ; can be wild cards
+
+              (force)         - if 'yes', force deleting without questions
+                 or
+              (f)             - to be compatible with rm -f 
+
+              (share)         - if 'yes', try to remove via GIT
+
+              (tags)          - use these tags in format tags=x,y,z to prune rm
+                   or
+              (search_string) - prune entries with expression *?
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="rm_read_only">61</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L9417"><b>ck.rm_read_only(f,p,e)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for internal use</i></b></td>
+  <td nowrap valign="top"><i>Remove files and dirs even if read only</i>
+<p>
+<pre>
+    Input:  Can be dictionary or string (string will be converted to dictionary)
+
+            {
+               action
+
+               module_uoa or CID -> converted to cid
+                 or
+               (cid1)            -  if doesn't have = and doesn't start from -- or - or @ -> appended to cids[]
+               (cid2)            -  if doesn't have = and doesn't start from -- or - or @ -> appended to cids[]
+               (cid3)            -  if doesn't have = and doesn't start from -- or - or @ -> appended to cids[]
+                 or
+               (repo_uoa)
+               (module_uoa)
+               (data_uoa)
+
+               (out=type)     Module output
+                              == ''              - none
+                              == 'con'           - console interaction (if from CMD, default)
+                              == 'json'          - return dict as json to console
+                              == 'json_with_sep' - separation line and return dict as json to console
+                              == 'json_file'     - return dict as json to file
+
+               (out_file)     Output file if out=='json_file'
+
+               (con_encoding) - force encoding for IO
+               (ck_profile)   - if 'yes', profile CK
+
+               INPUT TO A GIVEN FUNCTION
+
+
+               NOTE: If INPUT is a string and it will be converted to INPUT dictionary as follows (the same as CK command line):
+
+                     ck key1=value1    -> converted to {key1:value1}
+
+                        -key10         -> converted to {key10:"yes"}
+                        -key11=value11 -> converted to {key11:value11}
+
+                        --key12         -> converted to {key12:"yes"}
+                        --key13=value13 -> converted to {key13:value13}
+
+
+                     @file_json         -> JSON from this file will be merged with INPUT
+                     @@                 -> CK will ask user ot enter manually JSON from console and merge with INPUT
+                     @@key              -> Enter JSON manually from console and merge with INPUT under this key
+
+                     @@@cmd_json        -> convert string to JSON (special format) and merge with INPUT
+
+                     -- xyz             -> add everything after -- to "unparsed_cmd" key in INPUT
+
+                     When string is converted to INPUT dictionary, "cmd" variable is set to True
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+              OUTPUT FROM A GIVEN FUNCTION
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="save_repo_cache">62</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L2529"><b>ck.save_repo_cache(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Save repo cache</i>
+<p>
+<pre>
+    Input:  {}
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="search">63</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L7541"><b>ck.search(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Common action: search entries</i>
+<p>
+<pre>
+    Input:  {
+              (repo_uoa)           - repo UOA
+              (module_uoa)         - module UOA
+              (data_uoa)           - data UOA
+
+              (repo_uoa_list)      - list of repos to search
+              (module_uoa_list)    - list of module to search
+              (data_uoa_list)      - list of data to search
+
+              (add_if_date_before) - add only entries with date before this date 
+              (add_if_date_after)  - add only entries with date after this date
+              (add_if_date)        - add only entries with this date
+
+              (search_by_name)     - search by name
+
+              (print_time)         - if 'yes', print elapsed time at the end
+
+              (search_flat_dict)   - search if these flat keys/values exist in entries
+              (search_dict)        - search if this dict is a part of the entry
+              (tags)               - add tags to search in format tags=x,y,z
+                   or
+              (search_string)      - search with expressions *?
+
+              (ignore_case)        - if 'yes', ignore case of letters
+
+              (time_out)           - in secs, default=30
+
+              (internal)           - if 'yes', use internal search even if indexing is on
+
+              (limit_size)         - by default 5000 or -1 if no limit
+
+              (print_full)         - if 'yes', show CID (repo_uoa:module_uoa:data_uoa)
+              (print_uid)          - if 'yes', print UID in brackets
+
+              (print_name)         - if 'yes', print name (and add info to the list)
+              (add_info)           - if 'yes', add info about entry to the list
+              (add_meta)           - if 'yes', add meta about entry to the list
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+              lst          - [{'repo_uoa', 'repo_uid',
+                               'module_uoa', 'module_uid', 
+                               'data_uoa','data_uid',
+                               'path'}]
+              elapsed_time - elapsed time in string
+
+              (timed_out)  - if 'yes', timed out
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="search_filter">64</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L7813"><b>ck.search_filter(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Search filter</i>
+<p>
+<pre>
+    Input:  {
+              repo_uoa             - repo UOA
+              module_uoa           - module UOA
+              data_uoa             - data UOA
+              path                 - path  
+
+              (search_dict)        - search if this dict is a part of the entry
+              (ignore_case)        - if 'yes', ignore case of letters
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+              lst          - [{'repo_uoa', 'repo_uid',
+                               'module_uoa', 'module_uid', 
+                               'data_uoa','data_uid',
+                               'path'}]
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="search_string_filter">65</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L8127"><b>ck.search_string_filter(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Search filter</i>
+<p>
+<pre>
+    Input:  {
+              repo_uoa             - repo UOA
+              module_uoa           - module UOA
+              data_uoa             - data UOA
+              path                 - path  
+
+              (search_string)      - search with expressions *?
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+              lst          - [{'repo_uoa', 'repo_uid',
+                               'module_uoa', 'module_uid', 
+                               'data_uoa','data_uid',
+                               'path'}]
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="set_lock">66</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L4158"><b>ck.set_lock(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Set lock for path</i>
+<p>
+<pre>
+    Input:  {
+              path               - path to be locked
+
+              (get_lock)         - if 'yes', lock this entry
+              (lock_retries)     - number of retries to aquire lock (default=11)
+              (lock_retry_delay) - delay in seconds before trying to aquire lock again (default=3)
+              (lock_expire_time) - number of seconds before lock expires (default=30)
+
+              (unlock_uid)       - UID of the lock to release it
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         = 32, couldn't acquire lock (still locked after all retries)
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+              (lock_uid)   - lock UID, if locked successfully
+            }
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="short_help">67</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L5073"><b>ck.short_help(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Common action: print help for a given module</i>
+<p>
+<pre>
+    Input:  {
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+              help         - help text
+            }
+
+
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="status">68</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L4515"><b>ck.status(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Action: check CK status</i>
+<p>
+<pre>
+    Input:  {}
+
+    Output: {
+              outdated     - if 'yes', newer version exists
+
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="update">69</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L6066"><b>ck.update(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Common action: update data (module) meta-description to a repository</i>
+<p>
+<pre>
+    Input:  {
+              (repo_uoa)             - repo UOA
+              module_uoa             - module UOA
+              data_uoa               - data UOA
+              (data_uid)             - data UID (if uoa is an alias)
+              (data_name)            - user friendly data name
+
+              (dict_from_cid)        -
+              (dict_from_repo_uoa)   - 
+              (dict_from_module_uoa) - 
+              (dict_from_data_uoa)   - if present, pre-load dict 
+                                       from this (module_uoa):data_uoa (analog of copy)
+
+              (dict)                 - meta description to record
+              (substitute)           - if 'yes', substitute dictionaries, otherwise merge!
+
+              (tags)                 - list or comma separated list of tags to add to entry
+
+              (info)                 - entry info to record - normally, should not use it!
+              (updates)              - entry updates info to record - normally, should not use it!
+              (ignore_update)        - if 'yes', do not add info about update
+
+              (ask)                  - if 'yes', ask questions, otherwise silent
+
+              (unlock_uid)           - unlock UID if was previously locked
+
+              (sort_keys)            - if 'yes', sort keys
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+
+              Output from the 'add' function (the last one in case of wildcards)
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="webapi">70</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L4878"><b>ck.webapi(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Special function: open webbrowser with API, if exists</i>
+<p>
+<pre>
+    Input:  { from access function }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="webhelp">71</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L4713"><b>ck.webhelp(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Special function: open webbrowser with help</i>
+<p>
+<pre>
+    Input:  { from access function }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="wiki">72</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L4762"><b>ck.wiki(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>Special function: open webbrowser with discussion wiki page for collaborative R&DURL is taken from default kernel configuration cfg['wiki_data_web']</i>
+<p>
+<pre>
+    Input:  { 
+               (repo_uoa)
+               (module_uoa)
+               (data_uoa)
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+            }
+
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="zip">73</td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck/blob/master/ck/kernel.py#L9251"><b>ck.zip(i)</b></a><p>&nbsp;&nbsp;&nbsp;<i>for CK kernel and low-level developers</i></b></td>
+  <td nowrap valign="top"><i>zip entries (call repo)</i>
+<p>
+<pre>
+
+    Input:  {
+              (repo_uoa)   - repo UOA with wild cards
+              (module_uoa) - module UOA with wild cards
+              (data_uoa)   - data UOA with wild cards
+
+              (archive_path) - if '' create inside repo path
+
+              (archive_name) - if !='' use it for zip name
+              (auto_name)    - if 'yes', generate name name from data_uoa: ckr-<repo_uoa>.zip
+              (bittorent)    - if 'yes', generate zip name for BitTorrent: ckr-<repo_uid>-YYYYMMDD.zip
+
+              (overwrite)    - if 'yes', overwrite zip file
+              (store)        - if 'yes', store files instead of packing
+
+            }
+
+    Output: {
+              return       - return code =  0, if successful
+                                         >  0, if error
+              (error)      - error text if return > 0
+            }
+
+</pre>
+</td>
+ </tr>
+</table>
+ 
+
+      </div>
+     </div>
+    </div>
+
+    <br>
+
+    {% endblock %}
+
+

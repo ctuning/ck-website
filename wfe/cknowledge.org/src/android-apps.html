@@ -1,0 +1,157 @@
+{% set page = 'android-apps' %}
+{% set title = 'Android application to crowdsource AI/SW/HW co-design experiments' %}
+{% extends 'ck.html' %}
+
+{% block content %}
+
+    <div class="container pt-3 pt-md-5 pb-5 mb-auto">
+      <h1>CK-based Android applications to crowdsource AI/SW/HW co-design experiments</h1>
+
+      You can download and install two CK-based applications for your Android device
+      to participate in collaborative benchmarking, optimization, autotuning 
+      and co-design of efficient model/SW/HW stacks for emerging workloads.
+      You can view results from all crowdsourced experiments (quantum, ReQuEST, etc) <a href="http://cKnowledge.org/repo">here</a>
+      (see <a href="http://cKnowledge.org/repo-beta">previous version</a> of a public repository).
+
+      We use this open-source technology in open and reproducible <a href="request.html">ACM ReQuEST tournaments</a> 
+      to co-design Pareto-efficient deep learning stacks (speed, accuracy, costs)
+      and in a <a href="http://cKnowledge.org/rpi-crowd-tuning">joint project with Raspberry Pi foundation</a> 
+      to crowdsource compiler autotuning and machine learning (see <a href="http://cKnowledge.org/rpi-crowd-tuning">interactive article</a>). 
+
+      <p><p>
+      <i>To our surprise, our open science applications were removed from Google Play 
+      in August 2018 after 3 years of successful participation by thousands of users
+      because it apparently violates recent Google's terms of use: it's not allowed to download
+      extra code or data from external sources. However, the whole point of our applications 
+      and our novel crowd-tuning concept is to download slightly differently modified 
+      code and models to different users to collaboratively find the most efficient solutions
+      across diverse platforms and environments provided by volunteers similar 
+      to <a href="https://en.wikipedia.org/wiki/SETI@home">SETI@home</a> in terms of speed,
+      accuracy, costs and other metrics or automatically detect software and hardware bugs
+      (see <a href="http://cKnowledge.org/rpi-crowd-tuning">paper 1</a> 
+       and <a href="https://arxiv.org/abs/1506.06256">paper 2</a>).
+      </i>
+
+      <p>
+      While we are discussing with Google how to move our applications back to Google Play Store,
+      you can download and install them here.
+      Just make sure that your Android device is configured to allow
+      installation from sources other than the Play Store before
+      downloading and installing our CK-based Android apps.
+
+      You can check it as follows:
+
+      <ul>
+       <li>
+        Go to "Settings" of your Android device
+       </li>
+       <li>
+        Tap on "Lock screen and security" or "Security" (depending on the version of your Android device)
+       </li>
+       <li>
+        Check the box next to "Unknown sources" (Allow installation of apps from sources other than the Play Store). 
+        Note that you can always revert it back to original setting after installing our apps.
+       </li>
+      </ul>
+
+      You can now download, install and run two CK-based Android applications to
+
+      <ul>
+       <li>
+        <a href="http://cKnowledge.org/ai/android/crowdsource-ai-co-design-2.12.apk">crowdsource DNN benchmarking, optimization and SW/HW co-design (V2.12)</a>
+        &nbsp;&nbsp;[&nbsp;<a href="http://cKnowledge.org/dnn-crowd-benchmarking-results">View results</a>&nbsp;,
+        &nbsp;<a href="https://github.com/dividiti/crowdsource-video-experiments-on-android">See open sources</a>&nbsp;]
+       </li>
+       <li>
+        <a href="http://cKnowledge.org/ai/android/crowdsource-compiler-autotuning-2.5.apk">crowdsource LLVM and GCC benchmarking and autotuning (V2.5)</a>
+        &nbsp;&nbsp;[&nbsp;<a href="http://cKnowledge.org/gcc-crowd-benchmarking-results">View GCC results</a>&nbsp;,
+        &nbsp;<a href="http://cKnowledge.org/llvm-crowd-benchmarking-results">View LLVM results</a>&nbsp;,
+        &nbsp;<a href="https://github.com/ctuning/crowdsource-experiments-using-android-devices">See open sources</a>&nbsp;,
+        &nbsp;<a href="http://cKnowledge.org/rpi-crowd-tuning">View interactive report (Raspberry Pi foundation)</a>&nbsp;]
+       </li>
+      </ul>
+
+      <p>
+      Please feel free to get in touch with <a href="contacts.html">the CK community</a> 
+      to provide your feedback or discuss results!
+
+
+    </div>
+
+    <footer class="footer pt-3 pb-3">
+        <div class="container mw-1440">
+            <div class="d-flex justify-content-between mx-auto">
+                <div class="d-none d-md-block text-center">
+                    <a href="http://www.clustrmaps.com/map/Cknowledge.org">
+                        <img src="http://www2.clustrmaps.com/stats/maps-no_clusters/Cknowledge.org-thumb.jpg" height="72" alt="Locations of visitors to this page">
+                    </a>
+                </div>
+                <div class="text-left text-md-center">
+                        <ul class="container-fluid nav justify-content-sm-start justify-content-md-center">
+                            <li class="nav-item">
+                                <a class="nav-link div-footer-nav-link" href="https://github.com/ctuning/ck/wiki/News-archive">
+                                    News
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link div-footer-nav-link" href="request.html">
+                                    ACM ReQuEST tournaments
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link div-footer-nav-link" href="http://ctuning.org/ae">
+                                    Artifact Evaluation
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link div-footer-nav-link" href="https://github.com/ctuning/ck/wiki/Publications">
+                                    Publications
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link div-footer-nav-link" href="contacts.html">
+                                    Contacts
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="a2a_dd nav-link div-footer-nav-link" href="https://www.addtoany.com/share#url=http%3A%2F%2Fcknowledge.org%2F&amp;title=About%20cKnowledge%20framework">Share</a>
+                                <script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+                            </li>
+                        </ul>
+                    <div class="row pt20 pb10">
+                        <span class="container-fluid dividiti-copyright">
+                            &copy;&nbsp;2014-2018&nbsp;
+                            <a href="https://en.wikipedia.org/wiki/CTuning_foundation">non-profit cTuning foundation</a>&nbsp;and&nbsp;
+                            <a href="http://dividiti.com">dividiti</a>
+                        </span>
+                    </div>
+                </div>
+                <div class="text-center">
+                  <table>
+                    <tr>
+                        <td><a href="http://twitter.com/grigori_fursin" class="social-icon-sm si-dark si-colored-twitter m-1">
+                            <i><img class="footer-icon" src="images/svg/twitter.svg"></i>
+                            <i><img class="footer-icon" src="images/svg/twitter.svg"></i>
+                        </a></td>
+                        <td><a href="https://www.linkedin.com/grp/home?gid=7433414" class="social-icon-sm si-dark si-colored-linkedin m-1">
+                            <i><img class="footer-icon" src="images/svg/linkedin-in.svg"></i>
+                            <i><img class="footer-icon" src="images/svg/linkedin-in.svg"></i>
+                        </a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://dividiti.blogspot.com/" class="social-icon-sm si-dark si-colored-google m-1">
+                            <i><img class="footer-icon" src="images/svg/blogger-b.svg"></i>
+                            <i><img class="footer-icon" src="images/svg/blogger-b.svg"></i>
+                        </a></td>
+                        <td><a href="https://groups.google.com/forum/#!forum/collective-knowledge" class="social-icon-sm si-dark si-colored-google m-1">
+                            <i><img class="footer-icon" src="images/svg/comments.svg"></i>
+                            <i><img class="footer-icon" src="images/svg/comments.svg"></i>
+                        </a></td>
+                    </tr>
+                  </table>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+{% endblock %}

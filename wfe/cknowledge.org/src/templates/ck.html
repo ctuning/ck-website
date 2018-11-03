@@ -1,0 +1,25 @@
+{% import 'menu.html' as toolbar %}
+
+{% include 'head.html' %}
+
+<body>
+    <div id="preloader">
+        <div id="preloader-inner"></div>
+    </div>
+
+    <div class="site-overlay"></div>
+
+    {{toolbar.currentPage(page)}}
+
+    {% block content %}{% endblock %}
+    
+    {% include 'footer.html' %}
+    
+    <script src="js/plugins/plugins.js"></script>
+
+    {% block script %}{% endblock %}
+
+
+</body>
+
+</html>

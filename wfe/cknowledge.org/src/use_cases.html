@@ -1,0 +1,498 @@
+{% set page = 'use-cases' %}
+{% set title = 'Collective Knowledge use cases' %}
+{% extends 'ck.html' %}
+
+{% block content %}
+
+    <div class="container pt90 pb50">
+        <div class="row justify-content-md-center">
+            <div class="col col-lg-12 text">
+
+<!-------------------------------------------------------------------------------------->
+<div id="ck_entries_space4"></div>
+
+<p>
+We made a special effort to simplify CK installation with minimal dependencies 
+across Linux, Windows and MacOS. You just need Git client and Python 2.7+ or 3.3+. 
+Just try it yourself as described <a href="https://github.com/ctuning/ck#minimal-installation">here</a>.
+You can then follow a simple <a href="https://github.com/ctuning/ck/wiki/First-feeling">tutorial</a> to get the first feeling
+about CK capabilities (portable, customizable and reusable workflows and artifacts with a portable package manager).
+
+<p>
+<i>
+ Feel free to reuse or extend 
+ <a href="shared-repos.html">CK repositories</a>,
+ <a href="shared-programs.html">workflows</a>,
+ <a href="shared-soft-detection-plugins.html">software detection plugins</a>,
+ <a href="shared-packages.html">portable packages</a> and
+ <a href="shared-modules.html">modules</a>
+ already shared by the community!
+</i>
+
+<p>
+List of practical CK use cases from <a href="partners.html">the community</a>:
+
+<ul>
+ <li><a href="#converting-artifacts">Converting ad-hoc code and data into reusable components with CK Python wrappers and JSON API</a></li>
+ <li><a href="#converting-workflows">Converting ad-hoc experimental scripts into customizable and sustainable CK workflows</a></li>
+ <li><a href="#enabling-interactive-articles">Enabling interactive dashboards and articles connected to CK repositories</a></li>
+ <li><a href="#crowdsourcing-experiments">Crowdsourcing experiments using public or private CK repositories</a></li>
+ <li><a href="#crowd-benchmarking">Collaboratively benchmarking realistic workloads across diverse platforms</a></li>
+ <li><a href="#customizable-autotuning-and-co-design">Unifying and crowd-sourcing multi-objective and multi-dimensional optimization and co-design</a></li>
+ <li><a href="#realistic-training-sets">Collaboratively creating realistic, representative and diverse training sets</a></li>
+ <li><b><a href="#surviving-cambrian-explosion">Surviving in a Cambrian AI/SW/HW explosion with the Collective Knowledge and open AI research</a></b></li>
+ </li>
+</ul>
+
+<!-------------------------------------------------------------------------------------->
+<div id="ck_box_with_shadow" style="overflow:hidden;position:relative;width:98%;padding:5px;margin:7px;">
+
+ <a id="converting-artifacts"></a>
+ <h2>Converting ad-hoc code and data into reusable components with CK Python wrappers and JSON API</h2>
+
+ <p>
+ CK allows users to provide a common structure to their local ad-hoc code and data,
+ and pack them with associated CK Python wrappers and JSON API into CK repositories
+  (a - typical ad-hoc experimental packs for <a href="http://cTuning.org/ae">Artifact Evaluation<a/>, 
+  b - unified and reusable experimental repositories such as the one for 
+  <a href="https://github.com/SamAinsworth/reproduce-cgo2017-paper">CGO'17 paper</a>
+  or <a href="https://github.com/ctuning/ck-request-asplos18-results">ACM ReQuEST tournaments</a>).
+ This allows the community to collaboratively validate, improve and build upon shared research artifacts
+ thus enabling practical open science as described in 
+ the <a href="https://portalparts.acm.org/3230000/3229762/fm/frontmatter.pdf">ACM ReQuEST-ASPLOS'18 proceedings front matter</a>
+ and <a href="http://cKnowledge.org/rpi-crowd-tuning">this interactive and reproducible paper</a>.
+
+ <center>
+ <img src="_resources/4094a9fad1c48a5e-cropped.png" style="padding:10px;" width="800"/>
+ </center>
+
+ <p>
+ Such repositories can be easily shared and reused via public or private services including GitHub, BitBucket and GitLab.
+ We keep track of some <a href="shared-repos.html">CK repositories</a>,
+ <a href="shared-programs.html">workflows</a>,
+ <a href="shared-soft-detection-plugins.html">software detection plugins</a>,
+ <a href="shared-packages.html">portable packages</a> and
+ <a href="shared-modules.html">reusable CK modules</a>. 
+ Feel free to add your own ones! In the future, we would like to assign DOI for stable artifacts 
+ and make a web-service to automatically find their location.
+
+ <p> 
+  <a href="http://dl.acm.org"><img src="_resources/logo_acm_resized.jpg" style="float:left;padding:10px;" width="50"/></a>
+  For example, <a href="http://www.acm.org">Association for Computing Machinery (ACM)</a> 
+  evaluates <a href="http://cKnowledge.org">Collective Knowledge technology</a> 
+  to share artifacts and experimental workflows as reusable and customizable components 
+  along with <a href="http://dl.acm.org/docs/reproducibility.cfm">reproducible publications</a>
+  (see their <a href="http://dl.acm.org/citation.cfm?id=3068854&picked=formats&CFID=980302216&CFTOKEN=11225679">video about CK</a>).
+
+ <p>
+ <a href="request.html">ReQuEST consortium</a> 
+ is also developing a scalable tournament framework, a common experimental methodology 
+ and an open repository powered by CK for continuous evaluation and optimization of the quality vs. efficiency Pareto 
+ optimality of a wide range of real-world applications, libraries and models across the whole hardware/software stack on complete platforms.
+ See <a href="https://doi.org/10.1145/3229762">ACM proceedings</a>, 
+ <a href="https://portalparts.acm.org/3230000/3229762/fm/frontmatter.pdf">results report</a> 
+ and <a href="https://cKnowledge.org/request-results">live scoreboard</a>.
+
+ <p>
+ <center>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/DIkZxraTmGM" frameborder="0" allowfullscreen style="padding:10px;"></iframe>
+ </center>
+
+ <p>
+ <div align="right">
+  [&nbsp;<a href="https://www.researchgate.net/publication/304010295_Collective_Knowledge_Towards_RD_Sustainability">CK concepts in DATE'16 paper</a>&nbsp;] 
+  [&nbsp;<a href="https://michel-steuwer.github.io/About-CK">CK concepts by Michel Stewer</a>&nbsp;] 
+  [&nbsp;<a href="https://github.com/ctuning/ck/wiki/Getting-started-guide">CK Getting Started Guide</a>&nbsp;] 
+ </div>
+</div>
+
+<!-------------------------------------------------------------------------------------->
+<div id="ck_entries_space4"></div>
+<div id="ck_box_with_shadow" style="overflow:hidden;position:relative;width:98%;padding:5px;margin:7px;">
+
+ <a id="converting-workflows"></a>
+ <h2>Converting ad-hoc experimental scripts into customizable and sustainable CK workflows</h2>
+
+ <p>
+ Researchers can now use CK SDK to convert their complex and ad-hoc experimental scripts into unified CK workflows assembled from shared CK artifacts as LEGO bricks:
+
+ <center>
+  <img src="_resources/849d2cb494280f0c-cropped.png" style="padding:10px;" width="700"/>
+ </center>
+
+<div id="ck_entries_space4"></div>
+<div id="ck_entries_space4"></div>
+
+ <p>
+ Furthermore, CK has its own <a href="https://github.com/ctuning/ck/wiki/Portable-workflows">portable package manager</a> 
+ for Linux, Windows, Android and MacOS to automatically adapt such workflows to underlying software,
+ detect multiple versions of installed dependencies which can co-exist and used in parallel
+ (see available <a href="shared-soft-detection-plugins.html">CK software detection plugins</a>), 
+ and automatically install missing <a href="shared-packages.html">packages</a>:
+
+ <div id="ck_entries_space4"></div>
+
+ <center>
+  <img src="_resources/b928cc435237da3e-cropped.png" style="padding:10px;" width="700"/>
+ </center>
+
+ <div id="ck_entries_space4"></div>
+
+ <p>
+ Such approach can considerably simplify <a href="http://cTuning.org">artifact evaluation and validation of experimental results</a> 
+ at conferences and journals.
+
+ Furthermore, such workflows can be reused and collaboratively improved by the community
+ (rather than just archiving Docker images which become quickly outdated) thus enabling 
+ practical, agile and open research!
+
+ <p>
+ For example, experimental workflow for the CGO'17 article from the University of Cambridge researchers which won distinguished artifact award was implemented using CK:
+ <ul>
+  <li>
+   <a href="https://github.com/SamAinsworth/reproduce-cgo2017-paper">CGO'17 CK artifact at GitHub</a>
+  </li>
+  <li>
+   <a href="http://ctuning.org/ae/resources/paper-with-distinguished-ck-artifact-and-ae-appendix-cgo2017.pdf">Paper with AE appendix and CK workflow</a>
+  </li>
+ <ul>
+
+ <p>
+ <div align="right">
+  [&nbsp;<a href="http://cTuning.org">Artifact Evaluation website</a>&nbsp;] 
+  [&nbsp;<a href="https://github.com/ctuning/ck/wiki/Artifact-sharing">Notes about artifact sharing via CK</a>&nbsp;] 
+  [&nbsp;<a href="https://hal.inria.fr/inria-00436029">Paper open computer engineering</a>&nbsp;] 
+  [&nbsp;<a href="http://adapt-workshop.org/motivation2016.html">Community-driven reviewing of publications</a>&nbsp;] 
+ </div>
+</div>
+
+<!-------------------------------------------------------------------------------------->
+<div id="ck_entries_space4"></div>
+<div id="ck_box_with_shadow" style="overflow:hidden;position:relative;width:98%;padding:5px;margin:7px;">
+
+ <a id="enabling-interactive-articles"></a>
+ <h2>Enabling interactive dashboards and articles connected to CK repositories</h2>
+
+ <p>
+ CK has an integrated web server allowing users to quickly prototype 
+ various web-based dashboards to run their workflows and analyze experimental results in workgroups.
+ CK even allows creation of interactive reports and articles assembled from CK artifacts.
+
+ <p>
+ Here are some real examples of practical CK dashboards and interactive articles:
+
+ <ul>
+  <li>
+   <p>
+   <a href="http://cKnowledge.org/request-results">cKnowledge.org/request-results: Scoreboard from open ACM ReQuEST tournaments on SW/HW co-design of efficient deep learning</a>
+  </li>
+  <li>
+   <p>
+   <a href="http://cKnowledge.org/rpi-crowd-tuning">CK-powered interactive and reproducible article on collaborative auto-tuning and machine leanring</a>
+  </li>
+  <li>
+   <p>
+   <a href="https://github.com/SamAinsworth/reproduce-cgo2017-paper/files/618737/ck-aarch64-dashboard.pdf">PDF snapshot of the interactive CK dashboard from the CGO'17 distinguished artifact</a>
+  </li>
+  <li>
+   <p>
+   <a href="http://cKnowledge.org/repo">cKnowledge.org/repo: web access to a public CK repository of knowledge hosted in Azure cloud</a>
+  </li>
+  <li>
+   <p>
+   <a href="http://cknowledge.org/interactive-report">Interactive optimization report</a>
+  </li>
+  <li>
+   <p>
+   <a href="http://cknowledge.org/repo/web.php?template=cknowledge&wcid=report:">Shared interactive reports in the CK public repository</a>
+  </li>
+  <li>
+   <p>
+   <a href="http://cknowledge.org/repo/web.php?template=cknowledge&wcid=graph:">Shared interactive graphs in the CK public repository</a>
+  </li>
+ </ul>
+
+ <p>Furthermore, we can now generate the whole collaborative websites using CK:
+
+ <ul>
+  <li>
+   <p>
+   ADAPT workshop series: 
+     [&nbsp;<a href="http://adapt-workshop.org">adapt-workshop.org</a>&nbsp;] , 
+     [&nbsp;<a href="https://github.com/ctuning/ck-web-adapt-workshop">CK GitHub repo</a>&nbsp;]
+  </li>
+  <li>
+   <p>
+   Artifact Evaluation for computer systems conferences: 
+     [&nbsp;<a href="http://cTuning.org/ae">cTuning.org/ae</a>&nbsp;] , 
+     [&nbsp;<a href="https://github.com/ctuning/ck-web-artifact-evaluation">CK GitHub repo</a>&nbsp;]
+  </li>
+  <li>
+   <p>
+   non-profit cTuning foundation: 
+     [&nbsp;<a href="http://cTuning.org">cTuning.org</a>&nbsp;] 
+  </li>
+  <li>
+   <p>
+   Grigori Fursin's personal website with all cross-linked CK artifacts from past R&D:
+     [&nbsp;<a href="http://fursin.net/research.html">fursin.net/research</a>&nbsp;] 
+  </li>
+ </ul>
+
+</div>
+
+<!-------------------------------------------------------------------------------------->
+<div id="ck_entries_space4"></div>
+<div id="ck_box_with_shadow" style="overflow:hidden;position:relative;width:98%;padding:5px;margin:7px;">
+
+ <a id="crowdsourcing-experiments"></a>
+ <h2>Crowdsourcing experiments using public or private CK repositories</h2>
+
+ <p>
+ Integrated CK web server combined with unified JSON API of CK components allows workflows 
+ running on different machines to interact with each other via JSON-based web interfaces.
+ This, in turn, allows users to effectively crowdsource experiments across diverse platforms
+ (mobile devices, tablets, laptops, servers, cloud, supercomputers) provided by supporters
+ similar to SETI@HOME. Results can be aggregated in public or private CK repositories
+ for further visualization, analysis and improvement.
+
+ <p>
+ Colleagues from the Imperial College London used CK to crowdsource OpenCL compiler bug detection 
+ (<a href="https://www.hipeac.net/press/6801/hipeac-tech-transfer-awards-announced">HiPEAC technology transfer award winner</a>):
+ <ul>
+  <li>
+   <p>
+   <a href="https://github.com/ctuning/ck-clsmith">CK-CLsmith GitHub prepo</a>
+  </li>
+  <li>
+   <p>
+   <a href="http://cknowledge.org/repo/web.php?template=cknowledge&wcid=bc0409fb61f0aa82:1b437e72c74fe782&table_sort=2">CK-CLsmith live results</a>
+  </li>
+  <li>
+   <p>
+   <a href="http://cKnowledge.org/repo">Live CK repository with different crowdsource experiments</a>
+  </li>
+ </ul>
+
+</div>
+
+<!-------------------------------------------------------------------------------------->
+<div id="ck_entries_space4"></div>
+<div id="ck_box_with_shadow" style="overflow:hidden;position:relative;width:98%;padding:5px;margin:7px;">
+
+ <a id="crowd-benchmarking"></a>
+ <h2>Collaboratively benchmarking realistic workloads across diverse platforms</h2>
+
+ <p>
+ CK helps our partners collaboratively benchmark their workloads such as deep learning
+ across diverse platforms. You can test a simple example of compiling and running some shared
+ workload on your own machine as follows:
+
+ <pre>
+  $ ck pull repo:ck-autotuning
+  $ ck pull repo:ctuning-programs
+ </pre>
+
+ <p>
+ You can see shared programs in the CK format (JSON meta information 
+ describing how to compile and run shared program with all dependencies and data sets):
+ 
+ <pre>
+  $ ck list program
+ </pre>
+
+ <p>
+ You can now compile a given program simply as follows:
+ <pre>
+  $ ck compile program:cbench-automotive-susan --speed
+ </pre>
+
+ <p>
+ Note, that CK will detect all available versions of required compilers (GCC, LLVM, ICC ...) 
+ and libraries on your system using 
+ <a href="https://github.com/ctuning/ck-env">customizable cross-platform package and environment manager with JSON API and meta</a>.
+ If some software dependencies are missing, CK will automatically install required packages
+ as described <a href="https://github.com/ctuning/ck/wiki/Portable-workflows">here</a>.
+
+ <p>
+ Now you can run a given workload simply as follows:
+ <pre>
+  $ ck run program:cbench-automotive-susan
+ </pre>
+
+ <p>
+ CK will ask you which command line to use and will automatically detect or install all required data sets.
+
+ <p>
+ If you have Android NDK/SDK installed on your host machine and Android device connected via ADB, 
+ you can simply compile and run the same problem on this device as follows:
+
+ <pre>
+  $ ck compile program:cbench-automotive-susan --speed --target_os=android21-arm-v7a
+  $ ck run program:cbench-automotive-susan --target_os=android21-arm-v7a
+ </pre>
+
+ <p>
+ ARM uses such CK workflows together with low-level tools 
+ to automate <a href="https://github.com/ctuning/ck-wa">benchmarking and optimization of realistic workloads across diverse hardware</a>.
+
+</div>
+
+<!-------------------------------------------------------------------------------------->
+<div id="ck_entries_space4"></div>
+<div id="ck_box_with_shadow" style="overflow:hidden;position:relative;width:98%;padding:5px;margin:7px;">
+
+ <a id="customizable-autotuning-and-co-design"></a>
+ <h2>Unifying and crowd-sourcing multi-objective and multi-dimensional optimization and co-design</h2>
+
+ <center>
+  <img src="_resources/d6118462b94f89da-cropped.png" style="padding:10px;" width="700"/>
+ </center>
+
+ <p>
+ High-level CK workflows together with unified JSON API allowed us to implement universal, customizable,
+ multi-objective and multi-dimensional autotuning as described 
+ <a href="https://github.com/ctuning/ck/wiki/Compiler-autotuning">here</a>.                                                                           
+
+ <p>
+ <center>
+  <img src="_resources/9a4de89400e0ff21-cropped.png" style="padding:10px;" width="650"/>
+ </center>
+
+ <p>
+ Furthermore, we can now crowdsource exploration of large and non-linear design and optimization spaces
+ to improve performance, energy, accuracy, memory consumption and other characteristics 
+ or automatically detect bugs across diverse workloads and platforms provided by volunteers.
+
+ <p>
+ You can check our shared workflow to crowdsource optimization as follows:
+
+ <pre>
+  $ ck pull repo:ck-crowdtuning
+  $ ck crowdsource experiment
+ </pre>
+
+ <p>
+ For example, you can execute shared workflow for collaborative program optimization
+ with all related artifacts, and start participating in multi-objective crowdtuning 
+ simply as follows: 
+
+ <pre>
+  $ ck crowdtune program
+ </pre>
+
+ <p>
+ You can also crowd-tune GCC on Windows as follows:
+ <pre>
+  $ ck crowdtune program --gcc --target_os=mingw-64
+ </pre>
+
+ <p>
+ If you have GCC or LLVM compilers installed, you can start continuously crowd-tune 
+ their optimization heuristics in a quiet mode (for example overnight) via
+
+ <pre>
+ $ ck crowdtune program --llvm --quiet
+ $ ck crowdtune program --gcc --quiet
+ </pre>
+
+ <p>
+ This experimental workflow will be optimizing different shared workloads
+ for multiple objectives (execution time, code size, energy, compilation time, etc)
+ using all exposed design and optimization knobs, while sending most profitable
+ optimization choices to the <a href="http://cKnowledge.org/repo">public CK-based server</a>.
+
+ <p>
+ CK server will, in turn, perform on-line learning to classify optimization 
+ versus workloads which can be useful for compiler/hardware designers and 
+ performance engineers (described in more detail in <a href="http://arxiv.org/abs/1506.06256">this article</a>).
+
+ <p>
+ You can even use our small <a href="android-apps.html">Android application</a> 
+ to crowdsource tuning of GCC and LLVM compiler optimization heuristics
+ while continuously learning and aggregating optimization results 
+ in the <a href="http://cKnowledge.org/repo">public CK repository</a>.
+
+ <p>
+ You can also participate in crowdtuning of popular third-party OpenCL, OpenMP and CUDA-based mathematical libraries 
+ as described <a href="https://github.com/ctuning/ck/wiki/Autotuning-example-clblast">here</a>.
+
+</div>
+
+<!-------------------------------------------------------------------------------------->
+<div id="ck_entries_space4"></div>
+<div id="ck_box_with_shadow" style="overflow:hidden;position:relative;width:98%;padding:5px;margin:7px;">
+
+ <a id="realistic-training-sets"></a>
+ <h2>Collaboratively creating realistic, representative and diverse training sets</h2>
+
+ <p>
+ Having a common experimental infrastructure allows us to
+ build reusable, realistic, diverse,  
+ and continuously evolving training sets in a common format 
+ (programs, data sets, models, unexpected behavior, mispredictions) 
+ with the help of our <a href="partners.html">partners</a> and the community.
+
+ <p>
+ See the following examples of shared training sets:
+ <ul>
+  <li><a href="shared-program.html">Browse shared programs</a>
+  <li><a href="http://cknowledge.org/repo/web.php?template=cknowledge&wcid=dataset:">Browse shared datasets</a>
+  <li><a href="http://cknowledge.org/repo/web.php?template=cknowledge&wcid=package:&ck_top_search_tag=caffemodel">Browse shared CK-Caffe models</a>
+  <li><a href="http://cknowledge.org/repo/web.php?template=cknowledge&wcid=package:&ck_top_search_tag=tensorflow,model">Browse shared CK-TensorFlow models</a>
+  <li><a href="http://cknowledge.org/repo/web.php?template=cknowledge&wcid=bc0409fb61f0aa82:1b437e72c74fe782&table_sort=2">Browse OpenCL compiler bugs (crowd-fuzzing)</a>
+  <li><a href="http://cknowledge.org/repo/web.php?template=cknowledge&wcid=147d284ae646bb5a:bc0409fb61f0aa82:665589934ba6a039">Browse GCC compiler bugs (crowd-fuzzing)</a>
+  <li><a href="http://cknowledge.org/repo/web.php?action=index&module_uoa=wfe&native_action=show&native_module_uoa=program.optimization">Browse Caffe/TensorFlow mispredictions</a>
+  <li><a href="http://cknowledge.org/repo/web.php?wcid=42b9a1221eb50259:collective_training_set"><b>Browse DNN image classification mispredictions</b></a> 
+      (from this <a href="android-apps.html">Android app</a>).
+ </ul>
+
+ <p>
+ Such realistic training sets can help design more efficient computer systems (<a href="https://github.com/ctuning/ck/wiki/Demo-ARM-TechCon'16">ARM TechCon'16</a> 
+ and <a href="https://arxiv.org/abs/1506.06256">article on machine-learning based optimization</a>) and build accurate models!
+
+</div>
+
+<!-------------------------------------------------------------------------------------->
+<div id="ck_entries_space4"></div>
+<div id="ck_box_with_shadow" style="overflow:hidden;position:relative;width:98%;padding:5px;margin:7px;">
+
+ <a id="surviving-cambrian-explosion"></a>
+ <h2>Surviving in a Cambrian AI/SW/HW explosion with the Collective Knowledge and open AI research</h2>
+
+ <p>
+ Our personal ultimate goal behind CK development is to 
+ a) reinvent computer engineering and make it more collaborative, reproducible and reusable, 
+ b) develop efficient and reliable computer systems from IoT to supercomputers, 
+ c) enable open science via reusable and customizable artifacts, and
+ d) create a public repository of reusable AI artifacts (models, data sets, tools, etc) 
+ and portable AI algorithms/workflows (classification, detection, etc).
+
+ This should help us enable open AI research, 
+ boost innovation in science and technology, 
+ get back to our AI-related projects,
+ develop artificial brain and have fun &#9786;!
+
+ <p>See <a href="https://portalparts.acm.org/3230000/3229762/fm/frontmatter.pdf">ACM ReQuEST-ASPLOS'18 proceedings front matter</a> and our motivation slides:
+ <ul>
+  <li><p><a href="https://www.slideshare.net/GrigoriFursin/introducing-the-request-competitions-platform-scoreboard-and-longterm-vision">Introducing the ReQuEST competitions, platform, scoreboard and long-term vision] (ACM ASPLOS'18)</a>
+  <li><p><a href="https://www.slideshare.net/GrigoriFursin/adapting-to-a-cambrian-aiswhw-explosion-with-open-codesign-competitions-and-collective-knowledge">Adapting to a Cambrian AI/SW/HW explosion with open co-design competitions and Collective Knowledge] (ARM Research Summit'17)</a>
+  <li><p><a href="https://www.slideshare.net/GrigoriFursin/enabling-open-and-reproducible-computer-systems-research-the-good-the-bad-and-the-ugly">Enabling open and reproducible computer systems research: the good, the bad and the ugly] (CNRS'17)</a>
+ </ul>
+
+ <p>
+ <b>See how we combine together all above techniques and tools 
+ to enable <a href="ai.html">CK-powered open AI research</a>.</b>
+
+ <p>
+</div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block script %}{% endblock %}

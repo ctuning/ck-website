@@ -1,0 +1,21 @@
+{
+  "backup_data_uid": "a549d2ddf4e61b18",
+  "backup_module_uid": "1e4e644996b7f2a0",
+  "backup_module_uoa": "wfe",
+  "control": {
+    "author": "Grigori Fursin",
+    "author_email": "Grigori.Fursin@cTuning.org",
+    "author_webpage": "http://fursin.net",
+    "copyright": "See CK COPYRIGHT.txt for copyright details",
+    "engine": "CK",
+    "iso_datetime": "2018-11-03T18:48:40.813267",
+    "license": "See CK LICENSE.txt for licensing details",
+    "version": [
+      "1",
+      "9",
+      "6",
+      "1"
+    ]
+  },
+  "data_name": "cknowledge.org"
+}

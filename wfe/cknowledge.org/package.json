@@ -1,0 +1,40 @@
+{
+  "name": "intro",
+  "version": "1.0.0",
+  "description": "Web-site http://cknowledge.org/",
+  "main": "gulpfile.js",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-babel": "^7.0.1",
+    "gulp-bundle-assets": "^2.29.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-concat-css": "^3.1.0",
+    "gulp-connect": "^5.5.0",
+    "gulp-declare": "^0.3.0",
+    "gulp-html2pug": "^1.1.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-notify": "^3.2.0",
+    "gulp-nunjucks-render": "^2.2.2",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^3.2.1",
+    "gulp-template": "^5.0.0",
+    "gulp-watch": "^4.3.11",
+    "gulp-wrap": "^0.14.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp default",
+    "build-ck": "gulp ck"
+  },
+  "repository": "https://github.com/ctuning/ck-website",
+  "keywords": [],
+  "author": "cTuning foundation",
+  "license": "ISC",
+  "dependencies": {
+    "npm": "^6.3.0"
+  }
+}

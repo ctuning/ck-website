@@ -1,0 +1,151 @@
+{% set page = 'quantum' %}
+{% set title = 'Collective Knowledge for Quantum Computing' %}
+{% extends 'ck.html' %}
+
+{% block content %}
+
+<div class="main-content">
+
+    <div class="pt-3 pt-md-5 pb-5 main-content">
+        <div class="container">
+            <h1>Quantum Collective Knowledge</h1>
+        </div>
+        <div class="container">
+            <p class="pt-2">
+Quantum computers have the potential to solve certain problems dramatically faster than conventional computers, with applications in areas such as machine learning, drug discovery, materials, optimization, finance and cryptography.
+            </p>
+            <p class="pt-2">
+It is not known yet when the first demonstration of quantum advantage will be achieved, or what shape it will take, but even when that happens one thing is certain: to make <b>scalable</b> quantum computing a reality, we must enable effective aggregation and sharing of multidisciplinary knowledge.
+            </p>
+            <p class="pt-2">
+Together with a growing community of quantum computing experts and enthusiasts, we are building Quantum Collective Knowledge (QCK) to pinpoint the state-of-the-art and forecast future developments in quantum computing.
+            </p>
+            <p class="pt-2">
+<i>In contrast with other initiatives, QCK uses
+
+<a href="https://github.com/ctuning/ck-quantum">unified workflows with reusable components</a> 
+which can run on classical and quantum platforms, can be extended by the community, 
+and are connected to a <a href="http://cKnowledge.org/repo">public scoreboard</a>
+to simplify reproducibility and comparison of different algorithms across different platforms!
+We hope that QCK will be instrumental to unlock the power of quantum computing for everyone!
+</i>
+            </p>
+        </div>
+
+        <div class="container">
+            <h2>Quantum Collective Knowledge Hackathons</h2>
+        </div>
+
+        <div class="container container-wrapped dvdt-card-partner mt-lg-5">
+            <div id="hackathon1"></div>
+            <div class="container">
+                <h3>1st QCK Hackathon, Cambridge, 15 June 2018</h3>
+            </div>
+            <div class="dvdt-card-logos justify-content-around justify-content-md-start">
+                <a href="http://rigetti.com">
+                    <img class="dvdt-card-logos-md" src="_resources/partners/logo-rigetti.svg" />
+                </a>
+                <a href="http://dividiti.com">
+                    <img class="dvdt-card-logos-md" src="_resources/partners/logo-dvdt.png" />
+                </a>
+                <a href="http://riverlane.io">
+                    <img class="dvdt-card-logos-md" src="_resources/partners/logo-riverlane.png" />
+                </a>
+            </div>
+            <div class="dvdt-card-desc">
+            <p class="pt-2">
+We held our first QCK hackathon in Cambridge, UK. (Also, to the best of our knowledge, the first quantum hackathon in Western Europe!)
+
+Over 20 keen quantum programmers were given exclusive cloud access to Rigetti's 8-qubit Agave quantum computer and simulator.
+
+We had participants with various backgrounds, ranging from secondary school students to PhD students and experienced professionals, most of whom had no prior experience programming quantum computers.
+            </p>
+            </div>
+            <div class="dvdt-card-links">
+                <a class="dvdt-a-text" href="https://riverlane.io/news/river-lane-research-and-dividiti-hold-western-europes-first-quantum-computing-hackathon/">Blog</a>
+                <a class="dvdt-a-external" href="http://cKnowledge.org/results">QCK scoreboard</a>
+                <a class="dvdt-a-github" href="https://github.com/ctuning/ck-quantum">CK-Quantum workflows</a>
+                <a class="dvdt-a-github" href="https://github.com/ctuning/ck-rigetti">CK-Rigetti workflows</a>
+            </div>
+        </div>
+
+        <div class="container container-wrapped dvdt-card-partner mt-lg-5">
+            <div id="hackathon2"></div>
+            <div class="container">
+                <h3>2nd QCK Hackathon, London, 6 October 2018</h3>
+            </div>
+            <div class="dvdt-card-logos justify-content-around justify-content-md-start">
+                <a href="http://ibm.com">
+                    <img class="dvdt-card-logos-md" src="_resources/partners/logo-ibm.png" />
+                </a>
+                <a href="http://dividiti.com">
+                    <img class="dvdt-card-logos-md" src="_resources/partners/logo-dvdt.png" />
+                </a>
+                <a href="http://riverlane.io">
+                    <img class="dvdt-card-logos-md" src="_resources/partners/logo-riverlane.png" />
+                </a>
+                <a href="http://thoughtworks.com">
+                    <img class="dvdt-card-logos-md" src="_resources/partners/logo-tw.png" />
+                </a>
+            </div>
+            <div class="dvdt-card-desc">
+              <p class="pt-2">
+We organized our second QCK hackathon in London, UK.
+
+Over 40 participants collaborated in teams to solve a quantum chemistry problem, and for the day were given priority access to <a href="https://www.research.ibm.com/ibm-q/">IBM Quantum Experience</a> machines, including a 16-bit quantum computer.
+
+Thanks to QCK, the participants had the opportunity to build upon the knowledge gained from the first hackathon and view experimental results on a live
+ <a href="http://cKnowledge.org/results">scoreboard</a>.
+              </p>
+              <p class="pt-2">
+Some participants commented after the event:
+<ul>
+  <li>"My first hackathon! really great day! I loved it, learned a lot, good mix of people, good interaction, helpdesk, well facilitated. thank you very much!!!"</li>
+  <li>"That was a unique and brilliant hackathon; a gateway to further QC for more people. :)"</li>
+  <li>"Great day. Really interesting talks, hands-on coding and great opportunity to talk to people with similar interests. I came away feeling that I'd learned a lot."</li>
+</ul>
+              </p>
+            </div>
+            <div class="dvdt-card-links">
+                <a class="dvdt-a-external" href="https://www.meetup.com/London-Quantum-Computing-Meetup/events/254156028/254156028">Meetup page with photos and comments</a>
+                <a class="dvdt-a-external" href="http://cKnowledge.org/results">QCK scoreboard</a>
+                <a class="dvdt-a-github" href="https://github.com/ctuning/ck-quantum">CK-Quantum workflows</a>
+                <a class="dvdt-a-github" href="https://github.com/ctuning/ck-qiskit">CK-Qiskit workflows</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+
+<script>
+
+    var waypoints = [];
+
+    Array.from(document.getElementsByClassName('dvdt-card-partner')).forEach( anchor => {
+
+        var anchorId = anchor.children[0].getAttribute('id');
+
+        waypoints[anchorId] = new Waypoint({
+            element: document.getElementById(anchorId),
+            handler: function() {
+                console.log(document.getElementsByClassName('anchor-link-active'));
+                if (document.getElementsByClassName('anchor-link-active')) document.getElementsByClassName('anchor-link-active').item(0).classList.remove('anchor-link-active');
+                if (document.getElementById('link-' + anchorId)) document.getElementById('link-' + anchorId).classList.add('anchor-link-active')
+            },
+            continuous: false,
+            offset:0
+        });
+        console.log(anchorId);
+    })
+
+    function anchorHighlight(linkId) {
+            document.getElementById(linkId).classList.add("anchor-link-active")
+    };
+
+</script>
+
+{% endblock %}
