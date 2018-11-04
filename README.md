@@ -4,17 +4,3 @@
 <!-------------------------------------------------------------------------------------->
 # Introduction
 CK repository for cKnowledge.org website 
-
-**Both sources
-and scripts**
-
-* Test1
-
-* Test
-test 2
-
-* Test
- test 3
-
-* Test
-  test 4
