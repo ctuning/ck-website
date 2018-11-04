@@ -4,3 +4,6 @@
 <!-------------------------------------------------------------------------------------->
 # Introduction
 CK repository for cKnowledge.org website 
+
+**Both sources
+and scripts**
