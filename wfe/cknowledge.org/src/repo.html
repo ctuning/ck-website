@@ -14,12 +14,17 @@
 {% block script %}
 
 <script type="text/javascript">
+function initWidget() {
+    let url = new URL(window.location.href);
+
     const widget = new CkRepoWdiget();
-    widget.init(
-        '#ck-repo-widget',
-        '#ck-repo-widget-header',
-        '#ck-repo-widget-loading-layer'
-    );
+    widget.init({
+        apiUrlPrefix: '/repo/json.php',
+        isLocalRun: false,
+        scenario: url.searchParams.get("scenario"),
+    });
+}
+initWidget();
 </script>
 
 {% endblock %}
