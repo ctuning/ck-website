@@ -17,11 +17,22 @@
 function initWidget() {
     let url = new URL(window.location.href);
 
+    let scenario = '';
+    let path = url.pathname;
+    let dashboardStr = 'dashboard/';
+    if (path.indexOf(dashboardStr) >= 0) {
+        scenario = path.slice(path.indexOf(dashboardStr) + dashboardStr.length);
+
+        let slashPos = scenario.indexOf('/');
+        if (slashPos >= 0) {
+            scenario = scenario.slice(0, slashPos);
+        }
+    }
+
     const widget = new CkRepoWdiget();
     widget.init({
-        apiUrlPrefix: '/repo/json.php',
         isLocalRun: false,
-        scenario: url.searchParams.get("scenario"),
+        scenario: scenario,
     });
 }
 initWidget();
