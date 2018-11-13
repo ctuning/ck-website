@@ -63,6 +63,8 @@ gulp.task('ck-repo-widget', function () {
                 browsers: ['last 2 versions'],
                 cascade: false
             }))
+            .pipe(gulp.dest('public/ck-repo-widget/')),
+        gulp.src('src/ck-repo-widget/*.json')
             .pipe(gulp.dest('public/ck-repo-widget/'))
     );
 });
