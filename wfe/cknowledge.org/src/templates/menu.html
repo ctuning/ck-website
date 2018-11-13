@@ -2,8 +2,8 @@
 {% macro currentPage(page) %}
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
         <div class="container-fluid mw-1440">
-            <a class="navbar-brand ml-0 mr-auto" href="index.html">
-              <img class="logo" src="images/dividiti/logo.png">
+            <a class="navbar-brand ml-0 mr-auto" href="/index.html">
+              <img class="logo" src="/images/dividiti/logo.png">
               <div class="logo2">Collective<br><br>Knowledge</div>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,12 +12,12 @@
             <div id="navbarNav" class="navbar-collapse collapse">
                 <ul class="navbar-nav ml-auto mr-0">
                     <li {%if page=='about' %}class="nav-item active" {% else %}class="nav-item"{% endif %} >
-                        <a class="nav-link-dark div-nav-link" href="index.html">
+                        <a class="nav-link-dark div-nav-link" href="/index.html">
                             About
                         </a>
                     </li>
                     <li {%if page=='partners' %}class="nav-item active" {% else %}class="nav-item"{% endif %}>
-                        <a class="nav-link-dark div-nav-link" href="partners.html">
+                        <a class="nav-link-dark div-nav-link" href="/partners.html">
                             Partners
                         </a>
                     </li>
@@ -28,7 +28,7 @@
                         </a>
                     </li>
                     <li {%if page=='contacts' %}class="nav-item active" {% else %}class="nav-item" {% endif %}>
-                        <a class="nav-link-dark visible div-nav-link" href="contacts.html">
+                        <a class="nav-link-dark visible div-nav-link" href="/contacts.html">
                             Contact us
                         </a>
                     </li>
@@ -38,7 +38,7 @@
                         </a>
                     </li>
                     <li {%if page=='repo' %} class="nav-item active" {% else %}class="nav-item" {% endif %}>
-                        <a class="nav-link-dark div-nav-link div-nav-link-CTA" href="repo.html">
+                        <a class="nav-link-dark div-nav-link div-nav-link-CTA" href="/repo.html">
                             Crowd results
                         </a>
                     </li>
