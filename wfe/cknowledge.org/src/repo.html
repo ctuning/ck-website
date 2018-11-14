@@ -32,7 +32,7 @@ function initWidget() {
     const widget = new CkRepoWdiget();
     widget.init({
         isLocalRun: false,
-        scenario: url.searchParams.get("scenario"),
+        scenario: scenario,
         workflows: "/ck-repo-widget/workflows.json",
     });
 }
