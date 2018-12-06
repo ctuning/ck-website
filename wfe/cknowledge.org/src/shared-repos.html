@@ -10,8 +10,12 @@
 
 
 
-<p>Users share their research components and experimental workflows using CK-compatible repositories and archives.
-<p>You can reuse modules and other components with a common API from below repositories (most of them were shared with the permissive 3-clause BSD license or CC-BY):
+<p>Users share their reusable CK components (code, data, models) and workflows/pipelines using CK-compatible repositories and archives
+(for example, see this <a href="https://github.com/dividiti/ck-rpi-optimization">CK repository</a>
+with a complete compiler crowd-tuning workflow, an <a href="http://cKnowledge.org/rpi-crowd-tuning">automatically generated interactive article</a>,
+and a <a href="http://cKnowledge.org/dashboard">public interactive dashboard</a>).
+Most of them are shared with the permissive 3-clause BSD license or CC-BY to accelerate technology transfer!
+<p>You can run and reuse workflows, <a href="http://cKnowledge.org/shared-modules.html">modules</a> and other components with a common API from below repositories:
 <pre>
  ck pull repo:{Repo UOA - see below}
 </pre>
@@ -31,7 +35,7 @@
    }
 }
 </pre>
-<p>Feel free to add description of your own CK repository in this <a href="https://github.com/ctuning/ck-env/blob/master/cfg/list-of-repos/.cm/meta.json">JSON file</a>.
+<p>Feel free to add description of your own CK repository in <a href="https://github.com/ctuning/ck-env/blob/master/cfg/list-of-repos/.cm/meta.json">this JSON file</a>.
 <p>See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
  <a href="https://github.com/ctuning/ck/wiki#contributing">"how to contribute" guide</a>
  and <a href="https://github.com/ctuning/ck/wiki#user-content-reusable-ck-components">already shared reusable components</a> for further details.
@@ -40,27 +44,15 @@
  <tr>
   <td nowrap><b>#</b></td>
   <td nowrap><b>Repository UOA</b></td>
+  <td nowrap><b>Workflow</b></td>
   <td><b>Description</b></td>
  </tr>
  <tr>
   <td nowrap valign="top"><a name="ck-analytics">1</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-analytics">ck-analytics</a></b> <i>(<a href="https://github.com/ctuning/ck-analytics/tree/master/.ckr.json">.ckr.json)</i></td>
-  <td valign="top">
-<p>
-How to get:
-<pre>
-ck pull repo:ck-analytics
-</pre>
-<p>Dependencies on other repositories:
-<ul>
-<li><a href="#ck-env">ck-env</a>
-<li><a href="#ck-web">ck-web</a>
-</ul>
-</td>
- </tr>
- <tr>
-  <td nowrap valign="top"><a name="ck-analytics">2</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-analytics">ck-analytics</a></b> <i>(<a href="https://github.com/ctuning/ck-analytics/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-analytics">ck-analytics</a></b><br><ul>( <a href="https://github.com/ctuning/ck-analytics#readme">README</a> ; <a href="https://github.com/ctuning/ck-analytics/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    
+  </center></td>
   <td valign="top">Unified CK JSON API for predictive analytics, statistical analysis, graphs, experiments and interactive reports (see the <a href="http://cKnowledge.org/rpi-crowd-tuning">real use case</a>).
 <p>
 How to get:
@@ -75,9 +67,12 @@ ck pull repo:ck-analytics
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-artifact-evaluation">3</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-artifact-evaluation">ck-artifact-evaluation</a></b> <i>(<a href="https://github.com/ctuning/ck-artifact-evaluation/tree/master/.ckr.json">.ckr.json)</i></td>
-  <td valign="top">CK modules and data for artifact evaluation (see <a href="http://cTuning.org/ae">Artifact Evaluation</a>).
+  <td nowrap valign="top"><a name="ck-artifact-evaluation">2</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-artifact-evaluation">ck-artifact-evaluation</a></b><br><ul>( <a href="https://github.com/ctuning/ck-artifact-evaluation#readme">README</a> ; <a href="https://github.com/ctuning/ck-artifact-evaluation/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    AE website generator
+  </center></td>
+  <td valign="top">CK components for the <a href="http://cTuning.org/ae">Artifact Evaluation initiative</a> at systems, AI and ML conferences.
 <p>
 How to get:
 <pre>
@@ -93,9 +88,12 @@ ck pull repo:ck-artifact-evaluation
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-assets">4</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-assets">ck-assets</a></b> <i>(<a href="https://github.com/ctuning/ck-assets/tree/master/.ckr.json">.ckr.json)</i></td>
-  <td valign="top">Public and reusable CK slides, presentations and other assets (see real use cases in <a href="http://cKnowledge.org/rpi-crowd-tuning">this paper</a>).
+  <td nowrap valign="top"><a name="ck-assets">3</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-assets">ck-assets</a></b><br><ul>( <a href="https://github.com/ctuning/ck-assets#readme">README</a> ; <a href="https://github.com/ctuning/ck-assets/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    
+  </center></td>
+  <td valign="top">Public and reusable CK <a href="https://github.com/ctuning/ck-assets/tree/master/slide">slides</a>, presentations, <a href="https://github.com/ctuning/ck-assets/tree/master/report/common-bib">Latex BIB file</a>, and other assets (see real use cases in <a href="http://cKnowledge.org/rpi-crowd-tuning">this CK-generated interactive and reproducible article</a>).
 <p>
 How to get:
 <pre>
@@ -108,8 +106,11 @@ ck pull repo:ck-assets
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-autotuning">5</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-autotuning">ck-autotuning</a></b> <i>(<a href="https://github.com/ctuning/ck-autotuning/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-autotuning">4</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-autotuning">ck-autotuning</a></b><br><ul>( <a href="https://github.com/ctuning/ck-autotuning#readme">README</a> ; <a href="https://github.com/ctuning/ck-autotuning/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    
+  </center></td>
   <td valign="top">Portable and customizable CK workflow for multi-dimensional and multi-objective benchmarking, autotuning and co-design (see real use cases: <a href="http://cKnowledge.org/rpi-crowd-tuning">1</a> and <a href="https://github.com/dividiti/ck-request-asplos18-mobilenets-armcl-opencl">2</a>).
 <p>
 How to get:
@@ -124,8 +125,11 @@ ck pull repo:ck-autotuning
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-caffe">6</b></td>
-  <td nowrap valign="top"><b><a href="git@github.com:dividiti/ck-caffe.git">ck-caffe</a></b> <i>(<a href="git@github.com:dividiti/ck-caffe/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-caffe">5</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/dividiti/ck-caffe.git">ck-caffe</a></b><br><ul>( <a href="https://github.com/dividiti/ck-caffe.git#readme">README</a> ; <a href="https://github.com/dividiti/ck-caffe/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    programs
+  </center></td>
   <td valign="top">Portable/customizable installation and unified access to Caffe AI framework with different workflows and data sets (see the real use case from the <a href="https://github.com/ctuning/ck-request-asplos18-caffe-intel">ACM ReQuEST tournament</a>).
 <p>
 How to get:
@@ -140,8 +144,11 @@ ck pull repo --url=git@github.com:dividiti/ck-caffe.git
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-caffe2">7</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-caffe2">ck-caffe2</a></b> <i>(<a href="https://github.com/ctuning/ck-caffe2/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-caffe2">6</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-caffe2">ck-caffe2</a></b><br><ul>( <a href="https://github.com/ctuning/ck-caffe2#readme">README</a> ; <a href="https://github.com/ctuning/ck-caffe2/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    programs
+  </center></td>
   <td valign="top">[PACKAGES MUST BE UPDATED SINCE CAFFE2 MOVED TO ANOTHER GITHUB REPOSITORY] Portable/customizable installation and unified access to Caffe2 AI framework with different workflows and data sets (see <a href="https://arxiv.org/abs/1801.06378">ReQuEST intro</a>).
 <p>
 How to get:
@@ -157,9 +164,15 @@ ck pull repo:ck-caffe2
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-ccprof">8</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/proywm/ck-ccprof">ck-ccprof</a></b> <i>(<a href="https://github.com/proywm/ck-ccprof/tree/master/.ckr.json">.ckr.json)</i></td>
-  <td valign="top">CK workflow for CGO'18 paper "CCProf: Lightweight Detection of Cache Conflicts".
+  <td nowrap valign="top"><a name="ck-ccprof">7</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/proywm/ck-ccprof">ck-ccprof</a></b><br><ul>( <a href="https://github.com/proywm/ck-ccprof#readme">README</a> ; <a href="https://github.com/proywm/ck-ccprof/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    reproducible&nbsp;paper
+-&nbsp;passed&nbsp;<a href="http://cTuning.org/ae">Artifact&nbsp;Evaluation</a>:
+<p><center><img src="https://www.acm.org/binaries/content/gallery/acm/publications/replication-badges/artifacts_evaluated_reusable_dl.jpg" width="64"></center>
+
+  </center></td>
+  <td valign="top">CK workflow and components for the CGO'18 paper "CCProf: Lightweight Detection of Cache Conflicts".
 <p>
 How to get:
 <pre>
@@ -169,14 +182,18 @@ ck pull repo --url=https://github.com/proywm/ck-ccprof
 <ul>
 <li><a href="#ck-crowdtuning">ck-crowdtuning</a>
 </ul>
-<p>Workflow passed <a href="http://cTuning.org/ae">Artifact Evaluation</a>
-<p><center><img src="https://www.acm.org/binaries/content/gallery/acm/publications/replication-badges/artifacts_evaluated_reusable_dl.jpg" width="64"></center>
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-clsmith">9</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-clsmith">ck-clsmith</a></b> <i>(<a href="https://github.com/ctuning/ck-clsmith/tree/master/.ckr.json">.ckr.json)</i></td>
-  <td valign="top">Portable and customizable CK workflow to crowdsource detection of OpenCL bugs.
+  <td nowrap valign="top"><a name="ck-clsmith">8</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-clsmith">ck-clsmith</a></b><br><ul>( <a href="https://github.com/ctuning/ck-clsmith#readme">README</a> ; <a href="https://github.com/ctuning/ck-clsmith/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    reproducible&nbsp;paper
+-&nbsp;passed&nbsp;<a href="http://cTuning.org/ae">Artifact&nbsp;Evaluation</a>:
+<p><center><img src="https://www.acm.org/binaries/content/gallery/acm/publications/replication-badges/artifacts_evaluated_reusable_dl.jpg" width="64"></center>
+
+  </center></td>
+  <td valign="top">CK workflow and components to crowdsource detection of OpenCL bugs from the PLDI'15 paper "Many-Core Compiler Fuzzing".
 <p>
 How to get:
 <pre>
@@ -186,13 +203,14 @@ ck pull repo:ck-clsmith
 <ul>
 <li><a href="#ck-autotuning">ck-autotuning</a>
 </ul>
-<p>Workflow passed <a href="http://cTuning.org/ae">Artifact Evaluation</a>
-<p><center><img src="https://www.acm.org/binaries/content/gallery/acm/publications/replication-badges/artifacts_evaluated_reusable_dl.jpg" width="64"></center>
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-cntk">10</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-cntk">ck-cntk</a></b> <i>(<a href="https://github.com/ctuning/ck-cntk/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-cntk">9</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-cntk">ck-cntk</a></b><br><ul>( <a href="https://github.com/ctuning/ck-cntk#readme">README</a> ; <a href="https://github.com/ctuning/ck-cntk/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    programs
+  </center></td>
   <td valign="top">Portable/customizable installation and unified access to CNTK AI framework with different workflows and data sets (see <a href="http://cKnowledge.org/request">ReQuEST tournaments</a>).
 <p>
 How to get:
@@ -208,8 +226,11 @@ ck pull repo:ck-cntk
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-crowd-scenarios">11</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowd-scenarios">ck-crowd-scenarios</a></b> <i>(<a href="https://github.com/ctuning/ck-crowd-scenarios/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-crowd-scenarios">10</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowd-scenarios">ck-crowd-scenarios</a></b><br><ul>( <a href="https://github.com/ctuning/ck-crowd-scenarios#readme">README</a> ; <a href="https://github.com/ctuning/ck-crowd-scenarios/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    
+  </center></td>
   <td valign="top">Automatically generated scenarios (code and data) for our Android app to crowdsource benchmarking and optimization of deep learning across diverse devices and data sets (see <a href="https://play.google.com/store/apps/details?id=openscience.crowdsource.video.experiments&hl=en">Android app</a>).
 <p>
 How to get:
@@ -224,8 +245,11 @@ ck pull repo:ck-crowd-scenarios
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-crowd-scenarios-arc">12</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowd-scenarios-arc">ck-crowd-scenarios-arc</a></b> <i>(<a href="https://github.com/ctuning/ck-crowd-scenarios-arc/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-crowd-scenarios-arc">11</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowd-scenarios-arc">ck-crowd-scenarios-arc</a></b><br><ul>( <a href="https://github.com/ctuning/ck-crowd-scenarios-arc#readme">README</a> ; <a href="https://github.com/ctuning/ck-crowd-scenarios-arc/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    
+  </center></td>
   <td valign="top">Archive of outdated scenarios to crowdsource benchmarking and optimization of deep learning across Android devices (see <a href="https://play.google.com/store/apps/details?id=openscience.crowdsource.video.experiments&hl=en">Android app</a>).
 <p>
 How to get:
@@ -240,19 +264,29 @@ ck pull repo:ck-crowd-scenarios-arc
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-crowdsource-dnn-optimization">13</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/dividiti/ck-crowdsource-dnn-optimization">ck-crowdsource-dnn-optimization</a></b> <i>(<a href="https://github.com/dividiti/ck-crowdsource-dnn-optimization/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-crowdsource-dnn-optimization">12</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/dividiti/ck-crowdsource-dnn-optimization">ck-crowdsource-dnn-optimization</a></b><br><ul>( <a href="https://github.com/dividiti/ck-crowdsource-dnn-optimization#readme">README</a> ; <a href="https://github.com/dividiti/ck-crowdsource-dnn-optimization/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    GUI, programs
+  </center></td>
   <td valign="top">GUI to crowdsource benchmarking and optimization of DNN engines and models across diverse Linux or Windows platforms (see <a href="http://cKnowledge.org/ai">unified AI vision</a>).
 <p>
 How to get:
 <pre>
 ck pull repo --url=https://github.com/dividiti/ck-crowdsource-dnn-optimization
 </pre>
+<p>Dependencies on other repositories:
+<ul>
+<li><a href="#ck-autotuning">ck-autotuning</a>
+</ul>
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-crowdtuning">14</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowdtuning">ck-crowdtuning</a></b> <i>(<a href="https://github.com/ctuning/ck-crowdtuning/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-crowdtuning">13</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowdtuning">ck-crowdtuning</a></b><br><ul>( <a href="https://github.com/ctuning/ck-crowdtuning#readme">README</a> ; <a href="https://github.com/ctuning/ck-crowdtuning/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    <a href="https://github.com/ctuning/ck-crowdtuning/tree/master//module">reusable modules</a>
+  </center></td>
   <td valign="top">Portable and customizable CK workflow to crowdsource diverse experiments across diverse platforms (cloud, mobile phones, tablets, laptops, data centers, etc) such as multi-objective autotuning (see the <a href="http://cKnowledge.org/rpi-crowd-tuning">real use case</a> and <a href="http://cKnowledge.org/repo">open CK repository</a>).
 <p>
 How to get:
@@ -268,8 +302,11 @@ ck pull repo:ck-crowdtuning
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-crowdtuning-platforms">15</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowdtuning-platforms">ck-crowdtuning-platforms</a></b> <i>(<a href="https://github.com/ctuning/ck-crowdtuning-platforms/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-crowdtuning-platforms">14</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowdtuning-platforms">ck-crowdtuning-platforms</a></b><br><ul>( <a href="https://github.com/ctuning/ck-crowdtuning-platforms#readme">README</a> ; <a href="https://github.com/ctuning/ck-crowdtuning-platforms/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    
+  </center></td>
   <td valign="top">Reusable meta description of diverse platforms (and their properties) participated in experiment crowdsourcing such as benchmarking of deep learning across Android devices (see <a href="https://play.google.com/store/apps/details?id=openscience.crowdsource.video.experiments&hl=en">Android app</a> and <a href="http://cKnowledge.org/dnn-crowd-benchmarking-results">live results</a>).
 <p>
 How to get:
@@ -279,8 +316,11 @@ ck pull repo:ck-crowdtuning-platforms
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-crowdtuning-results">16</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowdtuning-results">ck-crowdtuning-results</a></b> <i>(<a href="https://github.com/ctuning/ck-crowdtuning-results/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-crowdtuning-results">15</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowdtuning-results">ck-crowdtuning-results</a></b><br><ul>( <a href="https://github.com/ctuning/ck-crowdtuning-results#readme">README</a> ; <a href="https://github.com/ctuning/ck-crowdtuning-results/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    
+  </center></td>
   <td valign="top">Copy of public results from different crowdsourced experiments in the CK format from <a href="http://cKnowledge.org/repo">this public repo</a>.
 <p>
 How to get:
@@ -294,8 +334,11 @@ ck pull repo:ck-crowdtuning-results
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-dev-compilers">17</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-dev-compilers">ck-dev-compilers</a></b> <i>(<a href="https://github.com/ctuning/ck-dev-compilers/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-dev-compilers">16</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-dev-compilers">ck-dev-compilers</a></b><br><ul>( <a href="https://github.com/ctuning/ck-dev-compilers#readme">README</a> ; <a href="https://github.com/ctuning/ck-dev-compilers/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    
+  </center></td>
   <td valign="top">CK packages to rebuild and test different compilers such as GCC and LLVM.
 <p>
 How to get:
@@ -305,9 +348,12 @@ ck pull repo:ck-dev-compilers
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-dissemination">18</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/gfursin/ck-dissemination.git">ck-dissemination</a></b> <i>(<a href="https://github.com/gfursin/ck-dissemination/tree/master/.ckr.json">.ckr.json)</i></td>
-  <td valign="top">Different artifacts from Grigori Fursin's R&D in the reusable CK form (used to automatically generate this <a href="http://fursin.net/cv.html">interactive CV</a>).
+  <td nowrap valign="top"><a name="ck-dissemination">17</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/gfursin/ck-dissemination.git">ck-dissemination</a></b><br><ul>( <a href="https://github.com/gfursin/ck-dissemination.git#readme">README</a> ; <a href="https://github.com/gfursin/ck-dissemination/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    
+  </center></td>
+  <td valign="top">Different artifacts from Grigori Fursin's R&D as reusable CK components (used to automatically generate this <a href="http://fursin.net/cv.html">interactive CV</a>).
 <p>
 How to get:
 <pre>
@@ -320,8 +366,11 @@ ck pull repo --url=https://github.com/gfursin/ck-dissemination.git
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-dissemination-modules">19</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-dissemination-modules.git">ck-dissemination-modules</a></b> <i>(<a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-dissemination-modules">18</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-dissemination-modules.git">ck-dissemination-modules</a></b><br><ul>( <a href="https://github.com/ctuning/ck-dissemination-modules.git#readme">README</a> ; <a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    
+  </center></td>
   <td valign="top">CK modules with a unified JSON API for artifact evaluation, interactive articles, ACM proceedings generation, knowledge dissemination, etc (see <a href="http://cTuning.org/ae">Artifact Evaluation</a>).
 <p>
 How to get:
@@ -331,8 +380,11 @@ ck pull repo:ck-dissemination-modules
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-docker">20</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-docker">ck-docker</a></b> <i>(<a href="https://github.com/ctuning/ck-docker/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-docker">19</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-docker">ck-docker</a></b><br><ul>( <a href="https://github.com/ctuning/ck-docker#readme">README</a> ; <a href="https://github.com/ctuning/ck-docker/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    
+  </center></td>
   <td valign="top">Unified CK JSON API to automate Docker functions (see the <a href="https://github.com/ctuning/ck-request-asplos18-caffe-intel">real use case</a>).
 <p>
 How to get:
@@ -342,8 +394,11 @@ ck pull repo:ck-docker
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-env">21</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-env.git">ck-env</a></b> <i>(<a href="https://github.com/ctuning/ck-env/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-env">20</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-env">ck-env</a></b><br><ul>( <a href="https://github.com/ctuning/ck-env#readme">README</a> ; <a href="https://github.com/ctuning/ck-env/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    
+  </center></td>
   <td valign="top">
 <p>
 How to get:
@@ -357,8 +412,11 @@ ck pull repo:ck-env
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-env">22</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-env.git">ck-env</a></b> <i>(<a href="https://github.com/ctuning/ck-env/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-env">21</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-env.git">ck-env</a></b><br><ul>( <a href="https://github.com/ctuning/ck-env.git#readme">README</a> ; <a href="https://github.com/ctuning/ck-env/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    
+  </center></td>
   <td valign="top">Portable CK package manager with a unified JSON API and with virtual environment allowing automatic detection, installation and rebuilding of a given software or data sets across diverse platforms, environments, compilers and libraries with easy co-existence of multiple tools (see <a href="http://cKnowledge.org/shared-packages.html">shared packages</a>, <a href="http://cKnowledge.org/shared-soft-detection-plugins.html">software detection plugins</a> and <a href="https://github.com/ctuning/ck/wiki/Portable-workflows">other details</a>).
 <p>
 How to get:
@@ -372,38 +430,11 @@ ck pull repo:ck-env
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-env">23</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-env.git">ck-env</a></b> <i>(<a href="https://github.com/ctuning/ck-env/tree/master/.ckr.json">.ckr.json)</i></td>
-  <td valign="top">
-<p>
-How to get:
-<pre>
-ck pull repo:ck-env
-</pre>
-<p>Dependencies on other repositories:
-<ul>
-<li><a href="#ck-web">ck-web</a>
-</ul>
-</td>
- </tr>
- <tr>
-  <td nowrap valign="top"><a name="ck-env">24</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-env.git">ck-env</a></b> <i>(<a href="https://github.com/ctuning/ck-env/tree/master/.ckr.json">.ckr.json)</i></td>
-  <td valign="top">
-<p>
-How to get:
-<pre>
-ck pull repo:ck-env
-</pre>
-<p>Dependencies on other repositories:
-<ul>
-<li><a href="#ck-web">ck-web</a>
-</ul>
-</td>
- </tr>
- <tr>
-  <td nowrap valign="top"><a name="ck-graph-analytics">25</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-graph-analytics">ck-graph-analytics</a></b> <i>(<a href="https://github.com/ctuning/ck-graph-analytics/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-graph-analytics">22</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-graph-analytics">ck-graph-analytics</a></b><br><ul>( <a href="https://github.com/ctuning/ck-graph-analytics#readme">README</a> ; <a href="https://github.com/ctuning/ck-graph-analytics/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    programs
+  </center></td>
   <td valign="top">Collection of graph analytics packages and application in the CK format.
 <p>
 How to get:
@@ -420,8 +451,11 @@ ck pull repo:ck-graph-analytics
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-gui">26</b></td>
-  <td nowrap valign="top"><b><a href="git@github.com:Chunosov/ck-gui">ck-gui</a></b> <i>(<a href="git@github.com:Chunosov/ck-gui/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-gui">23</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/Chunosov/ck-gui">ck-gui</a></b><br><ul>( <a href="https://github.com/Chunosov/ck-gui#readme">README</a> ; <a href="https://github.com/Chunosov/ck-gui/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    GUI, programs
+  </center></td>
   <td valign="top">
 <p>
 How to get:
@@ -431,8 +465,11 @@ ck pull repo --url=git@github.com:Chunosov/ck-gui
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-kann">27</b></td>
-  <td nowrap valign="top"><b><a href="http://github.com/ctuning/ck-kann">ck-kann</a></b> <i>(<a href="http://github.com/ctuning/ck-kann/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-kann">24</b></td>
+  <td nowrap valign="top"><b><a href="http://github.com/ctuning/ck-kann">ck-kann</a></b><br><ul>( <a href="http://github.com/ctuning/ck-kann#readme">README</a> ; <a href="http://github.com/ctuning/ck-kann/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    programs
+  </center></td>
   <td valign="top">Portable/customizable installation and unified access to KANN AI framework with different workflows and data sets.
 <p>
 How to get:
@@ -446,8 +483,14 @@ ck pull repo:ck-kann
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-lift">28</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/lift-project/ck-lift">ck-lift</a></b> <i>(<a href="https://github.com/lift-project/ck-lift/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-lift">25</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/lift-project/ck-lift">ck-lift</a></b><br><ul>( <a href="https://github.com/lift-project/ck-lift#readme">README</a> ; <a href="https://github.com/lift-project/ck-lift/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    reproducible&nbsp;paper
+-&nbsp;passed&nbsp;<a href="http://cTuning.org/ae">Artifact&nbsp;Evaluation</a>:
+<p><center><img src="https://www.acm.org/binaries/content/gallery/acm/publications/replication-badges/artifacts_evaluated_reusable_dl.jpg" width="64"></center>
+
+  </center></td>
   <td valign="top">[OUTDATED] Portable/customizable installation and unified access to Lift compiler.
 <p>
 How to get:
@@ -458,13 +501,14 @@ ck pull repo --url=https://github.com/lift-project/ck-lift
 <ul>
 <li><a href="#ck-env">ck-env</a>
 </ul>
-<p>Workflow passed <a href="http://cTuning.org/ae">Artifact Evaluation</a>
-<p><center><img src="https://www.acm.org/binaries/content/gallery/acm/publications/replication-badges/artifacts_evaluated_reusable_dl.jpg" width="64"></center>
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-math">29</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-math">ck-math</a></b> <i>(<a href="https://github.com/ctuning/ck-math/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-math">26</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-math">ck-math</a></b><br><ul>( <a href="https://github.com/ctuning/ck-math#readme">README</a> ; <a href="https://github.com/ctuning/ck-math/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    
+  </center></td>
   <td valign="top">Collective of CK packages to unify detection, installation and rebuilding of popular mathematical packages such as OpenBLAS, clBLAST and Boost across different OS (see <a href="http://cKnowledge.org/shared-packages.html">shared packages</a> and <a href="http://cKnowledge.org/shared-soft-detection-plugins.html">software detection plugins</a>).
 <p>
 How to get:
@@ -478,9 +522,12 @@ ck pull repo:ck-math
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-mlperf">30</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-mlperf">ck-mlperf</a></b> <i>(<a href="https://github.com/ctuning/ck-mlperf/tree/master/.ckr.json">.ckr.json)</i></td>
-  <td valign="top">
+  <td nowrap valign="top"><a name="ck-mlperf">27</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-mlperf">ck-mlperf</a></b><br><ul>( <a href="https://github.com/ctuning/ck-mlperf#readme">README</a> ; <a href="https://github.com/ctuning/ck-mlperf/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    programs
+  </center></td>
+  <td valign="top">CK workflows and components for the <a href="http://mlperf.org">MLPerf benchmark</a>.
 <p>
 How to get:
 <pre>
@@ -489,8 +536,11 @@ ck pull repo:ck-mlperf
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-mvnc">31</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-mvnc">ck-mvnc</a></b> <i>(<a href="https://github.com/ctuning/ck-mvnc/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-mvnc">28</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-mvnc">ck-mvnc</a></b><br><ul>( <a href="https://github.com/ctuning/ck-mvnc#readme">README</a> ; <a href="https://github.com/ctuning/ck-mvnc/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    programs
+  </center></td>
   <td valign="top">Portable/customizable installation and unified access to Caffe and other AI frameworks on Movidius NN accelerator with different workflows and data sets.
 <p>
 How to get:
@@ -506,8 +556,11 @@ ck pull repo:ck-mvnc
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-mxnet">32</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-mxnet">ck-mxnet</a></b> <i>(<a href="https://github.com/ctuning/ck-mxnet/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-mxnet">29</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-mxnet">ck-mxnet</a></b><br><ul>( <a href="https://github.com/ctuning/ck-mxnet#readme">README</a> ; <a href="https://github.com/ctuning/ck-mxnet/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    programs
+  </center></td>
   <td valign="top">Portable/customizable installation and unified access to MXNet AI frameworks with different workflows and data sets (see the <a href="https://github.com/ctuning/ck-request-asplos18-mobilenets-tvm-arm">use case</a> from ReQuEST tournament).
 <p>
 How to get:
@@ -523,8 +576,11 @@ ck pull repo:ck-mxnet
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-old-packages">33</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-old-packages">ck-old-packages</a></b> <i>(<a href="https://github.com/ctuning/ck-old-packages/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-old-packages">30</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-old-packages">ck-old-packages</a></b><br><ul>( <a href="https://github.com/ctuning/ck-old-packages#readme">README</a> ; <a href="https://github.com/ctuning/ck-old-packages/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    
+  </center></td>
   <td valign="top">Collection of outdated CK packages for legacy.
 <p>
 How to get:
@@ -538,8 +594,11 @@ ck pull repo:ck-old-packages
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-pytorch">34</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-pytorch">ck-pytorch</a></b> <i>(<a href="https://github.com/ctuning/ck-pytorch/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-pytorch">31</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-pytorch">ck-pytorch</a></b><br><ul>( <a href="https://github.com/ctuning/ck-pytorch#readme">README</a> ; <a href="https://github.com/ctuning/ck-pytorch/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    programs
+  </center></td>
   <td valign="top">Portable/customizable installation and unified access to PyTorch AI framework with different workflows and data sets.
 <p>
 How to get:
@@ -554,8 +613,11 @@ ck pull repo:ck-pytorch
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-qiskit">35</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-qiskit">ck-qiskit</a></b> <i>(<a href="https://github.com/ctuning/ck-qiskit/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-qiskit">32</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-qiskit">ck-qiskit</a></b><br><ul>( <a href="https://github.com/ctuning/ck-qiskit#readme">README</a> ; <a href="https://github.com/ctuning/ck-qiskit/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    programs
+  </center></td>
   <td valign="top">CK workflows and portable packages for Quantum Information Software Kit (QISKit).
 <p>
 How to get:
@@ -569,9 +631,12 @@ ck pull repo:ck-qiskit
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-quantum">36</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-quantum">ck-quantum</a></b> <i>(<a href="https://github.com/ctuning/ck-quantum/tree/master/.ckr.json">.ckr.json)</i></td>
-  <td valign="top">
+  <td nowrap valign="top"><a name="ck-quantum">33</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-quantum">ck-quantum</a></b><br><ul>( <a href="https://github.com/ctuning/ck-quantum#readme">README</a> ; <a href="https://github.com/ctuning/ck-quantum/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    programs
+  </center></td>
+  <td valign="top">CK workflows and components for open and reproducible <a href="http://cKnowledge.org/quantum">Quantum hackathons</a>.
 <p>
 How to get:
 <pre>
@@ -586,42 +651,11 @@ ck pull repo:ck-quantum
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-quantum">37</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-quantum">ck-quantum</a></b> <i>(<a href="https://github.com/ctuning/ck-quantum/tree/master/.ckr.json">.ckr.json)</i></td>
-  <td valign="top">CK workflows and portable packages for Quantum programs.
-<p>
-How to get:
-<pre>
-ck pull repo:ck-quantum
-</pre>
-<p>Dependencies on other repositories:
-<ul>
-<li><a href="#ck-env">ck-env</a>
-<li><a href="#ck-qiskit">ck-qiskit</a>
-<li><a href="#ck-rigetti">ck-rigetti</a>
-</ul>
-</td>
- </tr>
- <tr>
-  <td nowrap valign="top"><a name="ck-quantum">38</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-quantum">ck-quantum</a></b> <i>(<a href="https://github.com/ctuning/ck-quantum/tree/master/.ckr.json">.ckr.json)</i></td>
-  <td valign="top">
-<p>
-How to get:
-<pre>
-ck pull repo:ck-quantum
-</pre>
-<p>Dependencies on other repositories:
-<ul>
-<li><a href="#ck-env">ck-env</a>
-<li><a href="#ck-qiskit">ck-qiskit</a>
-<li><a href="#ck-rigetti">ck-rigetti</a>
-</ul>
-</td>
- </tr>
- <tr>
-  <td nowrap valign="top"><a name="ck-request">39</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-request">ck-request</a></b> <i>(<a href="https://github.com/ctuning/ck-request/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-request">34</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-request">ck-request</a></b><br><ul>( <a href="https://github.com/ctuning/ck-request#readme">README</a> ; <a href="https://github.com/ctuning/ck-request/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    
+  </center></td>
   <td valign="top">CK workflows, packages and components for <a href="http://cKnowledge.org/request">ACM ReQuEST tournaments</a> on software/hardware co-design of Pareto-efficient deep learning and other emerging workloads.
 <p>
 How to get:
@@ -638,8 +672,14 @@ ck pull repo:ck-request
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-request-asplos18-caffe-intel">40</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-request-asplos18-caffe-intel">ck-request-asplos18-caffe-intel</a></b> <i>(<a href="https://github.com/ctuning/ck-request-asplos18-caffe-intel/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-request-asplos18-caffe-intel">35</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-request-asplos18-caffe-intel">ck-request-asplos18-caffe-intel</a></b><br><ul>( <a href="https://github.com/ctuning/ck-request-asplos18-caffe-intel#readme">README</a> ; <a href="https://github.com/ctuning/ck-request-asplos18-caffe-intel/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    reproducible&nbsp;paper
+-&nbsp;passed&nbsp;<a href="http://cTuning.org/ae">Artifact&nbsp;Evaluation</a>:
+<p><center><img src="https://www.acm.org/binaries/content/gallery/acm/publications/replication-badges/artifacts_evaluated_reusable_dl.jpg" width="64"></center>
+
+  </center></td>
   <td valign="top">CK workflow, portable packages and other artifacts for the <a href="http://cknowledge.org/request-cfp-asplos2018.html">ReQuEST-ASPLOS'18 tournament</a>.
 <p>
 How to get:
@@ -651,13 +691,17 @@ ck pull repo:ck-request-asplos18-caffe-intel
 <li><a href="#ck-caffe">ck-caffe</a>
 <li><a href="#ck-request">ck-request</a>
 </ul>
-<p>Workflow passed <a href="http://cTuning.org/ae">Artifact Evaluation</a>
-<p><center><img src="https://www.acm.org/binaries/content/gallery/acm/publications/replication-badges/artifacts_evaluated_reusable_dl.jpg" width="64"></center>
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-request-asplos18-iot-farm">41</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-request-asplos18-iot-farm">ck-request-asplos18-iot-farm</a></b> <i>(<a href="https://github.com/ctuning/ck-request-asplos18-iot-farm/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-request-asplos18-iot-farm">36</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-request-asplos18-iot-farm">ck-request-asplos18-iot-farm</a></b><br><ul>( <a href="https://github.com/ctuning/ck-request-asplos18-iot-farm#readme">README</a> ; <a href="https://github.com/ctuning/ck-request-asplos18-iot-farm/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    programs, <a href="https://github.com/ctuning/ck-request-asplos18-iot-farm/tree/master//module">reusable modules</a><p>reproducible&nbsp;paper
+-&nbsp;passed&nbsp;<a href="http://cTuning.org/ae">Artifact&nbsp;Evaluation</a>:
+<p><center><img src="https://www.acm.org/binaries/content/gallery/acm/publications/replication-badges/artifacts_evaluated_reusable_dl.jpg" width="64"></center>
+
+  </center></td>
   <td valign="top">CK workflow, portable packages and other artifacts for the <a href="http://cknowledge.org/request-cfp-asplos2018.html">ReQuEST-ASPLOS'18 tournament</a>.
 <p>
 How to get:
@@ -669,13 +713,17 @@ ck pull repo:ck-request-asplos18-iot-farm
 <li><a href="#ck-request">ck-request</a>
 <li><a href="#ck-tensorflow">ck-tensorflow</a>
 </ul>
-<p>Workflow passed <a href="http://cTuning.org/ae">Artifact Evaluation</a>
-<p><center><img src="https://www.acm.org/binaries/content/gallery/acm/publications/replication-badges/artifacts_evaluated_reusable_dl.jpg" width="64"></center>
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-request-asplos18-mobilenets-armcl-opencl">42</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/dividiti/ck-request-asplos18-mobilenets-armcl-opencl">ck-request-asplos18-mobilenets-armcl-opencl</a></b> <i>(<a href="https://github.com/dividiti/ck-request-asplos18-mobilenets-armcl-opencl/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-request-asplos18-mobilenets-armcl-opencl">37</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/dividiti/ck-request-asplos18-mobilenets-armcl-opencl">ck-request-asplos18-mobilenets-armcl-opencl</a></b><br><ul>( <a href="https://github.com/dividiti/ck-request-asplos18-mobilenets-armcl-opencl#readme">README</a> ; <a href="https://github.com/dividiti/ck-request-asplos18-mobilenets-armcl-opencl/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    reproducible&nbsp;paper
+-&nbsp;passed&nbsp;<a href="http://cTuning.org/ae">Artifact&nbsp;Evaluation</a>:
+<p><center><img src="https://www.acm.org/binaries/content/gallery/acm/publications/replication-badges/artifacts_evaluated_reusable_dl.jpg" width="64"></center>
+
+  </center></td>
   <td valign="top">CK workflow, portable packages and other artifacts for the <a href="http://cknowledge.org/request-cfp-asplos2018.html">ReQuEST-ASPLOS'18 tournament</a>.
 <p>
 How to get:
@@ -689,13 +737,17 @@ ck pull repo --url=https://github.com/dividiti/ck-request-asplos18-mobilenets-ar
 <li><a href="#ck-request">ck-request</a>
 <li><a href="#ck-tensorflow">ck-tensorflow</a>
 </ul>
-<p>Workflow passed <a href="http://cTuning.org/ae">Artifact Evaluation</a>
-<p><center><img src="https://www.acm.org/binaries/content/gallery/acm/publications/replication-badges/artifacts_evaluated_reusable_dl.jpg" width="64"></center>
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-request-asplos18-mobilenets-tvm-arm">43</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-request-asplos18-mobilenets-tvm-arm">ck-request-asplos18-mobilenets-tvm-arm</a></b> <i>(<a href="https://github.com/ctuning/ck-request-asplos18-mobilenets-tvm-arm/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-request-asplos18-mobilenets-tvm-arm">38</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-request-asplos18-mobilenets-tvm-arm">ck-request-asplos18-mobilenets-tvm-arm</a></b><br><ul>( <a href="https://github.com/ctuning/ck-request-asplos18-mobilenets-tvm-arm#readme">README</a> ; <a href="https://github.com/ctuning/ck-request-asplos18-mobilenets-tvm-arm/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    reproducible&nbsp;paper
+-&nbsp;passed&nbsp;<a href="http://cTuning.org/ae">Artifact&nbsp;Evaluation</a>:
+<p><center><img src="https://www.acm.org/binaries/content/gallery/acm/publications/replication-badges/artifacts_evaluated_reusable_dl.jpg" width="64"></center>
+
+  </center></td>
   <td valign="top">CK workflow, portable packages and other artifacts for the <a href="http://cknowledge.org/request-cfp-asplos2018.html">ReQuEST-ASPLOS'18 tournament</a>.
 <p>
 How to get:
@@ -707,31 +759,17 @@ ck pull repo:ck-request-asplos18-mobilenets-tvm-arm
 <li><a href="#ck-mxnet">ck-mxnet</a>
 <li><a href="#ck-request">ck-request</a>
 </ul>
-<p>Workflow passed <a href="http://cTuning.org/ae">Artifact Evaluation</a>
-<p><center><img src="https://www.acm.org/binaries/content/gallery/acm/publications/replication-badges/artifacts_evaluated_reusable_dl.jpg" width="64"></center>
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-request-asplos18-resnet-tvm-fpga">44</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-request-asplos18-resnet-tvm-fpga">ck-request-asplos18-resnet-tvm-fpga</a></b> <i>(<a href="https://github.com/ctuning/ck-request-asplos18-resnet-tvm-fpga/tree/master/.ckr.json">.ckr.json)</i></td>
-  <td valign="top">
-<p>
-How to get:
-<pre>
-ck pull repo:ck-request-asplos18-resnet-tvm-fpga
-</pre>
-<p>Dependencies on other repositories:
-<ul>
-<li><a href="#ck-mxnet">ck-mxnet</a>
-<li><a href="#ck-request">ck-request</a>
-</ul>
-<p>Workflow passed <a href="http://cTuning.org/ae">Artifact Evaluation</a>
+  <td nowrap valign="top"><a name="ck-request-asplos18-resnet-tvm-fpga">39</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-request-asplos18-resnet-tvm-fpga">ck-request-asplos18-resnet-tvm-fpga</a></b><br><ul>( <a href="https://github.com/ctuning/ck-request-asplos18-resnet-tvm-fpga#readme">README</a> ; <a href="https://github.com/ctuning/ck-request-asplos18-resnet-tvm-fpga/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    reproducible&nbsp;paper
+-&nbsp;passed&nbsp;<a href="http://cTuning.org/ae">Artifact&nbsp;Evaluation</a>:
 <p><center><img src="https://www.acm.org/binaries/content/gallery/acm/publications/replication-badges/artifacts_evaluated_reusable_dl.jpg" width="64"></center>
-</td>
- </tr>
- <tr>
-  <td nowrap valign="top"><a name="ck-request-asplos18-resnet-tvm-fpga">45</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-request-asplos18-resnet-tvm-fpga">ck-request-asplos18-resnet-tvm-fpga</a></b> <i>(<a href="https://github.com/ctuning/ck-request-asplos18-resnet-tvm-fpga/tree/master/.ckr.json">.ckr.json)</i></td>
+
+  </center></td>
   <td valign="top">CK workflow, portable packages and other artifacts for the <a href="http://cknowledge.org/request-cfp-asplos2018.html">ReQuEST-ASPLOS'18 tournament</a>.
 <p>
 How to get:
@@ -743,13 +781,36 @@ ck pull repo:ck-request-asplos18-resnet-tvm-fpga
 <li><a href="#ck-mxnet">ck-mxnet</a>
 <li><a href="#ck-request">ck-request</a>
 </ul>
-<p>Workflow passed <a href="http://cTuning.org/ae">Artifact Evaluation</a>
-<p><center><img src="https://www.acm.org/binaries/content/gallery/acm/publications/replication-badges/artifacts_evaluated_reusable_dl.jpg" width="64"></center>
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-request-asplos18-results">46</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-request-asplos18-results">ck-request-asplos18-results</a></b> <i>(<a href="https://github.com/ctuning/ck-request-asplos18-results/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-request-asplos18-resnet-tvm-fpga">40</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-request-asplos18-resnet-tvm-fpga">ck-request-asplos18-resnet-tvm-fpga</a></b><br><ul>( <a href="https://github.com/ctuning/ck-request-asplos18-resnet-tvm-fpga#readme">README</a> ; <a href="https://github.com/ctuning/ck-request-asplos18-resnet-tvm-fpga/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    reproducible&nbsp;paper
+-&nbsp;passed&nbsp;<a href="http://cTuning.org/ae">Artifact&nbsp;Evaluation</a>:
+<p><center><img src="https://www.acm.org/binaries/content/gallery/acm/publications/replication-badges/artifacts_evaluated_reusable_dl.jpg" width="64"></center>
+
+  </center></td>
+  <td valign="top">CK workflow, portable packages and other artifacts for the <a href="http://cknowledge.org/request-cfp-asplos2018.html">ReQuEST-ASPLOS'18 tournament</a>.
+<p>
+How to get:
+<pre>
+ck pull repo:ck-request-asplos18-resnet-tvm-fpga
+</pre>
+<p>Dependencies on other repositories:
+<ul>
+<li><a href="#ck-mxnet">ck-mxnet</a>
+<li><a href="#ck-request">ck-request</a>
+</ul>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="ck-request-asplos18-results">41</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-request-asplos18-results">ck-request-asplos18-results</a></b><br><ul>( <a href="https://github.com/ctuning/ck-request-asplos18-results#readme">README</a> ; <a href="https://github.com/ctuning/ck-request-asplos18-results/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    
+  </center></td>
   <td valign="top">Results in the portable and reproducible CK format from the <a href="http://cknowledge.org/request-cfp-asplos2018.html">1st ACM ReQuEST-ASPLOS'18 tournament</a>.
 <p>
 How to get:
@@ -763,8 +824,11 @@ ck pull repo:ck-request-asplos18-results
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-request-asplos18-results-caffe-intel">47</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-request-asplos18-results-caffe-intel">ck-request-asplos18-results-caffe-intel</a></b> <i>(<a href="https://github.com/ctuning/ck-request-asplos18-results-caffe-intel/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-request-asplos18-results-caffe-intel">42</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-request-asplos18-results-caffe-intel">ck-request-asplos18-results-caffe-intel</a></b><br><ul>( <a href="https://github.com/ctuning/ck-request-asplos18-results-caffe-intel#readme">README</a> ; <a href="https://github.com/ctuning/ck-request-asplos18-results-caffe-intel/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    
+  </center></td>
   <td valign="top">Collected experimental results in the CK format from the <a href="http://cknowledge.org/request-cfp-asplos2018.html">1st ACM ReQuEST-ASPLOS'18 tournament</a>.
 <p>
 How to get:
@@ -779,8 +843,11 @@ ck pull repo:ck-request-asplos18-results-caffe-intel
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-request-asplos18-results-iot-farm">48</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-request-asplos18-results-iot-farm">ck-request-asplos18-results-iot-farm</a></b> <i>(<a href="https://github.com/ctuning/ck-request-asplos18-results-iot-farm/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-request-asplos18-results-iot-farm">43</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-request-asplos18-results-iot-farm">ck-request-asplos18-results-iot-farm</a></b><br><ul>( <a href="https://github.com/ctuning/ck-request-asplos18-results-iot-farm#readme">README</a> ; <a href="https://github.com/ctuning/ck-request-asplos18-results-iot-farm/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    
+  </center></td>
   <td valign="top">Collected experimental results in the CK format from the <a href="http://cknowledge.org/request-cfp-asplos2018.html">1st ACM ReQuEST-ASPLOS'18 tournament</a>.
 <p>
 How to get:
@@ -795,8 +862,11 @@ ck pull repo:ck-request-asplos18-results-iot-farm
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-request-asplos18-results-mobilenets-armcl-opencl">49</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-request-asplos18-results-mobilenets-armcl-opencl">ck-request-asplos18-results-mobilenets-armcl-opencl</a></b> <i>(<a href="https://github.com/ctuning/ck-request-asplos18-results-mobilenets-armcl-opencl/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-request-asplos18-results-mobilenets-armcl-opencl">44</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-request-asplos18-results-mobilenets-armcl-opencl">ck-request-asplos18-results-mobilenets-armcl-opencl</a></b><br><ul>( <a href="https://github.com/ctuning/ck-request-asplos18-results-mobilenets-armcl-opencl#readme">README</a> ; <a href="https://github.com/ctuning/ck-request-asplos18-results-mobilenets-armcl-opencl/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    
+  </center></td>
   <td valign="top">Collected experimental results in the CK format from the <a href="http://cknowledge.org/request-cfp-asplos2018.html">1st ACM ReQuEST-ASPLOS'18 tournament</a>.
 <p>
 How to get:
@@ -811,8 +881,11 @@ ck pull repo:ck-request-asplos18-results-mobilenets-armcl-opencl
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-request-asplos18-results-mobilenets-tvm-arm">50</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-request-asplos18-results-mobilenets-tvm-arm">ck-request-asplos18-results-mobilenets-tvm-arm</a></b> <i>(<a href="https://github.com/ctuning/ck-request-asplos18-results-mobilenets-tvm-arm/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-request-asplos18-results-mobilenets-tvm-arm">45</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-request-asplos18-results-mobilenets-tvm-arm">ck-request-asplos18-results-mobilenets-tvm-arm</a></b><br><ul>( <a href="https://github.com/ctuning/ck-request-asplos18-results-mobilenets-tvm-arm#readme">README</a> ; <a href="https://github.com/ctuning/ck-request-asplos18-results-mobilenets-tvm-arm/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    
+  </center></td>
   <td valign="top">Collected experimental results in the CK format from the <a href="http://cknowledge.org/request-cfp-asplos2018.html">1st ACM ReQuEST-ASPLOS'18 tournament</a>.
 <p>
 How to get:
@@ -827,8 +900,11 @@ ck pull repo:ck-request-asplos18-results-mobilenets-tvm-arm
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-request-asplos18-results-resnet-tvm-fpga">51</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-request-asplos18-results-resnet-tvm-fpga">ck-request-asplos18-results-resnet-tvm-fpga</a></b> <i>(<a href="https://github.com/ctuning/ck-request-asplos18-results-resnet-tvm-fpga/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-request-asplos18-results-resnet-tvm-fpga">46</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-request-asplos18-results-resnet-tvm-fpga">ck-request-asplos18-results-resnet-tvm-fpga</a></b><br><ul>( <a href="https://github.com/ctuning/ck-request-asplos18-results-resnet-tvm-fpga#readme">README</a> ; <a href="https://github.com/ctuning/ck-request-asplos18-results-resnet-tvm-fpga/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    
+  </center></td>
   <td valign="top">Collected experimental results in the CK format from the <a href="http://cknowledge.org/request-cfp-asplos2018.html">1st ACM ReQuEST-ASPLOS'18 tournament</a>.
 <p>
 How to get:
@@ -843,9 +919,12 @@ ck pull repo:ck-request-asplos18-results-resnet-tvm-fpga
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-rescue-hpc">52</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-rescue-hpc">ck-rescue-hpc</a></b> <i>(<a href="https://github.com/ctuning/ck-rescue-hpc/tree/master/.ckr.json">.ckr.json)</i></td>
-  <td valign="top">
+  <td nowrap valign="top"><a name="ck-rescue-hpc">47</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-rescue-hpc">ck-rescue-hpc</a></b><br><ul>( <a href="https://github.com/ctuning/ck-rescue-hpc#readme">README</a> ; <a href="https://github.com/ctuning/ck-rescue-hpc/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    website generator
+  </center></td>
+  <td valign="top">CK components for <a href="http://rescue-hpc.org">RESCUE-HPC workshop at Supercomputing</a>.
 <p>
 How to get:
 <pre>
@@ -858,8 +937,11 @@ ck pull repo:ck-rescue-hpc
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-rescue-hpc">53</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-rescue-hpc">ck-rescue-hpc</a></b> <i>(<a href="https://github.com/ctuning/ck-rescue-hpc/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-rescue-hpc">48</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-rescue-hpc">ck-rescue-hpc</a></b><br><ul>( <a href="https://github.com/ctuning/ck-rescue-hpc#readme">README</a> ; <a href="https://github.com/ctuning/ck-rescue-hpc/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    
+  </center></td>
   <td valign="top">CK resources for <a href="http://rescue-hpc.org">ResCuE-HPC'18 workshop at SuperComputing'18</a>.
 <p>
 How to get:
@@ -873,9 +955,12 @@ ck pull repo:ck-rescue-hpc
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-rigetti">54</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-rigetti">ck-rigetti</a></b> <i>(<a href="https://github.com/ctuning/ck-rigetti/tree/master/.ckr.json">.ckr.json)</i></td>
-  <td valign="top">Customizable CK workflow and portable CK packages from Rigetti.
+  <td nowrap valign="top"><a name="ck-rigetti">49</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-rigetti">ck-rigetti</a></b><br><ul>( <a href="https://github.com/ctuning/ck-rigetti#readme">README</a> ; <a href="https://github.com/ctuning/ck-rigetti/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    programs
+  </center></td>
+  <td valign="top">CK workflow and components from Rigetti
 <p>
 How to get:
 <pre>
@@ -888,8 +973,11 @@ ck pull repo:ck-rigetti
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-rpi-optimization">55</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/dividiti/ck-rpi-optimization">ck-rpi-optimization</a></b> <i>(<a href="https://github.com/dividiti/ck-rpi-optimization/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-rpi-optimization">50</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/dividiti/ck-rpi-optimization">ck-rpi-optimization</a></b><br><ul>( <a href="https://github.com/dividiti/ck-rpi-optimization#readme">README</a> ; <a href="https://github.com/dividiti/ck-rpi-optimization/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    
+  </center></td>
   <td valign="top">CK workflows, portable packages and interactive articles to crowdsource autotuning of shared workloads across Rapsberry Pi devices (see <a href="http://cKnowledge.org/rpi-crowd-tuning">interactive report</a>).
 <p>
 How to get:
@@ -903,9 +991,13 @@ ck pull repo --url=https://github.com/dividiti/ck-rpi-optimization
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-rpi-optimization-results">56</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-rpi-optimization-results">ck-rpi-optimization-results</a></b> <i>(<a href="https://github.com/ctuning/ck-rpi-optimization-results/tree/master/.ckr.json">.ckr.json)</i></td>
-  <td valign="top">Experimental results in the unified and reproducible CK format from crowd-tuning programs across Rapsberry Pi devices (see <a href="http://cKnowledge.org/rpi-crowd-tuning">interactive report</a>).
+  <td nowrap valign="top"><a name="ck-rpi-optimization-results">51</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-rpi-optimization-results">ck-rpi-optimization-results</a></b><br><ul>( <a href="https://github.com/ctuning/ck-rpi-optimization-results#readme">README</a> ; <a href="https://github.com/ctuning/ck-rpi-optimization-results/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    reproducible&nbsp;paper
+
+  </center></td>
+  <td valign="top">CK workflows, components, experimental results and interactive article about program crowd-tuning across Rapsberry Pi devices (see <a href="http://cKnowledge.org/rpi-crowd-tuning">interactive report</a>).
 <p>
 How to get:
 <pre>
@@ -920,9 +1012,15 @@ ck pull repo:ck-rpi-optimization-results
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-scc18">57</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-scc18">ck-scc18</a></b> <i>(<a href="https://github.com/ctuning/ck-scc18/tree/master/.ckr.json">.ckr.json)</i></td>
-  <td valign="top">Experimental CK workflow to automate SuperComputing'18 Student Cluster Competition.
+  <td nowrap valign="top"><a name="ck-scc18">52</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-scc18">ck-scc18</a></b><br><ul>( <a href="https://github.com/ctuning/ck-scc18#readme">README</a> ; <a href="https://github.com/ctuning/ck-scc18/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    reproducible&nbsp;paper
+-&nbsp;passed&nbsp;<a href="http://cTuning.org/ae">Artifact&nbsp;Evaluation</a>:
+<p><center><img src="https://www.acm.org/binaries/content/gallery/acm/publications/replication-badges/artifacts_evaluated_reusable_dl.jpg" width="64"></center>
+
+  </center></td>
+  <td valign="top">CK workflow and components to automate SuperComputing'18 Student Cluster Competition.
 <p>
 How to get:
 <pre>
@@ -931,19 +1029,11 @@ ck pull repo:ck-scc18
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-seissol">58</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-seissol">ck-seissol</a></b> <i>(<a href="https://github.com/ctuning/ck-seissol/tree/master/.ckr.json">.ckr.json)</i></td>
-  <td valign="top">Customizable CK workflow and portable CK packages for Seissol application.
-<p>
-How to get:
-<pre>
-ck pull repo:ck-seissol
-</pre>
-</td>
- </tr>
- <tr>
-  <td nowrap valign="top"><a name="ck-spack">59</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-spack">ck-spack</a></b> <i>(<a href="https://github.com/ctuning/ck-spack/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-spack">53</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-spack">ck-spack</a></b><br><ul>( <a href="https://github.com/ctuning/ck-spack#readme">README</a> ; <a href="https://github.com/ctuning/ck-spack/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    
+  </center></td>
   <td valign="top">CK front-end for spack packages.
 <p>
 How to get:
@@ -957,8 +1047,11 @@ ck pull repo:ck-spack
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-tbd-suite">60</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-tbd-suite">ck-tbd-suite</a></b> <i>(<a href="https://github.com/ctuning/ck-tbd-suite/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-tbd-suite">54</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-tbd-suite">ck-tbd-suite</a></b><br><ul>( <a href="https://github.com/ctuning/ck-tbd-suite#readme">README</a> ; <a href="https://github.com/ctuning/ck-tbd-suite/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    programs
+  </center></td>
   <td valign="top">[UNDER DEVELOPMENT] Customizable CK workflows and portable CK packages for TBD benchmark.
 <p>
 How to get:
@@ -976,8 +1069,11 @@ ck pull repo:ck-tbd-suite
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-tensorflow">61</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-tensorflow">ck-tensorflow</a></b> <i>(<a href="https://github.com/ctuning/ck-tensorflow/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-tensorflow">55</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-tensorflow">ck-tensorflow</a></b><br><ul>( <a href="https://github.com/ctuning/ck-tensorflow#readme">README</a> ; <a href="https://github.com/ctuning/ck-tensorflow/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    programs
+  </center></td>
   <td valign="top">Portable/customizable installation and unified access to TensorFlow AI framework with different workflows and data sets.
 <p>
 How to get:
@@ -992,8 +1088,11 @@ ck pull repo:ck-tensorflow
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-tensorrt">62</b></td>
-  <td nowrap valign="top"><b><a href="git@github.com:ctuning/ck-tensorrt.git">ck-tensorrt</a></b> <i>(<a href="git@github.com:ctuning/ck-tensorrt/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-tensorrt">56</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-tensorrt.git">ck-tensorrt</a></b><br><ul>( <a href="https://github.com/ctuning/ck-tensorrt.git#readme">README</a> ; <a href="https://github.com/ctuning/ck-tensorrt/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    programs
+  </center></td>
   <td valign="top">Portable/customizable installation and unified access to Nvidia TensorRT framework with different workflows and data sets (see <a href="http://cKnowledge.org/ai">unified AI project</a>).
 <p>
 How to get:
@@ -1007,8 +1106,11 @@ ck pull repo --url=git@github.com:ctuning/ck-tensorrt.git
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-tiny-dnn">63</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-tiny-dnn">ck-tiny-dnn</a></b> <i>(<a href="https://github.com/ctuning/ck-tiny-dnn/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-tiny-dnn">57</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-tiny-dnn">ck-tiny-dnn</a></b><br><ul>( <a href="https://github.com/ctuning/ck-tiny-dnn#readme">README</a> ; <a href="https://github.com/ctuning/ck-tiny-dnn/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    programs
+  </center></td>
   <td valign="top">[OUTDATED] Portable/customizable installation for TinyDNN AI framework.
 <p>
 How to get:
@@ -1023,8 +1125,11 @@ ck pull repo:ck-tiny-dnn
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-tvm">64</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-tvm">ck-tvm</a></b> <i>(<a href="https://github.com/ctuning/ck-tvm/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-tvm">58</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-tvm">ck-tvm</a></b><br><ul>( <a href="https://github.com/ctuning/ck-tvm#readme">README</a> ; <a href="https://github.com/ctuning/ck-tvm/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    programs
+  </center></td>
   <td valign="top">Portable/customizable installation and unified access to TVM/VTA AI frameworks with different workflows and data sets.
 <p>
 How to get:
@@ -1040,8 +1145,11 @@ ck pull repo:ck-tvm
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-wa">65</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/dividiti/ck-wa">ck-wa</a></b> <i>(<a href="https://github.com/dividiti/ck-wa/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-wa">59</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/dividiti/ck-wa">ck-wa</a></b><br><ul>( <a href="https://github.com/dividiti/ck-wa#readme">README</a> ; <a href="https://github.com/dividiti/ck-wa/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    programs
+  </center></td>
   <td valign="top">Collective Knowledge workflow for ARM's workload automation tool: an open framework for gathering and sharing knowledge about system design and optimization using real-world workloads.
 <p>
 How to get:
@@ -1058,8 +1166,11 @@ ck pull repo --url=https://github.com/dividiti/ck-wa
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-wa-extra">66</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-wa-extra">ck-wa-extra</a></b> <i>(<a href="https://github.com/ctuning/ck-wa-extra/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-wa-extra">60</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-wa-extra">ck-wa-extra</a></b><br><ul>( <a href="https://github.com/ctuning/ck-wa-extra#readme">README</a> ; <a href="https://github.com/ctuning/ck-wa-extra/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    
+  </center></td>
   <td valign="top">Extra resources in the reusable Collective Knowledge Format for ARM's Workload Automation Framework.
 <p>
 How to get:
@@ -1069,8 +1180,11 @@ ck pull repo:ck-wa-extra
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-wa-workloads">67</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-wa-workloads">ck-wa-workloads</a></b> <i>(<a href="https://github.com/ctuning/ck-wa-workloads/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-wa-workloads">61</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-wa-workloads">ck-wa-workloads</a></b><br><ul>( <a href="https://github.com/ctuning/ck-wa-workloads#readme">README</a> ; <a href="https://github.com/ctuning/ck-wa-workloads/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    
+  </center></td>
   <td valign="top">ARM's workloads in the universal Collective Knowledge Format with JSON API and JSON meta information to power Workload Automation Framework
 <p>
 How to get:
@@ -1080,8 +1194,11 @@ ck pull repo:ck-wa-workloads
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-web">68</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-web.git">ck-web</a></b> <i>(<a href="https://github.com/ctuning/ck-web/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-web">62</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-web.git">ck-web</a></b><br><ul>( <a href="https://github.com/ctuning/ck-web.git#readme">README</a> ; <a href="https://github.com/ctuning/ck-web/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    
+  </center></td>
   <td valign="top">Portable CK web server and web front-end with a unified JSON API for dashboards, benchmark scoreboards, interactive articles, graphs, crowdsourced experiments, etc (see <a href="http://cKnowledge.org/request-results">demo</a>).
 <p>
 How to get:
@@ -1091,8 +1208,11 @@ ck pull repo:ck-web
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-web-adapt-workshop">69</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-web-adapt-workshop">ck-web-adapt-workshop</a></b> <i>(<a href="https://github.com/ctuning/ck-web-adapt-workshop/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ck-web-adapt-workshop">63</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-web-adapt-workshop">ck-web-adapt-workshop</a></b><br><ul>( <a href="https://github.com/ctuning/ck-web-adapt-workshop#readme">README</a> ; <a href="https://github.com/ctuning/ck-web-adapt-workshop/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    website generator
+  </center></td>
   <td valign="top">CK resources for the <a href="http://adapt-workshop.org">ADAPT workshop</a>.
 <p>
 How to get:
@@ -1106,20 +1226,12 @@ ck pull repo:ck-web-adapt-workshop
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-web-cknowledge">70</b></td>
-  <td nowrap valign="top"><b><a href="https://gitlab.com/gfursin/ck-web-cknowledge">ck-web-cknowledge</a></b> <i>(<a href="https://gitlab.com/gfursin/ck-web-cknowledge/tree/master/.ckr.json">.ckr.json)</i></td>
-  <td valign="top">
-<p>
-How to get:
-<pre>
-ck pull repo --url=https://gitlab.com/gfursin/ck-web-cknowledge
-</pre>
-</td>
- </tr>
- <tr>
-  <td nowrap valign="top"><a name="ck-website">71</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-website">ck-website</a></b> <i>(<a href="https://github.com/ctuning/ck-website/tree/master/.ckr.json">.ckr.json)</i></td>
-  <td valign="top">
+  <td nowrap valign="top"><a name="ck-website">64</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-website">ck-website</a></b><br><ul>( <a href="https://github.com/ctuning/ck-website#readme">README</a> ; <a href="https://github.com/ctuning/ck-website/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    cKnowledge.org website generator
+  </center></td>
+  <td valign="top">CK components for <a href="http://cKnowledge.org">cKnowledge.org</a>.
 <p>
 How to get:
 <pre>
@@ -1133,8 +1245,11 @@ ck pull repo:ck-website
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ctuning-datasets-min">72</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ctuning-datasets-min">ctuning-datasets-min</a></b> <i>(<a href="https://github.com/ctuning/ctuning-datasets-min/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ctuning-datasets-min">65</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ctuning-datasets-min">ctuning-datasets-min</a></b><br><ul>( <a href="https://github.com/ctuning/ctuning-datasets-min#readme">README</a> ; <a href="https://github.com/ctuning/ctuning-datasets-min/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    
+  </center></td>
   <td valign="top">A minimal set of public and reusable data sets in the CK format with unified JSON meta information (used by programs from ctuning-programs repository).
 <p>
 How to get:
@@ -1144,8 +1259,11 @@ ck pull repo:ctuning-datasets-min
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ctuning-programs">73</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ctuning-programs">ctuning-programs</a></b> <i>(<a href="https://github.com/ctuning/ctuning-programs/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ctuning-programs">66</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ctuning-programs">ctuning-programs</a></b><br><ul>( <a href="https://github.com/ctuning/ctuning-programs#readme">README</a> ; <a href="https://github.com/ctuning/ctuning-programs/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    
+  </center></td>
   <td valign="top">
 <p>
 How to get:
@@ -1160,8 +1278,30 @@ ck pull repo:ctuning-programs
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ctuning-programs">74</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ctuning-programs">ctuning-programs</a></b> <i>(<a href="https://github.com/ctuning/ctuning-programs/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="ctuning-programs">67</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ctuning-programs">ctuning-programs</a></b><br><ul>( <a href="https://github.com/ctuning/ctuning-programs#readme">README</a> ; <a href="https://github.com/ctuning/ctuning-programs/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    
+  </center></td>
+  <td valign="top">
+<p>
+How to get:
+<pre>
+ck pull repo:ctuning-programs
+</pre>
+<p>Dependencies on other repositories:
+<ul>
+<li><a href="#ck-autotuning">ck-autotuning</a>
+<li><a href="#ctuning-datasets-min">ctuning-datasets-min</a>
+</ul>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="ctuning-programs">68</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ctuning-programs">ctuning-programs</a></b><br><ul>( <a href="https://github.com/ctuning/ctuning-programs#readme">README</a> ; <a href="https://github.com/ctuning/ctuning-programs/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    programs
+  </center></td>
   <td valign="top">Evolving set of diverse and portable programs shared by the community in the unified CK format to participate in collaborative benchmarking, optimization and co-design while gradually substituting rigid, non-portable and outdated and non representative benchmarks (see the <a href="http://cKnowledge.org/rpi-crowd-tuning">real use case</a>).
 <p>
 How to get:
@@ -1176,14 +1316,20 @@ ck pull repo:ctuning-programs
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="default">75</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck/tree/master/ck/repo">default</a></b> <i>(<a href="https://github.com/ctuning/ck/tree/master/ck/repo/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="default">69</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck/tree/master/ck/repo">default</a></b><br><ul>( <a href="https://github.com/ctuning/ck/tree/master/ck/repo#readme">README</a> ; <a href="https://github.com/ctuning/ck/tree/master/ck/repo/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    
+  </center></td>
   <td valign="top">A set of internal modules always available inside CK framework.
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="external-kdatasets">76</b></td>
+  <td nowrap valign="top"><a name="external-kdatasets">70</b></td>
   <td nowrap valign="top"><b>external-kdatasets</b></td>
+  <td valign="top"><center>
+    
+  </center></td>
   <td valign="top">Grigori Fursin shared all data sets from the <a href="http://dl.acm.org/citation.cfm?id=1806647">PLDI'10 paper "Evaluating iterative optimization across 1000 datasets"</a> in the reusable Collective Knowledge Format via Google Drive (size > 20GB) to support open computer systems research.
 <p>
 How to get:
@@ -1193,8 +1339,11 @@ How to get:
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="external-shared-via-bittorent">77</b></td>
+  <td nowrap valign="top"><a name="external-shared-via-bittorent">71</b></td>
   <td nowrap valign="top"><b>external-shared-via-bittorent</b></td>
+  <td valign="top"><center>
+    
+  </center></td>
   <td valign="top">Large CK repositories shared via BitTorrent.
 <p>
 How to get:
@@ -1204,8 +1353,11 @@ How to get:
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="gemmbench">78</b></td>
-  <td nowrap valign="top"><b><a href="git@github.com:dividiti/gemmbench.git">gemmbench</a></b> <i>(<a href="git@github.com:dividiti/gemmbench/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="gemmbench">72</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/dividiti/gemmbench.git">gemmbench</a></b><br><ul>( <a href="https://github.com/dividiti/gemmbench.git#readme">README</a> ; <a href="https://github.com/dividiti/gemmbench/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    programs
+  </center></td>
   <td valign="top">Customizable CK workflows and portable packages to crowdsource GEMM benchmarking.
 <p>
 How to get:
@@ -1221,8 +1373,12 @@ ck pull repo --url=git@github.com:dividiti/gemmbench.git
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="reproduce-adapt16">79</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/reproduce-adapt16">reproduce-adapt16</a></b> <i>(<a href="https://github.com/ctuning/reproduce-adapt16/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="reproduce-adapt16">73</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/reproduce-adapt16">reproduce-adapt16</a></b><br><ul>( <a href="https://github.com/ctuning/reproduce-adapt16#readme">README</a> ; <a href="https://github.com/ctuning/reproduce-adapt16/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    reproducible&nbsp;paper
+
+  </center></td>
   <td valign="top">CK workflows and packages from reproducible ADAPT'16 paper.
 <p>
 How to get:
@@ -1232,8 +1388,11 @@ ck pull repo:reproduce-adapt16
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="reproduce-anon-paper">80</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/paperasub/reproduce-anon-paper.git">reproduce-anon-paper</a></b> <i>(<a href="https://github.com/paperasub/reproduce-anon-paper/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="reproduce-anon-paper">74</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/paperasub/reproduce-anon-paper.git">reproduce-anon-paper</a></b><br><ul>( <a href="https://github.com/paperasub/reproduce-anon-paper.git#readme">README</a> ; <a href="https://github.com/paperasub/reproduce-anon-paper/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    
+  </center></td>
   <td valign="top">Testing CK anonymous workflows to run on AWS for <a href="http://cTuning.org/ae">Artifact Evaluation</a>.
 <p>
 How to get:
@@ -1243,8 +1402,11 @@ ck pull repo --url=https://github.com/paperasub/reproduce-anon-paper.git
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="reproduce-carp-project">81</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/reproduce-carp-project">reproduce-carp-project</a></b> <i>(<a href="https://github.com/ctuning/reproduce-carp-project/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="reproduce-carp-project">75</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/reproduce-carp-project">reproduce-carp-project</a></b><br><ul>( <a href="https://github.com/ctuning/reproduce-carp-project#readme">README</a> ; <a href="https://github.com/ctuning/reproduce-carp-project/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    programs
+  </center></td>
   <td valign="top">Customizable CK workflows and portable CK packages for EU CARP project.
 <p>
 How to get:
@@ -1258,9 +1420,15 @@ ck pull repo:reproduce-carp-project
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="reproduce-cgo2017-paper">82</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/SamAinsworth/reproduce-cgo2017-paper">reproduce-cgo2017-paper</a></b> <i>(<a href="https://github.com/SamAinsworth/reproduce-cgo2017-paper/tree/master/.ckr.json">.ckr.json)</i></td>
-  <td valign="top">Customizable CK workflow and portable CK packages from the CGO'17 paper "Software Prefetching for Indirect Memory Accesses".
+  <td nowrap valign="top"><a name="reproduce-cgo2017-paper">76</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/SamAinsworth/reproduce-cgo2017-paper">reproduce-cgo2017-paper</a></b><br><ul>( <a href="https://github.com/SamAinsworth/reproduce-cgo2017-paper#readme">README</a> ; <a href="https://github.com/SamAinsworth/reproduce-cgo2017-paper/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    reproducible&nbsp;paper
+-&nbsp;passed&nbsp;<a href="http://cTuning.org/ae">Artifact&nbsp;Evaluation</a>:
+<p><center><img src="https://www.acm.org/binaries/content/gallery/acm/publications/replication-badges/artifacts_evaluated_reusable_dl.jpg" width="64"></center>
+
+  </center></td>
+  <td valign="top">CK workflow and components from the CGO'17 paper "Software Prefetching for Indirect Memory Accesses".
 <p>
 How to get:
 <pre>
@@ -1271,13 +1439,15 @@ ck pull repo --url=https://github.com/SamAinsworth/reproduce-cgo2017-paper
 <li><a href="#ck-autotuning">ck-autotuning</a>
 <li><a href="#ck-docker">ck-docker</a>
 </ul>
-<p>Workflow passed <a href="http://cTuning.org/ae">Artifact Evaluation</a>
-<p><center><img src="https://www.acm.org/binaries/content/gallery/acm/publications/replication-badges/artifacts_evaluated_reusable_dl.jpg" width="64"></center>
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="reproduce-ck-paper">83</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/reproduce-ck-paper">reproduce-ck-paper</a></b> <i>(<a href="https://github.com/ctuning/reproduce-ck-paper/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="reproduce-ck-paper">77</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/reproduce-ck-paper">reproduce-ck-paper</a></b><br><ul>( <a href="https://github.com/ctuning/reproduce-ck-paper#readme">README</a> ; <a href="https://github.com/ctuning/reproduce-ck-paper/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    reproducible&nbsp;paper
+
+  </center></td>
   <td valign="top">Customizable CK workflows and portable CK packages for the past CK paper.
 <p>
 How to get:
@@ -1292,8 +1462,11 @@ ck pull repo:reproduce-ck-paper
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="reproduce-ck-paper-large-experiments">84</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/reproduce-ck-paper-large-experiments">reproduce-ck-paper-large-experiments</a></b> <i>(<a href="https://github.com/ctuning/reproduce-ck-paper-large-experiments/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="reproduce-ck-paper-large-experiments">78</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/reproduce-ck-paper-large-experiments">reproduce-ck-paper-large-experiments</a></b><br><ul>( <a href="https://github.com/ctuning/reproduce-ck-paper-large-experiments#readme">README</a> ; <a href="https://github.com/ctuning/reproduce-ck-paper-large-experiments/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    
+  </center></td>
   <td valign="top">Demo with different experiments in the reproducible CK format from one of our past papers.
 <p>
 How to get:
@@ -1307,8 +1480,11 @@ ck pull repo:reproduce-ck-paper-large-experiments
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="reproduce-fgg-2010">85</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/reproduce-fgg-2010">reproduce-fgg-2010</a></b> <i>(<a href="https://github.com/ctuning/reproduce-fgg-2010/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="reproduce-fgg-2010">79</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/reproduce-fgg-2010">reproduce-fgg-2010</a></b><br><ul>( <a href="https://github.com/ctuning/reproduce-fgg-2010#readme">README</a> ; <a href="https://github.com/ctuning/reproduce-fgg-2010/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    
+  </center></td>
   <td valign="top">Demo of experimental results in the reproducible CK format from past papers.
 <p>
 How to get:
@@ -1322,8 +1498,12 @@ ck pull repo:reproduce-fgg-2010
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="reproduce-milepost-project">86</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/reproduce-milepost-project">reproduce-milepost-project</a></b> <i>(<a href="https://github.com/ctuning/reproduce-milepost-project/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="reproduce-milepost-project">80</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/reproduce-milepost-project">reproduce-milepost-project</a></b><br><ul>( <a href="https://github.com/ctuning/reproduce-milepost-project#readme">README</a> ; <a href="https://github.com/ctuning/reproduce-milepost-project/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    reproducible&nbsp;paper
+
+  </center></td>
   <td valign="top">Customizable CK workflows and portable CK packages for the <a href="https://en.wikipedia.org/wiki/MILEPOST_GCC">MILEPOST project</a>.
 <p>
 How to get:
@@ -1338,8 +1518,11 @@ ck pull repo:reproduce-milepost-project
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="reproduce-pamela-project">87</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/reproduce-pamela-project">reproduce-pamela-project</a></b> <i>(<a href="https://github.com/ctuning/reproduce-pamela-project/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="reproduce-pamela-project">81</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/reproduce-pamela-project">reproduce-pamela-project</a></b><br><ul>( <a href="https://github.com/ctuning/reproduce-pamela-project#readme">README</a> ; <a href="https://github.com/ctuning/reproduce-pamela-project/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    
+  </center></td>
   <td valign="top">Customizable CK workflows and portable CK packages for EU PAMELA project.
 <p>
 How to get:
@@ -1354,8 +1537,11 @@ ck pull repo:reproduce-pamela-project
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="reproduce-pamela-project-medium-dataset">88</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/reproduce-pamela-project-small-dataset">reproduce-pamela-project-medium-dataset</a></b> <i>(<a href="https://github.com/ctuning/reproduce-pamela-project-small-dataset/tree/master/.ckr.json">.ckr.json)</i></td>
+  <td nowrap valign="top"><a name="reproduce-pamela-project-medium-dataset">82</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/reproduce-pamela-project-small-dataset">reproduce-pamela-project-medium-dataset</a></b><br><ul>( <a href="https://github.com/ctuning/reproduce-pamela-project-small-dataset#readme">README</a> ; <a href="https://github.com/ctuning/reproduce-pamela-project-small-dataset/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    programs
+  </center></td>
   <td valign="top">
 <p>
 How to get:
