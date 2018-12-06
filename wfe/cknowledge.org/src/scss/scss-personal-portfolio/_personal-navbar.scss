@@ -1,0 +1,83 @@
+/*
+Personal Portfolio Navbar
+*/
+.navbar .nav-link{
+    text-transform: uppercase;
+    font-size: .8rem;
+    color:rgba(#fff,.08);
+}
+    .navbar-offcanvas{
+        position:fixed;
+        top:15px;
+        right:15px;
+        width:44px;
+        height:44px;
+        text-align:center;
+        line-height:44px;
+        box-shadow: 0px 5px 20px rgba(#000,.1);
+        z-index: 99;
+        border-radius:50%;
+        background-color:#fff;
+        .menu-btn{
+            color:#333;
+            display:block;
+            >i{
+                display:block;
+                line-height: 44px;
+            }
+        }
+    }
+.pushy-close.pushy-link{
+    color:#999;
+    &:hover{
+        color: #333;
+    }
+}
+    .pushy{
+        width:300px;
+        background-color:#fff;
+        box-shadow:-10px 0px 30px rgba(0,0,0,0.1);
+        .offcanvas-menu{
+           list-style:none;
+           padding:0px;
+           >li>.dropdown-item.pushy-link{
+               color:#aeaeae;
+               display: block;
+               padding:10px 20px;
+               text-transform:uppercase;
+               font-weight:500;
+               font-size:.75rem;
+               &.active,&:hover,&:focus,&:active{
+                   color: $primary-color;
+                   background-color: transparent;
+               }
+           }
+        }
+        .social-buttons{
+            padding-top:40px;
+            border-top:1px solid #eee;
+        }
+    }
+    .pushy-right {
+    -webkit-transform: translate3d(300px, 0, 0);
+    -ms-transform: translate3d(300px, 0, 0);
+    transform: translate3d(300px, 0, 0);
+}
+.sidebar-contact{
+    padding:30px 20px;
+    border-top:1px solid #eee;
+    h5{
+        margin-bottom:0px;
+    }
+    p{
+        a{
+            padding:0px;
+            color:#444;
+            text-decoration:underline;
+            font-weight:300;
+            &:hover{
+               color:#000; 
+            }
+        }
+    }
+}

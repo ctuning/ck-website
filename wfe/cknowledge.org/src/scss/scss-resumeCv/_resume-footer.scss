@@ -1,0 +1,21 @@
+/*
+Resume footer
+*/
+.footer{
+    color:#aeaeae;
+    p{
+        color:rgba(#000,.5);
+        a{
+             color:#000;
+             display:inline-block;
+             margin-left:5px;
+            &:hover{
+                text-decoration:underline;
+                color:#000;
+            }
+        }
+    }
+    .social-buttons{
+        display:inline-block;
+    }
+}

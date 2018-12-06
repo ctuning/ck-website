@@ -1,0 +1,103 @@
+/*
+photography Header Style
+*/
+.navbar .nav-item .nav-link{
+    font-family: $title-font;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    &:hover{
+        color: $primary-color;
+    }
+    &.btn-primary{
+        color:#fff;
+        margin-left:15px;
+    }
+    &.active{
+        color:$primary-color!important;
+    }
+}
+.navbar.navbar-light.bg-faded{
+    background-color: #fff;
+}
+.top-bar{
+    background-color:#fff;
+    ul{
+        li{
+            color: rgba(#333,.7);
+            a{
+                color:#333;
+                &:hover{
+                    color: rgba(#000,.7);
+                }
+            }
+        }
+    }
+    .top-socials{
+        padding-top:5px;
+    }
+}
+.navbar-brand{
+    img{
+        margin-top: -50px;
+        transition:all .3s;
+        -webkit-transition:all .3s;
+    }
+}
+
+@media(min-width:992px){
+    .header-main.header-transparent{
+        position:absolute;
+        left:0;
+        top:0;
+        width:100%;
+        z-index: 999;
+        background-color: transparent!important;
+        .top-bar{
+            background-color: transparent;
+        }
+        .navbar.navbar-light.bg-faded{
+            background-color: transparent!important;
+            padding-top:0px;
+            .container{
+                position:relative;
+                .navbar-nav .nav-link{
+                    color: rgba(#fff,.7);
+                }
+                .nav-link.btn-primary{
+                    border-radius: 100px;
+                    position:relative;
+                    right: 0;
+                    top: 7px;
+                    opacity:1;
+                    color:#fff;
+                }
+                .navbar-brand>img{
+                   top: 69px;
+    position: absolute;
+    left: 24px;
+                }
+            }
+        }
+        &.fixed-top .navbar.navbar-light.bg-faded{
+            padding-top: .5rem;
+            position:fixed;
+            left:0;
+            width:100%;
+            right:0;
+            z-index:999;
+            top:0;
+            background-color:#000!important;
+            animation:fadeInDown .4s;
+            .navbar-brand>img{           
+    left: 15px;
+            }
+        }
+    }
+    .navbar-expand-lg .navbar-nav .nav-link{
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+}

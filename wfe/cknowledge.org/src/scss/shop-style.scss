@@ -1,0 +1,229 @@
+/*
+Assan shop style file
+*/
+@font-face {
+    font-family: 'FontAwesome';
+    src: url("../bower_components/font-awesome/fonts/fontawesome-webfont.eot?v=4.7.0");
+    src: url("../bower_components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0") format('embedded-opentype'),url("../bower_components/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0") format('woff2'),url("../bower_components/font-awesome/fonts/fontawesome-webfont.woff?v=4.7.0") format('woff'),url("../bower_components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.7.0") format('truetype'),url("../bower_components/font-awesome/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/*themify icons*/
+@font-face {
+    font-family: 'themify';
+    src: url("../bower_components/themify-icons/fonts/themify.eot");
+    src: url("../bower_components/themify-icons/fonts/themify.eot?#iefix") format('embedded-opentype'),
+        url("../bower_components/themify-icons/fonts/themify.woff") format('woff'),
+        url("../bower_components/themify-icons/fonts/themify.ttf") format('truetype'),
+        url("../bower_components/themify-icons/fonts/themify.svg") format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/**et line icons**/
+@font-face {
+    font-family: 'et-line';
+    src:url('../et-line-font/fonts/et-line.eot');
+    src:url('../et-line-font/fonts/et-line.eot?#iefix') format('embedded-opentype'),
+        url('../et-line-font/fonts/et-line.woff') format('woff'),
+        url('../et-line-font/fonts/et-line.ttf') format('truetype'),
+        url('../et-line-font/fonts/et-line.svg#et-line') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800|Open+Sans:300,300i,400,400i,600,700,800');
+@import url('https://fonts.googleapis.com/css?family=Droid+Serif:400,400i');
+@import"scss-classic-main/_variables.scss";
+@import"scss-classic-main/_base.scss";
+@import"scss-classic-main/_buttons.scss";
+@import"scss-classic-main/_preloader.scss";
+@import"scss-classic-main/_title-headings.scss";
+@import"scss-classic-main/_icon-boxes.scss";
+@import"scss-classic-main/_promo-boxes.scss";
+@import"scss-classic-main/_top-bars.scss";
+@import"scss-classic-main/_header.scss";
+@import"scss-classic-main/_dropdown.scss";
+@import"scss-classic-main/_img-boxes.scss";
+@import"scss-classic-main/_carousel.scss";
+@import"scss-classic-main/_accounts.scss";
+@import"scss-classic-main/_sidebar.scss";
+@import"scss-classic-main/_tabs.scss";
+@import"scss-classic-main/_page-titles.scss";
+@import"scss-classic-main/_breadcrumb.scss";
+@import"scss-classic-main/_footer.scss";
+@import"scss-classic-main/_responsive-utilities.scss";
+@import"scss-classic-main/_smart-forms";
+@import"scss-classic-main/_responsive.scss";
+
+
+/**typography customization for shop**/
+
+h1,h2,h3,h4,h5,h6{
+    font-weight: 500;
+}
+
+.title-heading1{
+    h2{
+        small{
+            font-family: $base-font;
+            color:#999;
+            font-size: 50%;
+        }
+    }
+}
+.product-category{
+    position:relative;
+    display:block;
+    overflow:hidden;
+    .category-overlay{
+        position:absolute;
+        left:15px;
+        top:15px;
+        h4{
+            font-weight:500;
+            letter-spacing: 0;
+            position: relative;
+            padding-bottom:5px;
+            &:before{
+                content:"";
+                width:0px;
+                height:2px;
+                background:$primary-color;
+                position: absolute;
+                bottom:0;
+                left:0;   
+                transition: all .3s;
+            }
+        }
+    }
+    &:hover{
+        .category-overlay h4{
+            &:before{
+                width:50px;
+            }
+        }
+    }
+}
+
+/****Shop Slider**/
+.shop-slider-title{
+    color:#fff;
+    font-weight: 400;
+    text-transform:capitalize;
+    font-style:italic;
+    font-family: $styled-font;
+    .rev-c-text{
+        text-transform: uppercase;
+        font-weight:700;
+        font-style:normal;
+        font-family: $title-font;
+    }
+}
+.shopSlide-Subtitle{
+    color:rgba(255,255,255,.7);
+    border:1px solid #eee;
+    padding:3px 10px!important;
+}
+.shopSlide-caption{
+    color:#fff;
+}
+.product-meta{
+    .lead{
+        font-size: 12px;
+        font-weight: 600;
+        text-transform:uppercase;
+        a{
+            color:#000;
+            &:hover{
+                color:#999;
+            }
+        }
+    }
+    h4{
+        font-family: $base-font;
+        font-size:13px;
+        font-weight:700;
+    }
+}
+.footer-standard{
+    h3{
+        text-transform: capitalize;
+        font-size: 1rem;
+        font-weight:400;
+    }
+}
+.quantity {
+    margin: 0 15px 25px 0;
+    overflow: hidden;
+    position: relative;
+    width: 125px;
+    height: 41px;
+    float: left;
+    .minus {
+        background: #f4f4f4;
+        border: 1px solid #C8BFC6;
+        border-radius: 2px;
+        box-shadow: none;
+        color: #5E5E5E;
+        cursor: pointer;
+        display: block;
+        font-size: 12px;
+        font-weight: bold;
+        height: 41px;
+        line-height: 13px;
+        margin: 0;
+        overflow: visible;
+        outline: 0;
+        padding: 0;
+        position: absolute;
+        text-align: center;
+        text-decoration: none;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+        vertical-align: text-top;
+        width: 35px;
+    }
+    .plus {
+        background: #f4f4f4;
+        border: 1px solid #C8BFC6;
+        border-radius: 2px;
+        box-shadow: none;
+        color: #5E5E5E;
+        cursor: pointer;
+        display: block;
+        font-size: 12px;
+        font-weight: bold;
+        height: 41px;
+        line-height: 13px;
+        margin: 0;
+        overflow: visible;
+        outline: 0;
+        padding: 0;
+        position: absolute;
+        text-align: center;
+        text-decoration: none;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+        vertical-align: text-top;
+        width: 35px;
+        right: 0;
+        top: 0;
+    }
+    .qty {
+        border: 1px solid #CCC;
+        box-shadow: none;
+        float: left;
+        height: 41px;
+        padding: 0 39px;
+        text-align: center;
+        width: 125px;
+        font-size: 1em;
+    }
+}
+.cart-table{
+    td{
+        vertical-align: middle;
+    }
+    input[type="number"]{
+        width:45px; 
+        border:2px solid #eee;
+        padding-left:10px;
+    }
+}

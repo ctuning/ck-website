@@ -1,0 +1,52 @@
+/*
+Personal Portfolio Navbar
+*/
+@media(min-width:992px){
+    
+}
+    .navbar.navbar-light.navbar-transparent.bg-faded{
+        background-color: transparent!important;
+        position: absolute;
+        left:0;
+        top:0;
+        width:100%;
+        z-index: 999;
+        .nav-link{
+            color: #fff;
+            opacity:0.8;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: .8rem;
+            padding-left:1rem;
+            padding-right:1rem;
+            &.btn{
+                opacity:1;
+                margin-left:15px;
+            }
+        }
+        .nav-item .nav-link.active{
+            color: $primary-color;
+            opacity:1;
+        }
+        &.fixed-top{
+                animation: fadeInDown 0.3s ease-out forwards;
+            position: fixed;
+            top:0;
+            left:0;
+            width:100%;
+            background-color: #000!important;
+            box-shadow: 0px 5px 20px rgba(0,0,0,0.1);
+             .nav-link{
+            color: #fff;
+            opacity:0.6;
+            &.btn{
+                opacity:1;
+                color:#fff;
+            }
+        }
+        .nav-item .nav-link.active{
+            color: $primary-color;
+            opacity:1;
+        }
+        }
+    }
