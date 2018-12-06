@@ -1,0 +1,46 @@
+/*
+Responsive style (always bottom in main style file)
+*/
+@media(max-width:991px){
+    .top-bar{
+        display:none;
+    }
+    .navbar .container{
+        position: relative;
+        width:100%;
+        max-width:100%;
+    }
+      .navbar.navbar-light.bg-faded{
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        z-index:999;
+        background-color:#000!important;
+        padding: .75rem 1rem;
+        
+        .navbar-toggler{
+            position:absolute;
+            top:1px;
+            right:0px;
+            background-color:#fff;
+            border-radius:0px;
+            -webkit-border-radius:0px;
+            border:0px;
+        }
+    }
+    .navbar-brand img {
+    margin-top: -5px;
+    }
+    .navbar-light .navbar-nav .nav-link{
+        color:#fff;
+        &.btn-primary{
+            margin-left: 0px;
+        }
+    }
+    .gallery-row{
+        a{
+            width:50%;
+        }
+    }
+}

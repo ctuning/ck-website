@@ -1,0 +1,105 @@
+/*
+schedule
+*/
+.tabs-schedule.nav-tabs{
+    border:0px;
+    border-bottom: 2px solid #f5f5f5;
+    margin-bottom:40px;
+    margin-left:0px;
+    text-align:center;
+    >li{
+        padding:0px;
+        >a{
+            font-size: 20px;
+            display: block;
+            padding:4px 20px;
+            color:#333;
+            font-family:$title-font;
+            font-weight:700;
+            margin-bottom:-2px;
+            position:relative;
+            border:0px;
+            &:after{
+                content: "";
+                width:0;
+                height: 2px;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                background: $primary-color;
+                transition: all .3s;
+                -webkit-transition: all .3s;
+            }
+            span{
+                font-size: 12px;
+                display: block;
+                color:#999;
+                font-family: $primary-color;
+                font-weight: 400;
+            }
+            &.active,&:hover{
+                color: $primary-color;
+                &:after{
+                     width:100%;
+                }
+            }
+        }
+    }
+}
+.event-info{
+    padding-right: 30px;
+    text-align: right;
+    text-transform: uppercase;
+    span{
+        display: block;
+        font-size: 16px;
+    }
+    .event-hall{
+        margin-top: 10px;
+        font-style: normal;
+        font-size: 12px;
+        padding: 3px 10px;
+        border-right: 3px solid $primary-color;
+        background: #f5f5f5;
+        font-weight:400;
+    }
+}
+.event-detail{
+    border-left:2px solid $primary-color;
+    padding-left:30px;
+    position:relative;
+    &:before{
+        width: 14px;
+        height: 14px;
+        border-radius: 7px;
+        background: #fff;
+        position: absolute;
+        left: -7px;
+        top: 10px;
+       content:"";
+    }
+    &:after{
+             content: "\f105";
+            font-family: "FontAwesome";
+            position:absolute;
+            left:-2px;
+            top:3px;
+            color:$primary-color;
+            font-size:28px;
+    }
+    h3{
+        margin-bottom:20px;
+        a{
+            color: #555;
+        }
+    }
+    .img-fluid{
+        border-radius: 5px;
+    }
+    h4{
+        margin-bottom: 0px;
+        font-weight:600;
+        font-size: 14px;
+        color:#666;
+    }
+}

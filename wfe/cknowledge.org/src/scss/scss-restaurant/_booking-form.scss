@@ -1,0 +1,23 @@
+/*
+Booking-form
+*/
+.reservation-card{
+    margin-bottom:20px;
+    .smart-forms{
+        padding:0px;
+        .form-body{
+            padding:0px;
+        }
+        .refresh-captcha{
+            background-color: $primary-color;
+            border-color:$danger-color;
+        }
+    }
+    .btn-primary{
+        background-color:$primary-color;
+        &:hover{
+           background-color:$primary-color; 
+        }
+    }
+}
+

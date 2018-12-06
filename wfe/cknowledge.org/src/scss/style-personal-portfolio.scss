@@ -1,0 +1,33 @@
+/*
+Project - Classic agency multipurpose template
+*/
+@font-face {
+    font-family: 'FontAwesome';
+    src: url("../bower_components/font-awesome/fonts/fontawesome-webfont.eot?v=4.7.0");
+    src: url("../bower_components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0") format('embedded-opentype'),url("../bower_components/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0") format('woff2'),url("../bower_components/font-awesome/fonts/fontawesome-webfont.woff?v=4.7.0") format('woff'),url("../bower_components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.7.0") format('truetype'),url("../bower_components/font-awesome/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/*themify icons*/
+@font-face {
+    font-family: 'themify';
+    src: url("../bower_components/themify-icons/fonts/themify.eot");
+    src: url("../bower_components/themify-icons/fonts/themify.eot?#iefix") format('embedded-opentype'),
+        url("../bower_components/themify-icons/fonts/themify.woff") format('woff'),
+        url("../bower_components/themify-icons/fonts/themify.ttf") format('truetype'),
+        url("../bower_components/themify-icons/fonts/themify.svg") format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,600,700,900');
+@import "scss-personal-portfolio/_variables.scss";
+@import "scss-personal-portfolio/_base.scss";
+@import "scss-personal-portfolio/_buttons.scss";
+@import "scss-personal-portfolio/_preloader.scss";
+@import "scss-personal-portfolio/_personal-navbar.scss";
+@import "scss-personal-portfolio/_fullscreen-hero.scss";
+@import "scss-personal-portfolio/_progress-bar.scss";
+@import "scss-personal-portfolio/_projects.scss";
+@import "scss-personal-portfolio/_typed.js.scss";
+@import "scss-personal-portfolio/_icon-card.scss";
+@import "scss-personal-portfolio/_footer.scss";

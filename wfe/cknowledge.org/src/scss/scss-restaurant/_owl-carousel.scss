@@ -1,0 +1,20 @@
+/*
+My Clients
+*/
+.owl-carousel{
+    &.clients{
+        .item .img-fluid{
+        width: 100px;
+        margin:0 auto;
+        margin-bottom: 20px;
+    }
+    }
+    &.owl-theme .owl-dots .owl-dot span{
+        width:6px;
+        height:6px;
+    }
+    &.owl-theme .owl-dots .owl-dot.active span, &.owl-theme .owl-dots .owl-dot:hover span{
+        background-color: #ddd;
+        opacity:0.3;
+    }
+}

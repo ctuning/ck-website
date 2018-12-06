@@ -1,0 +1,29 @@
+/*
+Footer styles
+*/
+.footer{
+    
+}
+.opening-time{
+    li{
+        padding: 5px 0;
+        position:relative;
+        
+        
+        &:before{
+            content:"";
+            height:1px;
+            width:100%;
+            border-top:1px solid #eee;
+            position:absolute;
+            left:0;
+        top:50%;
+        }
+        span{
+        display:inline-block;
+        padding:3px 10px;
+        background-color:#fff;
+        position: relative;
+    }
+    }
+}
