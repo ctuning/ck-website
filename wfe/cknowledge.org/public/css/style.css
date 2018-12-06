@@ -4259,9 +4259,13 @@ a {
   @media (min-width: 1024px) {
     .subnav {
       padding: 0 15px; } }
-  .subnav > ul > li > a {
+  .subnav ul li a {
     -webkit-text-decoration: underline dotted;
     text-decoration: underline dotted; }
+  .subnav ul li:first-child {
+    margin-left: -1px; }
+  .subnav:first-child {
+    margin-left: 2rem; }
 
 .navbar-expand-lg {
   -ms-flex-wrap: wrap;
@@ -4361,6 +4365,10 @@ a {
   padding-bottom: 6px;
   border-bottom: 2px solid #ef4e4e;
   opacity: 1; }
+
+.nav-item > a:hover:not(.div-nav-link-CTA) {
+  border-bottom: 2px solid;
+  padding-bottom: 6px; }
 
 .navbar-nav .active > a.div-nav-link-CTA {
   color: #ef4e4e;
@@ -4472,13 +4480,47 @@ a {
   left: 0;
   top: -144px; }
 
-.partners-arrow-right {
+#partners-arrow-right {
   position: absolute;
-  background: #ef4e4e;
-  width: 30px;
+  display: block;
+  width: 45px;
   height: 30px;
-  right: 0px;
-  top: -100px; }
+  right: 15px;
+  top: 0px;
+  text-align: right;
+  cursor: pointer;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), color-stop(66%, white));
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, white 66%); }
+
+#partners-arrow-left {
+  position: absolute;
+  display: block;
+  width: 45px;
+  height: 30px;
+  left: 15px;
+  top: 0px;
+  text-align: left;
+  cursor: pointer;
+  background: -webkit-gradient(linear, right top, left top, from(rgba(255, 255, 255, 0)), color-stop(66%, white));
+  background: linear-gradient(-90deg, rgba(255, 255, 255, 0) 0%, white 66%); }
+
+.ico-arrow-left {
+  margin: 8px 0;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-right: 8px solid #6c7072;
+  border-bottom: 5px solid transparent; }
+
+.ico-arrow-right {
+  position: absolute;
+  right: 0;
+  margin: 8px 0;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-left: 8px solid #6c7072;
+  border-bottom: 5px solid transparent; }
 
 .link-to-pdf:hover,
 .link-to-html:hover,
@@ -4514,6 +4556,8 @@ a {
 
 .anchor-link-active {
   color: #ef4e4e; }
+  .anchor-link-active:hover {
+    color: #ef4e4e; }
 
 #ck-repo-widget-header {
   margin-left: auto;
