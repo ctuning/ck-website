@@ -168,11 +168,23 @@ a {
         }
 }
 
+:target {
+    display: block;
+    position: relative;
+    padding-top: 144px;
+    margin-top: -144px;
+    visibility: hidden;
+  }
+
 .dvdt {
     &-card {
         &-partner {
           margin-bottom: 48px;
           width: 100%;
+          &>div:first-child {
+            position: relative;
+            left: 0;
+          }
         }
         &-logos {
             display: flex;
@@ -406,12 +418,10 @@ a {
         & ul {
             overflow-x: auto;
             white-space: nowrap;
-            // scroll-behavior: smooth;
             -webkit-overflow-scrolling: touch;
             & li {
                 font-size: 13px;
                 padding-bottom: 30px;
-                margin-right: 24px;
             }
         }
     }
@@ -419,21 +429,26 @@ a {
 
 .subnav {
     margin: 8px auto 0 auto;
-    @include desktop {
-        padding: 0 15px;
-    }
-    ul {
-        li {
-            a {
-                text-decoration: underline dotted;
-            }
-            &:first-child {
-                margin-left: -1px;
+        @include desktop {
+            padding: 0 15px;
+        }
+        & > ul {
+            justify-content: flex-start;
+            & > li {
+                & > a {
+                    text-decoration:none;
+                    vertical-align: top;
+                    border-bottom: 1px dotted map-get($color, menu-item);
+                    // text-decoration-style: dotted;
+                    // text-decoration-line: underline;
+                    margin-right: 24px;
+                &:hover {
+                    text-decoration:none;
+                    color: map-get($color, menu-item-active);
+                    border-bottom: 1px dotted map-get($color, menu-item-active);
+                }
             }
         }
-    }
-    &:first-child {
-        margin-left:2rem
     }
 }
 
@@ -660,53 +675,48 @@ a {
     position: fixed;
 }
 
-#consortium,
-#gm,
-#tomtom,
-#acm,
-#rpi,
-#arm,
-#eu,
-#glasgow,
-#ens,
-#hartree,
-#xored,
-#cambridge,
-#imperial,
-#ctuning,
-#dividiti {
-    position: relative;
-    left: 0;
-    top: -144px;
-}
-
 #partners-arrow {
 
     &-right {
         position: absolute;
         display:block;
-
+        z-index: 100;
         width: 45px;
         height: 30px;
-        right:15px;
+        right:0px;
         top:0px;
         text-align:right;
         cursor: pointer;
         background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 66%);
+        @include desktop {
+            right:15px;
+        }
     }
 
     &-left {
         position: absolute;
         display:block;
-    
+        z-index: 100;
         width: 45px;
         height: 30px;
-        left: 15px;
+        left: 0px;
         top:0px;
         text-align:left;
         cursor: pointer;
         background: linear-gradient(-90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 66%);
+        @include desktop {
+            left:15px;
+        }
     }
+}
+.dot {
+    height: 3px;
+    width: 3px;
+    background-color: map-get($color, link);
+    border-radius: 50%;
+    margin-right:2px;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .ico {
@@ -718,6 +728,11 @@ a {
             border-top: 5px solid transparent;
             border-right: 8px solid map-get($color, menu-item);
             border-bottom: 5px solid transparent;
+            &:hover {
+                border-top: 5px solid transparent;
+                border-right: 8px solid map-get($color, menu-item-hover);
+                border-bottom: 5px solid transparent;
+            }
         }
         &-right {
             position: absolute;
@@ -735,41 +750,45 @@ a {
 .link-to-pdf:hover,
 .link-to-html:hover,
 .link-to-github:hover {
- position: relative;
- -webkit-box-shadow: 0 0 0 1px #1a4b86;
-         box-shadow: 0 0 0 1px #1a4b86;
- z-index: 0; }
+    position: relative;
+    -webkit-box-shadow: 0 0 0 1px #1a4b86;
+            box-shadow: 0 0 0 1px #1a4b86;
+    z-index: 0;
+}
 
 .link-to-pdf:hover::before,
 .link-to-html:hover::before,
 .link-to-github:hover::before{
- display: block;
- height: 10px;
- content: “HTML”;
- font-size: 8px;
- line-height: 10px;
- font-family: roboto;
- color: white;
- background-color: #1a4b86;
- border-left: 4px solid #1a4b86;
- border-right: 4px solid #1a4b86;
+    display: block;
+    height: 10px;
+    content: “HTML”;
+    font-size: 8px;
+    line-height: 10px;
+    font-family: roboto;
+    color: white;
+    background-color: #1a4b86;
+    border-left: 4px solid #1a4b86;
+    border-right: 4px solid #1a4b86;
 
- position: absolute;
- top: -10px;
- left: -1px;
- z-index: 10; }
+    position: absolute;
+    top: -10px;
+    left: -1px;
+    z-index: 10; 
+}
 
- .link-to-github:hover::before {
+.link-to-github:hover::before {
     content: “GITHUB”;
 }
 
 .link-to-pdf:hover::before {
  content: “PDF”; }
 
- .anchor-link-active {
+ .anchor-link-active > a {
     color: map-get($color, menu-item-active);
+    border-bottom: 1px dotted map-get($color, menu-item-active) !important;
     &:hover {
         color: map-get($color, menu-item-active);
+        border-bottom: 1px dotted map-get($color, menu-item-active);
     }
  }
 

@@ -7,7 +7,7 @@
 <div class="main-content">
 
 
-        <div class="container container-wrapped dvdt-card-partner mt-lg-5">
+        <div class="container container-wrapped dvdt-card-partner mt-5">
             <div id="amazon"></div>
             <div class="dvdt-card-logos">
                 <a href="http://www.amazon.com">
@@ -174,27 +174,6 @@
         </div>
 
         <div class="container container-wrapped dvdt-card-partner">
-            <div id="university_of_toronto"></div>
-            <div class="dvdt-card-title"></div>
-            <div class="dvdt-card-logos">
-                <a href="http://www.cs.toronto.edu/ecosystem/index.html">
-                   <img class="dvdt-card-logos-md" src="_resources/partners/logo-university-of-toronto.png" />
-                </a>
-            </div>
-            <div class="dvdt-card-desc">
-                <p>We collaborate with the <a href="http://www.cs.toronto.edu/ecosystem/index.html">EcoSystem Lab</a> 
-                   from the University of Toronto 
-                   led by <a href="http://www.cs.toronto.edu/~pekhimenko/">Professor Gennady Pekhimenko</a>
-                   to develop portable, customizable and reusable AI benchmarks 
-                   based on the open-source <a href="http://tbd-suite.ai">TBD suite</a> 
-                   and the <a href="https://github.com/ctuning/ck-tbd">Collective Knowledge Workflow framework</a>.
-                   The release is expected at the end of 2018.</p>
-
-            </div>
-        </div>
-
-
-        <div class="container container-wrapped dvdt-card-partner">
             <div id="rpi"></div>
             <div class="dvdt-card-title"></div>
             <div class="dvdt-card-logos">
@@ -248,6 +227,26 @@
                 </a>
             </div>
             <div class="dvdt-card-links"></div>
+        </div>
+
+        <div class="container container-wrapped dvdt-card-partner">
+            <div id="university_of_toronto"></div>
+            <div class="dvdt-card-title"></div>
+            <div class="dvdt-card-logos">
+                <a href="http://www.cs.toronto.edu/ecosystem/index.html">
+                   <img class="dvdt-card-logos-md" src="_resources/partners/logo-university-of-toronto.png" />
+                </a>
+            </div>
+            <div class="dvdt-card-desc">
+                <p>We collaborate with the <a href="http://www.cs.toronto.edu/ecosystem/index.html">EcoSystem Lab</a> 
+                   from the University of Toronto 
+                   led by <a href="http://www.cs.toronto.edu/~pekhimenko/">Professor Gennady Pekhimenko</a>
+                   to develop portable, customizable and reusable AI benchmarks 
+                   based on the open-source <a href="http://tbd-suite.ai">TBD suite</a> 
+                   and the <a href="https://github.com/ctuning/ck-tbd">Collective Knowledge Workflow framework</a>.
+                   The release is expected at the end of 2018.</p>
+
+            </div>
         </div>
 
         <div class="container container-wrapped dvdt-card-partner">
@@ -476,28 +475,61 @@
 
 <script>
     
-    var waypoints = [];
+var waypoints = [];
 
-    Array.from(document.getElementsByClassName('dvdt-card-partner')).forEach( anchor => {
+Array.from(document.getElementsByClassName('dvdt-card-partner')).forEach( anchor => {
 
-        var anchorId = anchor.children[0].getAttribute('id');
+    var anchorId = anchor.children[0].getAttribute('id');
 
-        waypoints[anchorId] = new Waypoint({
-            element: document.getElementById(anchorId),
-            handler: function() {
-                console.log(document.getElementsByClassName('anchor-link-active'));
-                if (document.getElementsByClassName('anchor-link-active')) document.getElementsByClassName('anchor-link-active').item(0).classList.remove('anchor-link-active');
-                if (document.getElementById('link-' + anchorId)) document.getElementById('link-' + anchorId).classList.add('anchor-link-active')
-            },
-            continuous: false,
-            offset:0
-        });
-        console.log(anchorId);
-    })
+    waypoints[anchorId] = new Waypoint({
+        element: document.getElementById(anchorId),
+        handler: function() {
+            if (document.getElementsByClassName('anchor-link-active')) document.getElementsByClassName('anchor-link-active').item(0).classList.remove('anchor-link-active');
+            if (document.getElementById('link-' + anchorId)) document.getElementById('link-' + anchorId).classList.add('anchor-link-active')
+        },
+        continuous: false,
+        offset: 0
+    });
+})
 
-    function anchorHighlight(linkId) {
-            document.getElementById(linkId).classList.add("anchor-link-active")
-    };
+function anchorHighlight(linkId) {
+    document.getElementById(linkId).childNodes.classList.add('anchor-link-active')
+};
+
+var menu = $('#partners-hor-scroll');
+var scrollSize = $('#partners-hor-scroll').get(0);
+var scrollMax = scrollSize.scrollWidth - scrollSize.clientWidth;
+var menuPosition = 0;
+
+function arrowController() {
+    
+    if ( menuPosition == 0 ) {
+        $('#partners-arrow-left').hide();
+    } else if (menuPosition >= scrollMax ) {
+        $('#partners-arrow-right').hide();
+    } else {
+        $('.submenu-arrow').show();
+    }    
+}
+
+$('#partners-arrow-right').click(function () {
+    menuPosition += 320;
+    menu.animate({ scrollLeft: menuPosition }, 200, arrowController());
+});
+
+$('#partners-arrow-left').click(function () {
+    menuPosition -= 320;
+    menu.animate({ scrollLeft: menuPosition }, 200, arrowController());
+});
+
+arrowController();
+
+window.addEventListener('resize', function() {
+    menu = $('#partners-hor-scroll');
+    scrollSize = $('#partners-hor-scroll').get(0);
+    scrollMax = scrollSize.scrollWidth - scrollSize.clientWidth;
+    arrowController();
+});
 
 </script>
 
