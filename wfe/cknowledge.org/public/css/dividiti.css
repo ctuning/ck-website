@@ -134,9 +134,19 @@ a {
     .w-double {
       width: 66%; } }
 
+:target {
+  display: block;
+  position: relative;
+  padding-top: 144px;
+  margin-top: -144px;
+  visibility: hidden; }
+
 .dvdt-card-partner {
   margin-bottom: 48px;
   width: 100%; }
+  .dvdt-card-partner > div:first-child {
+    position: relative;
+    left: 0; }
 
 .dvdt-card-logos {
   display: -webkit-box;
@@ -349,21 +359,26 @@ a {
       -webkit-overflow-scrolling: touch; }
       .navbar-nav-scroll ul li {
         font-size: 13px;
-        padding-bottom: 30px;
-        margin-right: 24px; }
+        padding-bottom: 30px; }
 
 .subnav {
   margin: 8px auto 0 auto; }
   @media (min-width: 1024px) {
     .subnav {
       padding: 0 15px; } }
-  .subnav ul li a {
-    -webkit-text-decoration: underline dotted;
-    text-decoration: underline dotted; }
-  .subnav ul li:first-child {
-    margin-left: -1px; }
-  .subnav:first-child {
-    margin-left: 2rem; }
+  .subnav > ul {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start; }
+    .subnav > ul > li > a {
+      text-decoration: none;
+      vertical-align: top;
+      border-bottom: 1px dotted #6c7072;
+      margin-right: 24px; }
+      .subnav > ul > li > a:hover {
+        text-decoration: none;
+        color: #ef4e4e;
+        border-bottom: 1px dotted #ef4e4e; }
 
 .navbar-expand-lg {
   -ms-flex-wrap: wrap;
@@ -559,48 +574,46 @@ a {
 .side-nad {
   position: fixed; }
 
-#consortium,
-#gm,
-#tomtom,
-#acm,
-#rpi,
-#arm,
-#eu,
-#glasgow,
-#ens,
-#hartree,
-#xored,
-#cambridge,
-#imperial,
-#ctuning,
-#dividiti {
-  position: relative;
-  left: 0;
-  top: -144px; }
-
 #partners-arrow-right {
   position: absolute;
   display: block;
+  z-index: 100;
   width: 45px;
   height: 30px;
-  right: 15px;
+  right: 0px;
   top: 0px;
   text-align: right;
   cursor: pointer;
   background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), color-stop(66%, white));
   background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, white 66%); }
+  @media (min-width: 1024px) {
+    #partners-arrow-right {
+      right: 15px; } }
 
 #partners-arrow-left {
   position: absolute;
   display: block;
+  z-index: 100;
   width: 45px;
   height: 30px;
-  left: 15px;
+  left: 0px;
   top: 0px;
   text-align: left;
   cursor: pointer;
   background: -webkit-gradient(linear, right top, left top, from(rgba(255, 255, 255, 0)), color-stop(66%, white));
   background: linear-gradient(-90deg, rgba(255, 255, 255, 0) 0%, white 66%); }
+  @media (min-width: 1024px) {
+    #partners-arrow-left {
+      left: 15px; } }
+
+.dot {
+  height: 3px;
+  width: 3px;
+  background-color: #1f5a9f;
+  border-radius: 50%;
+  margin-right: 2px;
+  display: inline-block;
+  vertical-align: middle; }
 
 .ico-arrow-left {
   margin: 8px 0;
@@ -609,6 +622,10 @@ a {
   border-top: 5px solid transparent;
   border-right: 8px solid #6c7072;
   border-bottom: 5px solid transparent; }
+  .ico-arrow-left:hover {
+    border-top: 5px solid transparent;
+    border-right: 8px solid;
+    border-bottom: 5px solid transparent; }
 
 .ico-arrow-right {
   position: absolute;
@@ -652,10 +669,12 @@ a {
 .link-to-pdf:hover::before {
   content: “PDF”; }
 
-.anchor-link-active {
-  color: #ef4e4e; }
-  .anchor-link-active:hover {
-    color: #ef4e4e; }
+.anchor-link-active > a {
+  color: #ef4e4e;
+  border-bottom: 1px dotted #ef4e4e !important; }
+  .anchor-link-active > a:hover {
+    color: #ef4e4e;
+    border-bottom: 1px dotted #ef4e4e; }
 
 #ck-repo-widget-header {
   margin-left: auto;
