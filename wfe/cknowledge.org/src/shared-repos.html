@@ -35,7 +35,8 @@ Most of them are shared with the permissive 3-clause BSD license or CC-BY to acc
    }
 }
 </pre>
-<p>Feel free to add description of your own CK repository in <a href="https://github.com/ctuning/ck-env/blob/master/cfg/list-of-repos/.cm/meta.json">this JSON file</a>.
+<p>Feel free to add description of your own CK repository to <a href="https://github.com/ctuning/ck-env/blob/master/cfg/list-of-repos/.cm/meta.json">this JSON file</a> - just open a PR on this <a href="https://github.com/ctuning/ck-env">GitHub repo</a>.
+You can obtain the main key for your entry (DATA UID) as well as data_uoa (DATA ALIAS) using this command: ck info repo:{my repo name}. You can then obtain and add "dict" using this command: ck load repo:{my repo name} --min
 <p>See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
  <a href="https://github.com/ctuning/ck/wiki#contributing">"how to contribute" guide</a>
  and <a href="https://github.com/ctuning/ck/wiki#user-content-reusable-ck-components">already shared reusable components</a> for further details.
@@ -1107,6 +1108,27 @@ ck pull repo:ck-rpi-optimization-results
   <td nowrap valign="top"><a name="ck-scc18">57</b></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-scc18">ck-scc18</a></b><br><ul>( <a href="https://github.com/ctuning/ck-scc18#readme">README</a> ; <a href="https://github.com/ctuning/ck-scc18/tree/master/.ckr.json">JSON meta</a> )</td>
   <td valign="top"><center>
+    
+  </center></td>
+  <td valign="top">
+<p>
+How to get:
+<pre>
+ck pull repo:ck-scc18
+</pre>
+<p>Dependencies on other repositories:
+<ul>
+<li><a href="#ck-artifact-evaluation">ck-artifact-evaluation</a>
+<li><a href="#ck-autotuning">ck-autotuning</a>
+<li><a href="#ck-dissemination-modules">ck-dissemination-modules</a>
+<li><a href="#ck-docker">ck-docker</a>
+</ul>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="ck-scc18">58</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-scc18">ck-scc18</a></b><br><ul>( <a href="https://github.com/ctuning/ck-scc18#readme">README</a> ; <a href="https://github.com/ctuning/ck-scc18/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
     reproducible&nbsp;paper
 -&nbsp;passed&nbsp;<a href="http://cTuning.org/ae">Artifact&nbsp;Evaluation</a>:
 <p><center><img src="https://www.acm.org/binaries/content/gallery/acm/publications/replication-badges/artifacts_evaluated_reusable_dl.jpg" width="64"></center>
@@ -1121,7 +1143,7 @@ ck pull repo:ck-scc18
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-spack">58</b></td>
+  <td nowrap valign="top"><a name="ck-spack">59</b></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-spack">ck-spack</a></b><br><ul>( <a href="https://github.com/ctuning/ck-spack#readme">README</a> ; <a href="https://github.com/ctuning/ck-spack/tree/master/.ckr.json">JSON meta</a> )</td>
   <td valign="top"><center>
     
@@ -1139,7 +1161,7 @@ ck pull repo:ck-spack
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-tbd-suite">59</b></td>
+  <td nowrap valign="top"><a name="ck-tbd-suite">60</b></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-tbd-suite">ck-tbd-suite</a></b><br><ul>( <a href="https://github.com/ctuning/ck-tbd-suite#readme">README</a> ; <a href="https://github.com/ctuning/ck-tbd-suite/tree/master/.ckr.json">JSON meta</a> )</td>
   <td valign="top"><center>
     programs
@@ -1161,7 +1183,7 @@ ck pull repo:ck-tbd-suite
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-tensorflow">60</b></td>
+  <td nowrap valign="top"><a name="ck-tensorflow">61</b></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-tensorflow">ck-tensorflow</a></b><br><ul>( <a href="https://github.com/ctuning/ck-tensorflow#readme">README</a> ; <a href="https://github.com/ctuning/ck-tensorflow/tree/master/.ckr.json">JSON meta</a> )</td>
   <td valign="top"><center>
     programs
@@ -1180,7 +1202,7 @@ ck pull repo:ck-tensorflow
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-tensorrt">61</b></td>
+  <td nowrap valign="top"><a name="ck-tensorrt">62</b></td>
   <td nowrap valign="top"><b><a href="http://github.com/ctuning/ck-tensorrt.git">ck-tensorrt</a></b><br><ul>( <a href="http://github.com/ctuning/ck-tensorrt.git#readme">README</a> ; <a href="http://github.com/ctuning/ck-tensorrt/tree/master/.ckr.json">JSON meta</a> )</td>
   <td valign="top"><center>
     
@@ -1198,7 +1220,7 @@ ck pull repo:ck-tensorrt
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-tensorrt">62</b></td>
+  <td nowrap valign="top"><a name="ck-tensorrt">63</b></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-tensorrt.git">ck-tensorrt</a></b><br><ul>( <a href="https://github.com/ctuning/ck-tensorrt.git#readme">README</a> ; <a href="https://github.com/ctuning/ck-tensorrt/tree/master/.ckr.json">JSON meta</a> )</td>
   <td valign="top"><center>
     programs
@@ -1216,7 +1238,7 @@ ck pull repo --url=git@github.com:ctuning/ck-tensorrt.git
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-tiny-dnn">63</b></td>
+  <td nowrap valign="top"><a name="ck-tiny-dnn">64</b></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-tiny-dnn">ck-tiny-dnn</a></b><br><ul>( <a href="https://github.com/ctuning/ck-tiny-dnn#readme">README</a> ; <a href="https://github.com/ctuning/ck-tiny-dnn/tree/master/.ckr.json">JSON meta</a> )</td>
   <td valign="top"><center>
     
@@ -1235,7 +1257,7 @@ ck pull repo:ck-tiny-dnn
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-tiny-dnn">64</b></td>
+  <td nowrap valign="top"><a name="ck-tiny-dnn">65</b></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-tiny-dnn">ck-tiny-dnn</a></b><br><ul>( <a href="https://github.com/ctuning/ck-tiny-dnn#readme">README</a> ; <a href="https://github.com/ctuning/ck-tiny-dnn/tree/master/.ckr.json">JSON meta</a> )</td>
   <td valign="top"><center>
     programs
@@ -1254,7 +1276,7 @@ ck pull repo:ck-tiny-dnn
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-tvm">65</b></td>
+  <td nowrap valign="top"><a name="ck-tvm">66</b></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-tvm">ck-tvm</a></b><br><ul>( <a href="https://github.com/ctuning/ck-tvm#readme">README</a> ; <a href="https://github.com/ctuning/ck-tvm/tree/master/.ckr.json">JSON meta</a> )</td>
   <td valign="top"><center>
     programs
@@ -1274,7 +1296,7 @@ ck pull repo:ck-tvm
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-wa">66</b></td>
+  <td nowrap valign="top"><a name="ck-wa">67</b></td>
   <td nowrap valign="top"><b><a href="https://github.com/dividiti/ck-wa">ck-wa</a></b><br><ul>( <a href="https://github.com/dividiti/ck-wa#readme">README</a> ; <a href="https://github.com/dividiti/ck-wa/tree/master/.ckr.json">JSON meta</a> )</td>
   <td valign="top"><center>
     programs
@@ -1295,7 +1317,7 @@ ck pull repo --url=https://github.com/dividiti/ck-wa
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-wa-extra">67</b></td>
+  <td nowrap valign="top"><a name="ck-wa-extra">68</b></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-wa-extra">ck-wa-extra</a></b><br><ul>( <a href="https://github.com/ctuning/ck-wa-extra#readme">README</a> ; <a href="https://github.com/ctuning/ck-wa-extra/tree/master/.ckr.json">JSON meta</a> )</td>
   <td valign="top"><center>
     
@@ -1309,7 +1331,7 @@ ck pull repo:ck-wa-extra
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-wa-workloads">68</b></td>
+  <td nowrap valign="top"><a name="ck-wa-workloads">69</b></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-wa-workloads">ck-wa-workloads</a></b><br><ul>( <a href="https://github.com/ctuning/ck-wa-workloads#readme">README</a> ; <a href="https://github.com/ctuning/ck-wa-workloads/tree/master/.ckr.json">JSON meta</a> )</td>
   <td valign="top"><center>
     
@@ -1319,20 +1341,6 @@ ck pull repo:ck-wa-extra
 How to get:
 <pre>
 ck pull repo:ck-wa-workloads
-</pre>
-</td>
- </tr>
- <tr>
-  <td nowrap valign="top"><a name="ck-web">69</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-web.git">ck-web</a></b><br><ul>( <a href="https://github.com/ctuning/ck-web.git#readme">README</a> ; <a href="https://github.com/ctuning/ck-web/tree/master/.ckr.json">JSON meta</a> )</td>
-  <td valign="top"><center>
-    
-  </center></td>
-  <td valign="top">
-<p>
-How to get:
-<pre>
-ck pull repo:ck-web
 </pre>
 </td>
  </tr>
@@ -1351,7 +1359,21 @@ ck pull repo:ck-web
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-web-adapt-workshop">71</b></td>
+  <td nowrap valign="top"><a name="ck-web">71</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-web.git">ck-web</a></b><br><ul>( <a href="https://github.com/ctuning/ck-web.git#readme">README</a> ; <a href="https://github.com/ctuning/ck-web/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    
+  </center></td>
+  <td valign="top">
+<p>
+How to get:
+<pre>
+ck pull repo:ck-web
+</pre>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="ck-web-adapt-workshop">72</b></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-web-adapt-workshop">ck-web-adapt-workshop</a></b><br><ul>( <a href="https://github.com/ctuning/ck-web-adapt-workshop#readme">README</a> ; <a href="https://github.com/ctuning/ck-web-adapt-workshop/tree/master/.ckr.json">JSON meta</a> )</td>
   <td valign="top"><center>
     website generator
@@ -1369,7 +1391,7 @@ ck pull repo:ck-web-adapt-workshop
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ck-website">72</b></td>
+  <td nowrap valign="top"><a name="ck-website">73</b></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-website">ck-website</a></b><br><ul>( <a href="https://github.com/ctuning/ck-website#readme">README</a> ; <a href="https://github.com/ctuning/ck-website/tree/master/.ckr.json">JSON meta</a> )</td>
   <td valign="top"><center>
     cKnowledge.org website generator
@@ -1388,7 +1410,7 @@ ck pull repo:ck-website
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="ctuning-datasets-min">73</b></td>
+  <td nowrap valign="top"><a name="ctuning-datasets-min">74</b></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ctuning-datasets-min">ctuning-datasets-min</a></b><br><ul>( <a href="https://github.com/ctuning/ctuning-datasets-min#readme">README</a> ; <a href="https://github.com/ctuning/ctuning-datasets-min/tree/master/.ckr.json">JSON meta</a> )</td>
   <td valign="top"><center>
     
@@ -1399,25 +1421,6 @@ How to get:
 <pre>
 ck pull repo:ctuning-datasets-min
 </pre>
-</td>
- </tr>
- <tr>
-  <td nowrap valign="top"><a name="ctuning-programs">74</b></td>
-  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ctuning-programs">ctuning-programs</a></b><br><ul>( <a href="https://github.com/ctuning/ctuning-programs#readme">README</a> ; <a href="https://github.com/ctuning/ctuning-programs/tree/master/.ckr.json">JSON meta</a> )</td>
-  <td valign="top"><center>
-    
-  </center></td>
-  <td valign="top">
-<p>
-How to get:
-<pre>
-ck pull repo:ctuning-programs
-</pre>
-<p>Dependencies on other repositories:
-<ul>
-<li><a href="#ck-autotuning">ck-autotuning</a>
-<li><a href="#ctuning-datasets-min">ctuning-datasets-min</a>
-</ul>
 </td>
  </tr>
  <tr>
@@ -1443,6 +1446,25 @@ ck pull repo:ctuning-programs
   <td nowrap valign="top"><a name="ctuning-programs">76</b></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ctuning-programs">ctuning-programs</a></b><br><ul>( <a href="https://github.com/ctuning/ctuning-programs#readme">README</a> ; <a href="https://github.com/ctuning/ctuning-programs/tree/master/.ckr.json">JSON meta</a> )</td>
   <td valign="top"><center>
+    
+  </center></td>
+  <td valign="top">
+<p>
+How to get:
+<pre>
+ck pull repo:ctuning-programs
+</pre>
+<p>Dependencies on other repositories:
+<ul>
+<li><a href="#ck-autotuning">ck-autotuning</a>
+<li><a href="#ctuning-datasets-min">ctuning-datasets-min</a>
+</ul>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="ctuning-programs">77</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ctuning-programs">ctuning-programs</a></b><br><ul>( <a href="https://github.com/ctuning/ctuning-programs#readme">README</a> ; <a href="https://github.com/ctuning/ctuning-programs/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
     programs
   </center></td>
   <td valign="top">Evolving set of diverse and portable programs shared by the community in the unified CK format to participate in collaborative benchmarking, optimization and co-design while gradually substituting rigid, non-portable and outdated and non representative benchmarks (see the <a href="http://cKnowledge.org/rpi-crowd-tuning">real use case</a>).
@@ -1459,7 +1481,7 @@ ck pull repo:ctuning-programs
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="default">77</b></td>
+  <td nowrap valign="top"><a name="default">78</b></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck/tree/master/ck/repo">default</a></b><br><ul>( <a href="https://github.com/ctuning/ck/tree/master/ck/repo#readme">README</a> ; <a href="https://github.com/ctuning/ck/tree/master/ck/repo/.ckr.json">JSON meta</a> )</td>
   <td valign="top"><center>
     
@@ -1468,7 +1490,7 @@ ck pull repo:ctuning-programs
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="external-kdatasets">78</b></td>
+  <td nowrap valign="top"><a name="external-kdatasets">79</b></td>
   <td nowrap valign="top"><b>external-kdatasets</b></td>
   <td valign="top"><center>
     
@@ -1482,7 +1504,7 @@ How to get:
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="external-shared-via-bittorent">79</b></td>
+  <td nowrap valign="top"><a name="external-shared-via-bittorent">80</b></td>
   <td nowrap valign="top"><b>external-shared-via-bittorent</b></td>
   <td valign="top"><center>
     
@@ -1496,7 +1518,7 @@ How to get:
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="gemmbench">80</b></td>
+  <td nowrap valign="top"><a name="gemmbench">81</b></td>
   <td nowrap valign="top"><b><a href="https://github.com/dividiti/gemmbench.git">gemmbench</a></b><br><ul>( <a href="https://github.com/dividiti/gemmbench.git#readme">README</a> ; <a href="https://github.com/dividiti/gemmbench/tree/master/.ckr.json">JSON meta</a> )</td>
   <td valign="top"><center>
     programs
@@ -1516,7 +1538,7 @@ ck pull repo --url=git@github.com:dividiti/gemmbench.git
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="reproduce-adapt16">81</b></td>
+  <td nowrap valign="top"><a name="reproduce-adapt16">82</b></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/reproduce-adapt16">reproduce-adapt16</a></b><br><ul>( <a href="https://github.com/ctuning/reproduce-adapt16#readme">README</a> ; <a href="https://github.com/ctuning/reproduce-adapt16/tree/master/.ckr.json">JSON meta</a> )</td>
   <td valign="top"><center>
     reproducible&nbsp;paper
@@ -1531,7 +1553,7 @@ ck pull repo:reproduce-adapt16
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="reproduce-anon-paper">82</b></td>
+  <td nowrap valign="top"><a name="reproduce-anon-paper">83</b></td>
   <td nowrap valign="top"><b><a href="https://github.com/paperasub/reproduce-anon-paper.git">reproduce-anon-paper</a></b><br><ul>( <a href="https://github.com/paperasub/reproduce-anon-paper.git#readme">README</a> ; <a href="https://github.com/paperasub/reproduce-anon-paper/tree/master/.ckr.json">JSON meta</a> )</td>
   <td valign="top"><center>
     
@@ -1545,7 +1567,7 @@ ck pull repo --url=https://github.com/paperasub/reproduce-anon-paper.git
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="reproduce-carp-project">83</b></td>
+  <td nowrap valign="top"><a name="reproduce-carp-project">84</b></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/reproduce-carp-project">reproduce-carp-project</a></b><br><ul>( <a href="https://github.com/ctuning/reproduce-carp-project#readme">README</a> ; <a href="https://github.com/ctuning/reproduce-carp-project/tree/master/.ckr.json">JSON meta</a> )</td>
   <td valign="top"><center>
     
@@ -1563,7 +1585,7 @@ ck pull repo:reproduce-carp-project
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="reproduce-carp-project">84</b></td>
+  <td nowrap valign="top"><a name="reproduce-carp-project">85</b></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/reproduce-carp-project">reproduce-carp-project</a></b><br><ul>( <a href="https://github.com/ctuning/reproduce-carp-project#readme">README</a> ; <a href="https://github.com/ctuning/reproduce-carp-project/tree/master/.ckr.json">JSON meta</a> )</td>
   <td valign="top"><center>
     programs
@@ -1581,7 +1603,7 @@ ck pull repo:reproduce-carp-project
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="reproduce-cgo2017-paper">85</b></td>
+  <td nowrap valign="top"><a name="reproduce-cgo2017-paper">86</b></td>
   <td nowrap valign="top"><b><a href="https://github.com/SamAinsworth/reproduce-cgo2017-paper">reproduce-cgo2017-paper</a></b><br><ul>( <a href="https://github.com/SamAinsworth/reproduce-cgo2017-paper#readme">README</a> ; <a href="https://github.com/SamAinsworth/reproduce-cgo2017-paper/tree/master/.ckr.json">JSON meta</a> )</td>
   <td valign="top"><center>
     
@@ -1600,7 +1622,7 @@ ck pull repo --url=https://github.com/SamAinsworth/reproduce-cgo2017-paper
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="reproduce-cgo2017-paper">86</b></td>
+  <td nowrap valign="top"><a name="reproduce-cgo2017-paper">87</b></td>
   <td nowrap valign="top"><b><a href="https://github.com/SamAinsworth/reproduce-cgo2017-paper">reproduce-cgo2017-paper</a></b><br><ul>( <a href="https://github.com/SamAinsworth/reproduce-cgo2017-paper#readme">README</a> ; <a href="https://github.com/SamAinsworth/reproduce-cgo2017-paper/tree/master/.ckr.json">JSON meta</a> )</td>
   <td valign="top"><center>
     reproducible&nbsp;paper
@@ -1622,7 +1644,7 @@ ck pull repo --url=https://github.com/SamAinsworth/reproduce-cgo2017-paper
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="reproduce-ck-paper">87</b></td>
+  <td nowrap valign="top"><a name="reproduce-ck-paper">88</b></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/reproduce-ck-paper">reproduce-ck-paper</a></b><br><ul>( <a href="https://github.com/ctuning/reproduce-ck-paper#readme">README</a> ; <a href="https://github.com/ctuning/reproduce-ck-paper/tree/master/.ckr.json">JSON meta</a> )</td>
   <td valign="top"><center>
     
@@ -1641,7 +1663,7 @@ ck pull repo:reproduce-ck-paper
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="reproduce-ck-paper">88</b></td>
+  <td nowrap valign="top"><a name="reproduce-ck-paper">89</b></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/reproduce-ck-paper">reproduce-ck-paper</a></b><br><ul>( <a href="https://github.com/ctuning/reproduce-ck-paper#readme">README</a> ; <a href="https://github.com/ctuning/reproduce-ck-paper/tree/master/.ckr.json">JSON meta</a> )</td>
   <td valign="top"><center>
     reproducible&nbsp;paper
@@ -1661,7 +1683,7 @@ ck pull repo:reproduce-ck-paper
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="reproduce-ck-paper-large-experiments">89</b></td>
+  <td nowrap valign="top"><a name="reproduce-ck-paper-large-experiments">90</b></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/reproduce-ck-paper-large-experiments">reproduce-ck-paper-large-experiments</a></b><br><ul>( <a href="https://github.com/ctuning/reproduce-ck-paper-large-experiments#readme">README</a> ; <a href="https://github.com/ctuning/reproduce-ck-paper-large-experiments/tree/master/.ckr.json">JSON meta</a> )</td>
   <td valign="top"><center>
     
@@ -1679,7 +1701,7 @@ ck pull repo:reproduce-ck-paper-large-experiments
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="reproduce-fgg-2010">90</b></td>
+  <td nowrap valign="top"><a name="reproduce-fgg-2010">91</b></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/reproduce-fgg-2010">reproduce-fgg-2010</a></b><br><ul>( <a href="https://github.com/ctuning/reproduce-fgg-2010#readme">README</a> ; <a href="https://github.com/ctuning/reproduce-fgg-2010/tree/master/.ckr.json">JSON meta</a> )</td>
   <td valign="top"><center>
     
@@ -1697,7 +1719,7 @@ ck pull repo:reproduce-fgg-2010
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="reproduce-fgg-2010">91</b></td>
+  <td nowrap valign="top"><a name="reproduce-fgg-2010">92</b></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/reproduce-fgg-2010">reproduce-fgg-2010</a></b><br><ul>( <a href="https://github.com/ctuning/reproduce-fgg-2010#readme">README</a> ; <a href="https://github.com/ctuning/reproduce-fgg-2010/tree/master/.ckr.json">JSON meta</a> )</td>
   <td valign="top"><center>
     
@@ -1715,7 +1737,7 @@ ck pull repo:reproduce-fgg-2010
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="reproduce-milepost-project">92</b></td>
+  <td nowrap valign="top"><a name="reproduce-milepost-project">93</b></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/reproduce-milepost-project">reproduce-milepost-project</a></b><br><ul>( <a href="https://github.com/ctuning/reproduce-milepost-project#readme">README</a> ; <a href="https://github.com/ctuning/reproduce-milepost-project/tree/master/.ckr.json">JSON meta</a> )</td>
   <td valign="top"><center>
     reproducible&nbsp;paper
@@ -1735,7 +1757,26 @@ ck pull repo:reproduce-milepost-project
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="reproduce-pamela-project">93</b></td>
+  <td nowrap valign="top"><a name="reproduce-pamela-project">94</b></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/reproduce-pamela-project">reproduce-pamela-project</a></b><br><ul>( <a href="https://github.com/ctuning/reproduce-pamela-project#readme">README</a> ; <a href="https://github.com/ctuning/reproduce-pamela-project/tree/master/.ckr.json">JSON meta</a> )</td>
+  <td valign="top"><center>
+    
+  </center></td>
+  <td valign="top">
+<p>
+How to get:
+<pre>
+ck pull repo:reproduce-pamela-project
+</pre>
+<p>Dependencies on other repositories:
+<ul>
+<li><a href="#ck-autotuning">ck-autotuning</a>
+<li><a href="#ck-math">ck-math</a>
+</ul>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="reproduce-pamela-project">95</b></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/reproduce-pamela-project">reproduce-pamela-project</a></b><br><ul>( <a href="https://github.com/ctuning/reproduce-pamela-project#readme">README</a> ; <a href="https://github.com/ctuning/reproduce-pamela-project/tree/master/.ckr.json">JSON meta</a> )</td>
   <td valign="top"><center>
     
@@ -1754,7 +1795,7 @@ ck pull repo:reproduce-pamela-project
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="reproduce-pamela-project-medium-dataset">94</b></td>
+  <td nowrap valign="top"><a name="reproduce-pamela-project-medium-dataset">96</b></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/reproduce-pamela-project-small-dataset">reproduce-pamela-project-medium-dataset</a></b><br><ul>( <a href="https://github.com/ctuning/reproduce-pamela-project-small-dataset#readme">README</a> ; <a href="https://github.com/ctuning/reproduce-pamela-project-small-dataset/tree/master/.ckr.json">JSON meta</a> )</td>
   <td valign="top"><center>
     programs
