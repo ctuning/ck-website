@@ -10,6 +10,8 @@
 
 
 
+<h2>Please check our new <a href="http://ReuseResearch.com/c.php?c=program">beta browser</a> for CK components!</h2>
+<br>
 You can install and reuse CK modules as follows:
 <pre>
  ck pull repo:{Repo UOA - see below}
@@ -230,7 +232,77 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="crowdnode">21</b></td>
+  <td nowrap valign="top"><a name="component">21</b></td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/reuse-research/tree/master/module/component/module.py">component</a></b> <i>(<a href="https://github.com/ctuning/reuse-research/tree/master/module/component/.cm/meta.json">CK meta</a>)</i></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/reuse-research">reuse-research</a></b></td>
+  <td nowrap valign="top"></td>
+  <td valign="top">indexing reusable research components
+<ul>
+<li>"ck <i>get</i> component" - get index of components (&nbsp;<a href="https://github.com/ctuning/reuse-research/tree/master/module/component/module.py#L33">API</a>&nbsp;)<li>"ck <i>get_from_cmd</i> component" - get component from CMD (&nbsp;<a href="https://github.com/ctuning/reuse-research/tree/master/module/component/module.py#L630">API</a>&nbsp;)<li>"ck <i>index</i> component" - index components (&nbsp;<a href="https://github.com/ctuning/reuse-research/tree/master/module/component/module.py#L302">API</a>&nbsp;)</ul>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="component.article">22</b></td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/reuse-research/tree/master/module/component.article/module.py">component.article</a></b> <i>(<a href="https://github.com/ctuning/reuse-research/tree/master/module/component.article/.cm/meta.json">CK meta</a>)</i></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/reuse-research">reuse-research</a></b></td>
+  <td nowrap valign="top"></td>
+  <td valign="top">index of reproducible articles
+<ul>
+<li>"ck <i>add</i> component.article" - add new index manually (&nbsp;<a href="https://github.com/ctuning/reuse-research/tree/master/module/component.article/module.py#L326">API</a>&nbsp;)<li>"ck <i>add_index</i> component.article" - add index (&nbsp;<a href="https://github.com/ctuning/reuse-research/tree/master/module/component.article/module.py#L33">API</a>&nbsp;)<li>"ck <i>get</i> component.article" - find specific components (&nbsp;<a href="https://github.com/ctuning/reuse-research/tree/master/module/component.article/module.py#L294">API</a>&nbsp;)<li>"ck <i>html</i> component.article" - generate html (&nbsp;<a href="https://github.com/ctuning/reuse-research/tree/master/module/component.article/module.py#L93">API</a>&nbsp;)<li>"ck <i>index</i> component.article" - index components (&nbsp;<a href="https://github.com/ctuning/reuse-research/tree/master/module/component.article/module.py#L264">API</a>&nbsp;)</ul>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="component.module">23</b></td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/reuse-research/tree/master/module/component.module/module.py">component.module</a></b> <i>(<a href="https://github.com/ctuning/reuse-research/tree/master/module/component.module/.cm/meta.json">CK meta</a>)</i></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/reuse-research">reuse-research</a></b></td>
+  <td nowrap valign="top"></td>
+  <td valign="top">index of CK modules
+<ul>
+<li>"ck <i>add_index</i> component.module" - add index (&nbsp;<a href="https://github.com/ctuning/reuse-research/tree/master/module/component.module/module.py#L33">API</a>&nbsp;)<li>"ck <i>get</i> component.module" - find specific components (&nbsp;<a href="https://github.com/ctuning/reuse-research/tree/master/module/component.module/module.py#L212">API</a>&nbsp;)<li>"ck <i>html</i> component.module" - generate html (&nbsp;<a href="https://github.com/ctuning/reuse-research/tree/master/module/component.module/module.py#L93">API</a>&nbsp;)<li>"ck <i>index</i> component.module" - index components (&nbsp;<a href="https://github.com/ctuning/reuse-research/tree/master/module/component.module/module.py#L182">API</a>&nbsp;)</ul>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="component.package">24</b></td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/reuse-research/tree/master/module/component.package/module.py">component.package</a></b> <i>(<a href="https://github.com/ctuning/reuse-research/tree/master/module/component.package/.cm/meta.json">CK meta</a>)</i></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/reuse-research">reuse-research</a></b></td>
+  <td nowrap valign="top"></td>
+  <td valign="top">index of CK packages
+<ul>
+<li>"ck <i>add_index</i> component.package" - add index (&nbsp;<a href="https://github.com/ctuning/reuse-research/tree/master/module/component.package/module.py#L33">API</a>&nbsp;)<li>"ck <i>get</i> component.package" - find specific components (&nbsp;<a href="https://github.com/ctuning/reuse-research/tree/master/module/component.package/module.py#L265">API</a>&nbsp;)<li>"ck <i>html</i> component.package" - generate html (&nbsp;<a href="https://github.com/ctuning/reuse-research/tree/master/module/component.package/module.py#L129">API</a>&nbsp;)<li>"ck <i>index</i> component.package" - index components (&nbsp;<a href="https://github.com/ctuning/reuse-research/tree/master/module/component.package/module.py#L235">API</a>&nbsp;)</ul>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="component.program">25</b></td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/reuse-research/tree/master/module/component.program/module.py">component.program</a></b> <i>(<a href="https://github.com/ctuning/reuse-research/tree/master/module/component.program/.cm/meta.json">CK meta</a>)</i></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/reuse-research">reuse-research</a></b></td>
+  <td nowrap valign="top"></td>
+  <td valign="top">index of CK programs
+<ul>
+<li>"ck <i>add_index</i> component.program" - add index (&nbsp;<a href="https://github.com/ctuning/reuse-research/tree/master/module/component.program/module.py#L33">API</a>&nbsp;)<li>"ck <i>get</i> component.program" - find specific components (&nbsp;<a href="https://github.com/ctuning/reuse-research/tree/master/module/component.program/module.py#L247">API</a>&nbsp;)<li>"ck <i>html</i> component.program" - generate html (&nbsp;<a href="https://github.com/ctuning/reuse-research/tree/master/module/component.program/module.py#L123">API</a>&nbsp;)<li>"ck <i>index</i> component.program" - index components (&nbsp;<a href="https://github.com/ctuning/reuse-research/tree/master/module/component.program/module.py#L217">API</a>&nbsp;)</ul>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="component.repo">26</b></td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/reuse-research/tree/master/module/component.repo/module.py">component.repo</a></b> <i>(<a href="https://github.com/ctuning/reuse-research/tree/master/module/component.repo/.cm/meta.json">CK meta</a>)</i></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/reuse-research">reuse-research</a></b></td>
+  <td nowrap valign="top"></td>
+  <td valign="top">index of CK repositories
+<ul>
+<li>"ck <i>add_index</i> component.repo" - add index (&nbsp;<a href="https://github.com/ctuning/reuse-research/tree/master/module/component.repo/module.py#L33">API</a>&nbsp;)<li>"ck <i>get</i> component.repo" - find specific components (&nbsp;<a href="https://github.com/ctuning/reuse-research/tree/master/module/component.repo/module.py#L275">API</a>&nbsp;)<li>"ck <i>html</i> component.repo" - generate html (&nbsp;<a href="https://github.com/ctuning/reuse-research/tree/master/module/component.repo/module.py#L148">API</a>&nbsp;)<li>"ck <i>index</i> component.repo" - index components (&nbsp;<a href="https://github.com/ctuning/reuse-research/tree/master/module/component.repo/module.py#L245">API</a>&nbsp;)</ul>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="component.soft">27</b></td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/reuse-research/tree/master/module/component.soft/module.py">component.soft</a></b> <i>(<a href="https://github.com/ctuning/reuse-research/tree/master/module/component.soft/.cm/meta.json">CK meta</a>)</i></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/reuse-research">reuse-research</a></b></td>
+  <td nowrap valign="top"></td>
+  <td valign="top">index of CK soft detection plugins
+<ul>
+<li>"ck <i>add_index</i> component.soft" - add index (&nbsp;<a href="https://github.com/ctuning/reuse-research/tree/master/module/component.soft/module.py#L33">API</a>&nbsp;)<li>"ck <i>get</i> component.soft" - find specific components (&nbsp;<a href="https://github.com/ctuning/reuse-research/tree/master/module/component.soft/module.py#L248">API</a>&nbsp;)<li>"ck <i>html</i> component.soft" - generate html (&nbsp;<a href="https://github.com/ctuning/reuse-research/tree/master/module/component.soft/module.py#L123">API</a>&nbsp;)<li>"ck <i>index</i> component.soft" - index components (&nbsp;<a href="https://github.com/ctuning/reuse-research/tree/master/module/component.soft/module.py#L218">API</a>&nbsp;)</ul>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="crowdnode">28</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-env/tree/master/module/crowdnode/module.py">crowdnode</a></b> <i>(<a href="https://github.com/ctuning/ck-env/tree/master/module/crowdnode/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-env">ck-env</a></b></td>
   <td nowrap valign="top"></td>
@@ -240,7 +312,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="dashboard">22</b></td>
+  <td nowrap valign="top"><a name="dashboard">29</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-web/tree/master/module/dashboard/module.py">dashboard</a></b> <i>(<a href="https://github.com/ctuning/ck-web/tree/master/module/dashboard/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-web.git">ck-web</a></b></td>
   <td nowrap valign="top"></td>
@@ -250,7 +322,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="dataset">23</b></td>
+  <td nowrap valign="top"><a name="dataset">30</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-autotuning/tree/master/module/dataset/module.py">dataset</a></b> <i>(<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/dataset/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-autotuning">ck-autotuning</a></b></td>
   <td nowrap valign="top"></td>
@@ -260,7 +332,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="dataset.features">24</b></td>
+  <td nowrap valign="top"><a name="dataset.features">31</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-autotuning/tree/master/module/dataset.features/module.py">dataset.features</a></b> <i>(<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/dataset.features/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-autotuning">ck-autotuning</a></b></td>
   <td nowrap valign="top"></td>
@@ -270,7 +342,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="demo">25</b></td>
+  <td nowrap valign="top"><a name="demo">32</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck/tree/master/ck/repo/module/demo/module.py">demo</a></b> <i>(<a href="https://github.com/ctuning/ck/tree/master/ck/repo/module/demo/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck/tree/master/ck/repo">default</a></b></td>
   <td nowrap valign="top"></td>
@@ -278,7 +350,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="device">26</b></td>
+  <td nowrap valign="top"><a name="device">33</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-env/tree/master/module/device/module.py">device</a></b> <i>(<a href="https://github.com/ctuning/ck-env/tree/master/module/device/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-env">ck-env</a></b></td>
   <td nowrap valign="top"></td>
@@ -286,7 +358,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="dissemination.announcement">27</b></td>
+  <td nowrap valign="top"><a name="dissemination.announcement">34</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/dissemination.announcement/module.py">dissemination.announcement</a></b> <i>(<a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/dissemination.announcement/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-dissemination-modules.git">ck-dissemination-modules</a></b></td>
   <td nowrap valign="top"></td>
@@ -294,7 +366,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="dissemination.conference">28</b></td>
+  <td nowrap valign="top"><a name="dissemination.conference">35</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/dissemination.conference/module.py">dissemination.conference</a></b> <i>(<a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/dissemination.conference/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-dissemination-modules.git">ck-dissemination-modules</a></b></td>
   <td nowrap valign="top"></td>
@@ -302,7 +374,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="dissemination.event">29</b></td>
+  <td nowrap valign="top"><a name="dissemination.event">36</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/dissemination.event/module.py">dissemination.event</a></b> <i>(<a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/dissemination.event/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-dissemination-modules.git">ck-dissemination-modules</a></b></td>
   <td nowrap valign="top"></td>
@@ -310,7 +382,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="dissemination.hardware">30</b></td>
+  <td nowrap valign="top"><a name="dissemination.hardware">37</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/dissemination.hardware/module.py">dissemination.hardware</a></b> <i>(<a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/dissemination.hardware/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-dissemination-modules.git">ck-dissemination-modules</a></b></td>
   <td nowrap valign="top"></td>
@@ -318,7 +390,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="dissemination.journal">31</b></td>
+  <td nowrap valign="top"><a name="dissemination.journal">38</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/dissemination.journal/module.py">dissemination.journal</a></b> <i>(<a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/dissemination.journal/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-dissemination-modules.git">ck-dissemination-modules</a></b></td>
   <td nowrap valign="top"></td>
@@ -326,7 +398,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="dissemination.keynote">32</b></td>
+  <td nowrap valign="top"><a name="dissemination.keynote">39</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/dissemination.keynote/module.py">dissemination.keynote</a></b> <i>(<a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/dissemination.keynote/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-dissemination-modules.git">ck-dissemination-modules</a></b></td>
   <td nowrap valign="top"></td>
@@ -334,7 +406,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="dissemination.lecture">33</b></td>
+  <td nowrap valign="top"><a name="dissemination.lecture">40</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/dissemination.lecture/module.py">dissemination.lecture</a></b> <i>(<a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/dissemination.lecture/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-dissemination-modules.git">ck-dissemination-modules</a></b></td>
   <td nowrap valign="top"></td>
@@ -342,7 +414,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="dissemination.patent">34</b></td>
+  <td nowrap valign="top"><a name="dissemination.patent">41</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/dissemination.patent/module.py">dissemination.patent</a></b> <i>(<a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/dissemination.patent/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-dissemination-modules.git">ck-dissemination-modules</a></b></td>
   <td nowrap valign="top"></td>
@@ -350,7 +422,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="dissemination.pitfall">35</b></td>
+  <td nowrap valign="top"><a name="dissemination.pitfall">42</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/dissemination.pitfall/module.py">dissemination.pitfall</a></b> <i>(<a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/dissemination.pitfall/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-dissemination-modules.git">ck-dissemination-modules</a></b></td>
   <td nowrap valign="top"></td>
@@ -358,7 +430,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="dissemination.poster">36</b></td>
+  <td nowrap valign="top"><a name="dissemination.poster">43</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/dissemination.poster/module.py">dissemination.poster</a></b> <i>(<a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/dissemination.poster/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-dissemination-modules.git">ck-dissemination-modules</a></b></td>
   <td nowrap valign="top"></td>
@@ -366,7 +438,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="dissemination.presentation">37</b></td>
+  <td nowrap valign="top"><a name="dissemination.presentation">44</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/dissemination.presentation/module.py">dissemination.presentation</a></b> <i>(<a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/dissemination.presentation/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-dissemination-modules.git">ck-dissemination-modules</a></b></td>
   <td nowrap valign="top"></td>
@@ -376,7 +448,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="dissemination.press-release">38</b></td>
+  <td nowrap valign="top"><a name="dissemination.press-release">45</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/dissemination.press-release/module.py">dissemination.press-release</a></b> <i>(<a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/dissemination.press-release/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-dissemination-modules.git">ck-dissemination-modules</a></b></td>
   <td nowrap valign="top"></td>
@@ -384,7 +456,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="dissemination.publication">39</b></td>
+  <td nowrap valign="top"><a name="dissemination.publication">46</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/dissemination.publication/module.py">dissemination.publication</a></b> <i>(<a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/dissemination.publication/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-dissemination-modules.git">ck-dissemination-modules</a></b></td>
   <td nowrap valign="top"></td>
@@ -394,7 +466,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="dissemination.publication.artifact">40</b></td>
+  <td nowrap valign="top"><a name="dissemination.publication.artifact">47</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/dissemination.publication.artifact/module.py">dissemination.publication.artifact</a></b> <i>(<a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/dissemination.publication.artifact/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-dissemination-modules.git">ck-dissemination-modules</a></b></td>
   <td nowrap valign="top"></td>
@@ -402,7 +474,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="dissemination.repo">41</b></td>
+  <td nowrap valign="top"><a name="dissemination.repo">48</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/dissemination.repo/module.py">dissemination.repo</a></b> <i>(<a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/dissemination.repo/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-dissemination-modules.git">ck-dissemination-modules</a></b></td>
   <td nowrap valign="top"></td>
@@ -410,7 +482,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="dissemination.soft">42</b></td>
+  <td nowrap valign="top"><a name="dissemination.soft">49</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/dissemination.soft/module.py">dissemination.soft</a></b> <i>(<a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/dissemination.soft/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-dissemination-modules.git">ck-dissemination-modules</a></b></td>
   <td nowrap valign="top"></td>
@@ -418,7 +490,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="dissemination.workshop">43</b></td>
+  <td nowrap valign="top"><a name="dissemination.workshop">50</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/dissemination.workshop/module.py">dissemination.workshop</a></b> <i>(<a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/dissemination.workshop/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-dissemination-modules.git">ck-dissemination-modules</a></b></td>
   <td nowrap valign="top"></td>
@@ -426,7 +498,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="docker">44</b></td>
+  <td nowrap valign="top"><a name="docker">51</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-docker/tree/master/module/docker/module.py">docker</a></b> <i>(<a href="https://github.com/ctuning/ck-docker/tree/master/module/docker/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-docker">ck-docker</a></b></td>
   <td nowrap valign="top"></td>
@@ -436,7 +508,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="env">45</b></td>
+  <td nowrap valign="top"><a name="env">52</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-env/tree/master/module/env/module.py">env</a></b> <i>(<a href="https://github.com/ctuning/ck-env/tree/master/module/env/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-env">ck-env</a></b></td>
   <td nowrap valign="top"></td>
@@ -446,7 +518,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="experiment">46</b></td>
+  <td nowrap valign="top"><a name="experiment">53</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-analytics/tree/master/module/experiment/module.py">experiment</a></b> <i>(<a href="https://github.com/ctuning/ck-analytics/tree/master/module/experiment/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-analytics">ck-analytics</a></b></td>
   <td nowrap valign="top"></td>
@@ -456,7 +528,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="experiment.bench.caffe">47</b></td>
+  <td nowrap valign="top"><a name="experiment.bench.caffe">54</b></td>
   <td nowrap valign="top"><a href="git@github.com:dividiti/ck-caffe/tree/master/module/experiment.bench.caffe/module.py">experiment.bench.caffe</a></b> <i>(<a href="git@github.com:dividiti/ck-caffe/tree/master/module/experiment.bench.caffe/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="git@github.com:dividiti/ck-caffe.git">ck-caffe</a></b></td>
   <td nowrap valign="top">crowd-benchmarking pipeline for Caffe</td>
@@ -466,7 +538,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="experiment.bench.caffe2">48</b></td>
+  <td nowrap valign="top"><a name="experiment.bench.caffe2">55</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-caffe2/tree/master/module/experiment.bench.caffe2/module.py">experiment.bench.caffe2</a></b> <i>(<a href="https://github.com/ctuning/ck-caffe2/tree/master/module/experiment.bench.caffe2/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-caffe2">ck-caffe2</a></b></td>
   <td nowrap valign="top">crowd-benchmarking pipeline for Caffe2</td>
@@ -476,7 +548,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="experiment.bench.dnn">49</b></td>
+  <td nowrap valign="top"><a name="experiment.bench.dnn">56</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.bench.dnn/module.py">experiment.bench.dnn</a></b> <i>(<a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.bench.dnn/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowdtuning">ck-crowdtuning</a></b></td>
   <td nowrap valign="top">crowd-benchmarking deep learning via desktop/server/cloud computers</td>
@@ -486,7 +558,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="experiment.bench.dnn.desktop">50</b></td>
+  <td nowrap valign="top"><a name="experiment.bench.dnn.desktop">57</b></td>
   <td nowrap valign="top"><a href="https://github.com/dividiti/ck-crowdsource-dnn-optimization/tree/master/module/experiment.bench.dnn.desktop/module.py">experiment.bench.dnn.desktop</a></b> <i>(<a href="https://github.com/dividiti/ck-crowdsource-dnn-optimization/tree/master/module/experiment.bench.dnn.desktop/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/dividiti/ck-crowdsource-dnn-optimization">ck-crowdsource-dnn-optimization</a></b></td>
   <td nowrap valign="top"></td>
@@ -496,7 +568,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="experiment.bench.dnn.mobile">51</b></td>
+  <td nowrap valign="top"><a name="experiment.bench.dnn.mobile">58</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.bench.dnn.mobile/module.py">experiment.bench.dnn.mobile</a></b> <i>(<a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.bench.dnn.mobile/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowdtuning">ck-crowdtuning</a></b></td>
   <td nowrap valign="top">crowd-benchmarking deep learning via mobile devices</td>
@@ -506,7 +578,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="experiment.bench.tensorflow">52</b></td>
+  <td nowrap valign="top"><a name="experiment.bench.tensorflow">59</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-tensorflow/tree/master/module/experiment.bench.tensorflow/module.py">experiment.bench.tensorflow</a></b> <i>(<a href="https://github.com/ctuning/ck-tensorflow/tree/master/module/experiment.bench.tensorflow/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-tensorflow">ck-tensorflow</a></b></td>
   <td nowrap valign="top"></td>
@@ -516,7 +588,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="experiment.bench.workload.android">53</b></td>
+  <td nowrap valign="top"><a name="experiment.bench.workload.android">60</b></td>
   <td nowrap valign="top"><a href="https://github.com/dividiti/ck-wa/tree/master/module/experiment.bench.workload.android/module.py">experiment.bench.workload.android</a></b> <i>(<a href="https://github.com/dividiti/ck-wa/tree/master/module/experiment.bench.workload.android/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/dividiti/ck-wa">ck-wa</a></b></td>
   <td nowrap valign="top">crowd-benchmarking Arm workloads via Android devices</td>
@@ -526,7 +598,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="experiment.check.algorithm.scalability">54</b></td>
+  <td nowrap valign="top"><a name="experiment.check.algorithm.scalability">61</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.check.algorithm.scalability/module.py">experiment.check.algorithm.scalability</a></b> <i>(<a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.check.algorithm.scalability/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowdtuning">ck-crowdtuning</a></b></td>
   <td nowrap valign="top"></td>
@@ -536,7 +608,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="experiment.check.numerical.stability">55</b></td>
+  <td nowrap valign="top"><a name="experiment.check.numerical.stability">62</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.check.numerical.stability/module.py">experiment.check.numerical.stability</a></b> <i>(<a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.check.numerical.stability/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowdtuning">ck-crowdtuning</a></b></td>
   <td nowrap valign="top"></td>
@@ -546,7 +618,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="experiment.detect.opencl.bugs">56</b></td>
+  <td nowrap valign="top"><a name="experiment.detect.opencl.bugs">63</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.detect.opencl.bugs/module.py">experiment.detect.opencl.bugs</a></b> <i>(<a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.detect.opencl.bugs/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowdtuning">ck-crowdtuning</a></b></td>
   <td nowrap valign="top">pipeline to crowdsource OpenCL bug detection</td>
@@ -556,7 +628,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="experiment.model.program.behavior">57</b></td>
+  <td nowrap valign="top"><a name="experiment.model.program.behavior">64</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.model.program.behavior/module.py">experiment.model.program.behavior</a></b> <i>(<a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.model.program.behavior/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowdtuning">ck-crowdtuning</a></b></td>
   <td nowrap valign="top"></td>
@@ -566,7 +638,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="experiment.raw">58</b></td>
+  <td nowrap valign="top"><a name="experiment.raw">65</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-analytics/tree/master/module/experiment.raw/module.py">experiment.raw</a></b> <i>(<a href="https://github.com/ctuning/ck-analytics/tree/master/module/experiment.raw/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-analytics">ck-analytics</a></b></td>
   <td nowrap valign="top"></td>
@@ -574,7 +646,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="experiment.scenario.mobile">59</b></td>
+  <td nowrap valign="top"><a name="experiment.scenario.mobile">66</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.scenario.mobile/module.py">experiment.scenario.mobile</a></b> <i>(<a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.scenario.mobile/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowdtuning">ck-crowdtuning</a></b></td>
   <td nowrap valign="top"></td>
@@ -584,7 +656,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="experiment.tune.compiler.flags">60</b></td>
+  <td nowrap valign="top"><a name="experiment.tune.compiler.flags">67</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.compiler.flags/module.py">experiment.tune.compiler.flags</a></b> <i>(<a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.compiler.flags/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowdtuning">ck-crowdtuning</a></b></td>
   <td nowrap valign="top">pipeline to crowd-tune compiler flags</td>
@@ -594,7 +666,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="experiment.tune.compiler.flags.gcc">61</b></td>
+  <td nowrap valign="top"><a name="experiment.tune.compiler.flags.gcc">68</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.compiler.flags.gcc/module.py">experiment.tune.compiler.flags.gcc</a></b> <i>(<a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.compiler.flags.gcc/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowdtuning">ck-crowdtuning</a></b></td>
   <td nowrap valign="top">yes</td>
@@ -604,7 +676,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="experiment.tune.compiler.flags.gcc.custom">62</b></td>
+  <td nowrap valign="top"><a name="experiment.tune.compiler.flags.gcc.custom">69</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.compiler.flags.gcc.custom/module.py">experiment.tune.compiler.flags.gcc.custom</a></b> <i>(<a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.compiler.flags.gcc.custom/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowdtuning">ck-crowdtuning</a></b></td>
   <td nowrap valign="top">yes</td>
@@ -614,7 +686,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="experiment.tune.compiler.flags.gcc.e">63</b></td>
+  <td nowrap valign="top"><a name="experiment.tune.compiler.flags.gcc.e">70</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.compiler.flags.gcc.e/module.py">experiment.tune.compiler.flags.gcc.e</a></b> <i>(<a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.compiler.flags.gcc.e/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowdtuning">ck-crowdtuning</a></b></td>
   <td nowrap valign="top">yes</td>
@@ -624,7 +696,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="experiment.tune.compiler.flags.gcc.e.x">64</b></td>
+  <td nowrap valign="top"><a name="experiment.tune.compiler.flags.gcc.e.x">71</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.compiler.flags.gcc.e.x/module.py">experiment.tune.compiler.flags.gcc.e.x</a></b> <i>(<a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.compiler.flags.gcc.e.x/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowdtuning">ck-crowdtuning</a></b></td>
   <td nowrap valign="top">yes</td>
@@ -634,7 +706,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="experiment.tune.compiler.flags.gcc.es">65</b></td>
+  <td nowrap valign="top"><a name="experiment.tune.compiler.flags.gcc.es">72</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.compiler.flags.gcc.es/module.py">experiment.tune.compiler.flags.gcc.es</a></b> <i>(<a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.compiler.flags.gcc.es/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowdtuning">ck-crowdtuning</a></b></td>
   <td nowrap valign="top">yes</td>
@@ -644,7 +716,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="experiment.tune.compiler.flags.gcc.fuzz">66</b></td>
+  <td nowrap valign="top"><a name="experiment.tune.compiler.flags.gcc.fuzz">73</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.compiler.flags.gcc.fuzz/module.py">experiment.tune.compiler.flags.gcc.fuzz</a></b> <i>(<a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.compiler.flags.gcc.fuzz/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowdtuning">ck-crowdtuning</a></b></td>
   <td nowrap valign="top">pipeline to crowdsource GCC compiler flag fuzzing</td>
@@ -654,7 +726,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="experiment.tune.compiler.flags.gcc.s">67</b></td>
+  <td nowrap valign="top"><a name="experiment.tune.compiler.flags.gcc.s">74</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.compiler.flags.gcc.s/module.py">experiment.tune.compiler.flags.gcc.s</a></b> <i>(<a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.compiler.flags.gcc.s/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowdtuning">ck-crowdtuning</a></b></td>
   <td nowrap valign="top">yes</td>
@@ -664,7 +736,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="experiment.tune.compiler.flags.gcc.x">68</b></td>
+  <td nowrap valign="top"><a name="experiment.tune.compiler.flags.gcc.x">75</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.compiler.flags.gcc.x/module.py">experiment.tune.compiler.flags.gcc.x</a></b> <i>(<a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.compiler.flags.gcc.x/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowdtuning">ck-crowdtuning</a></b></td>
   <td nowrap valign="top">yes</td>
@@ -674,7 +746,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="experiment.tune.compiler.flags.llvm">69</b></td>
+  <td nowrap valign="top"><a name="experiment.tune.compiler.flags.llvm">76</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.compiler.flags.llvm/module.py">experiment.tune.compiler.flags.llvm</a></b> <i>(<a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.compiler.flags.llvm/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowdtuning">ck-crowdtuning</a></b></td>
   <td nowrap valign="top">yes</td>
@@ -684,7 +756,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="experiment.tune.compiler.flags.llvm.e">70</b></td>
+  <td nowrap valign="top"><a name="experiment.tune.compiler.flags.llvm.e">77</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.compiler.flags.llvm.e/module.py">experiment.tune.compiler.flags.llvm.e</a></b> <i>(<a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.compiler.flags.llvm.e/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowdtuning">ck-crowdtuning</a></b></td>
   <td nowrap valign="top">yes</td>
@@ -694,7 +766,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="experiment.tune.compiler.flags.llvm.e.x">71</b></td>
+  <td nowrap valign="top"><a name="experiment.tune.compiler.flags.llvm.e.x">78</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.compiler.flags.llvm.e.x/module.py">experiment.tune.compiler.flags.llvm.e.x</a></b> <i>(<a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.compiler.flags.llvm.e.x/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowdtuning">ck-crowdtuning</a></b></td>
   <td nowrap valign="top">yes</td>
@@ -704,7 +776,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="experiment.tune.compiler.flags.llvm.fuzz">72</b></td>
+  <td nowrap valign="top"><a name="experiment.tune.compiler.flags.llvm.fuzz">79</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.compiler.flags.llvm.fuzz/module.py">experiment.tune.compiler.flags.llvm.fuzz</a></b> <i>(<a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.compiler.flags.llvm.fuzz/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowdtuning">ck-crowdtuning</a></b></td>
   <td nowrap valign="top">yes</td>
@@ -714,7 +786,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="experiment.tune.compiler.flags.llvm.x">73</b></td>
+  <td nowrap valign="top"><a name="experiment.tune.compiler.flags.llvm.x">80</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.compiler.flags.llvm.x/module.py">experiment.tune.compiler.flags.llvm.x</a></b> <i>(<a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.compiler.flags.llvm.x/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowdtuning">ck-crowdtuning</a></b></td>
   <td nowrap valign="top">yes</td>
@@ -724,7 +796,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="experiment.tune.cuda.ws.e">74</b></td>
+  <td nowrap valign="top"><a name="experiment.tune.cuda.ws.e">81</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.cuda.ws.e/module.py">experiment.tune.cuda.ws.e</a></b> <i>(<a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.cuda.ws.e/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowdtuning">ck-crowdtuning</a></b></td>
   <td nowrap valign="top"></td>
@@ -734,7 +806,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="experiment.tune.custom.dimensions">75</b></td>
+  <td nowrap valign="top"><a name="experiment.tune.custom.dimensions">82</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.custom.dimensions/module.py">experiment.tune.custom.dimensions</a></b> <i>(<a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.custom.dimensions/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowdtuning">ck-crowdtuning</a></b></td>
   <td nowrap valign="top">yes</td>
@@ -744,7 +816,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="experiment.tune.dnn.batch_size">76</b></td>
+  <td nowrap valign="top"><a name="experiment.tune.dnn.batch_size">83</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.dnn.batch_size/module.py">experiment.tune.dnn.batch_size</a></b> <i>(<a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.dnn.batch_size/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowdtuning">ck-crowdtuning</a></b></td>
   <td nowrap valign="top"></td>
@@ -754,7 +826,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="experiment.tune.openblas.threads">77</b></td>
+  <td nowrap valign="top"><a name="experiment.tune.openblas.threads">84</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.openblas.threads/module.py">experiment.tune.openblas.threads</a></b> <i>(<a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.openblas.threads/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowdtuning">ck-crowdtuning</a></b></td>
   <td nowrap valign="top"></td>
@@ -764,7 +836,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="experiment.tune.opencl.clblast">78</b></td>
+  <td nowrap valign="top"><a name="experiment.tune.opencl.clblast">85</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.opencl.clblast/module.py">experiment.tune.opencl.clblast</a></b> <i>(<a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.opencl.clblast/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowdtuning">ck-crowdtuning</a></b></td>
   <td nowrap valign="top">CLBlast crowd-tuning workflow</td>
@@ -774,7 +846,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="experiment.tune.opencl.lws.e">79</b></td>
+  <td nowrap valign="top"><a name="experiment.tune.opencl.lws.e">86</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.opencl.lws.e/module.py">experiment.tune.opencl.lws.e</a></b> <i>(<a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.opencl.lws.e/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowdtuning">ck-crowdtuning</a></b></td>
   <td nowrap valign="top"></td>
@@ -784,7 +856,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="experiment.tune.opencl.lws.ep">80</b></td>
+  <td nowrap valign="top"><a name="experiment.tune.opencl.lws.ep">87</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.opencl.lws.ep/module.py">experiment.tune.opencl.lws.ep</a></b> <i>(<a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.opencl.lws.ep/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowdtuning">ck-crowdtuning</a></b></td>
   <td nowrap valign="top"></td>
@@ -794,7 +866,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="experiment.tune.openmp.threads">81</b></td>
+  <td nowrap valign="top"><a name="experiment.tune.openmp.threads">88</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.openmp.threads/module.py">experiment.tune.openmp.threads</a></b> <i>(<a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.tune.openmp.threads/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowdtuning">ck-crowdtuning</a></b></td>
   <td nowrap valign="top"></td>
@@ -804,7 +876,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="experiment.user">82</b></td>
+  <td nowrap valign="top"><a name="experiment.user">89</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.user/module.py">experiment.user</a></b> <i>(<a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/experiment.user/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowdtuning">ck-crowdtuning</a></b></td>
   <td nowrap valign="top"></td>
@@ -814,7 +886,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="experiment.view">83</b></td>
+  <td nowrap valign="top"><a name="experiment.view">90</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-analytics/tree/master/module/experiment.view/module.py">experiment.view</a></b> <i>(<a href="https://github.com/ctuning/ck-analytics/tree/master/module/experiment.view/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-analytics">ck-analytics</a></b></td>
   <td nowrap valign="top"></td>
@@ -822,7 +894,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="gemmbench.crowdtuning">84</b></td>
+  <td nowrap valign="top"><a name="gemmbench.crowdtuning">91</b></td>
   <td nowrap valign="top"><a href="git@github.com:dividiti/gemmbench/tree/master/module/gemmbench.crowdtuning/module.py">gemmbench.crowdtuning</a></b> <i>(<a href="git@github.com:dividiti/gemmbench/tree/master/module/gemmbench.crowdtuning/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="git@github.com:dividiti/gemmbench.git">gemmbench</a></b></td>
   <td nowrap valign="top">GEMM benchmark autotuning/crowd-tuning pipeline</td>
@@ -832,7 +904,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="graph">85</b></td>
+  <td nowrap valign="top"><a name="graph">92</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-analytics/tree/master/module/graph/module.py">graph</a></b> <i>(<a href="https://github.com/ctuning/ck-analytics/tree/master/module/graph/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-analytics">ck-analytics</a></b></td>
   <td nowrap valign="top"></td>
@@ -842,7 +914,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="graph.dot">86</b></td>
+  <td nowrap valign="top"><a name="graph.dot">93</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-analytics/tree/master/module/graph.dot/module.py">graph.dot</a></b> <i>(<a href="https://github.com/ctuning/ck-analytics/tree/master/module/graph.dot/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-analytics">ck-analytics</a></b></td>
   <td nowrap valign="top"></td>
@@ -852,7 +924,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="gui">87</b></td>
+  <td nowrap valign="top"><a name="gui">94</b></td>
   <td nowrap valign="top"><a href="git@github.com:Chunosov/ck-gui/tree/master/module/gui/module.py">gui</a></b> <i>(<a href="git@github.com:Chunosov/ck-gui/tree/master/module/gui/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="git@github.com:Chunosov/ck-gui">ck-gui</a></b></td>
   <td nowrap valign="top"></td>
@@ -862,7 +934,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="hackathon.20180615">88</b></td>
+  <td nowrap valign="top"><a name="hackathon.20180615">95</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-quantum/tree/master/module/hackathon.20180615/module.py">hackathon.20180615</a></b> <i>(<a href="https://github.com/ctuning/ck-quantum/tree/master/module/hackathon.20180615/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-quantum">ck-quantum</a></b></td>
   <td nowrap valign="top">quantum hackathon workflow</td>
@@ -872,7 +944,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="hackathon.20181006">89</b></td>
+  <td nowrap valign="top"><a name="hackathon.20181006">96</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-quantum/tree/master/module/hackathon.20181006/module.py">hackathon.20181006</a></b> <i>(<a href="https://github.com/ctuning/ck-quantum/tree/master/module/hackathon.20181006/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-quantum">ck-quantum</a></b></td>
   <td nowrap valign="top">quantum hackathon workflow</td>
@@ -882,7 +954,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="hackathon.20190127">90</b></td>
+  <td nowrap valign="top"><a name="hackathon.20190127">97</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-quantum/tree/master/module/hackathon.20190127/module.py">hackathon.20190127</a></b> <i>(<a href="https://github.com/ctuning/ck-quantum/tree/master/module/hackathon.20190127/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-quantum">ck-quantum</a></b></td>
   <td nowrap valign="top">quantum hackathon workflow</td>
@@ -892,7 +964,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="index">91</b></td>
+  <td nowrap valign="top"><a name="index">98</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck/tree/master/ck/repo/module/index/module.py">index</a></b> <i>(<a href="https://github.com/ctuning/ck/tree/master/ck/repo/module/index/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck/tree/master/ck/repo">default</a></b></td>
   <td nowrap valign="top"></td>
@@ -902,7 +974,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="jnotebook">92</b></td>
+  <td nowrap valign="top"><a name="jnotebook">99</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-analytics/tree/master/module/jnotebook/module.py">jnotebook</a></b> <i>(<a href="https://github.com/ctuning/ck-analytics/tree/master/module/jnotebook/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-analytics">ck-analytics</a></b></td>
   <td nowrap valign="top"></td>
@@ -912,7 +984,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="kernel">93</b></td>
+  <td nowrap valign="top"><a name="kernel">100</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck/tree/master/ck/repo/module/kernel/module.py">kernel</a></b> <i>(<a href="https://github.com/ctuning/ck/tree/master/ck/repo/module/kernel/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck/tree/master/ck/repo">default</a></b></td>
   <td nowrap valign="top"></td>
@@ -922,7 +994,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="lift-benchmark">94</b></td>
+  <td nowrap valign="top"><a name="lift-benchmark">101</b></td>
   <td nowrap valign="top"><a href="https://github.com/lift-project/ck-lift/tree/master/module/lift-benchmark/module.py">lift-benchmark</a></b> <i>(<a href="https://github.com/lift-project/ck-lift/tree/master/module/lift-benchmark/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/lift-project/ck-lift">ck-lift</a></b></td>
   <td nowrap valign="top"></td>
@@ -932,7 +1004,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="machine">95</b></td>
+  <td nowrap valign="top"><a name="machine">102</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-env/tree/master/module/machine/module.py">machine</a></b> <i>(<a href="https://github.com/ctuning/ck-env/tree/master/module/machine/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-env">ck-env</a></b></td>
   <td nowrap valign="top"></td>
@@ -942,7 +1014,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="math.conditions">96</b></td>
+  <td nowrap valign="top"><a name="math.conditions">103</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-analytics/tree/master/module/math.conditions/module.py">math.conditions</a></b> <i>(<a href="https://github.com/ctuning/ck-analytics/tree/master/module/math.conditions/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-analytics">ck-analytics</a></b></td>
   <td nowrap valign="top"></td>
@@ -952,7 +1024,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="math.frontier">97</b></td>
+  <td nowrap valign="top"><a name="math.frontier">104</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-analytics/tree/master/module/math.frontier/module.py">math.frontier</a></b> <i>(<a href="https://github.com/ctuning/ck-analytics/tree/master/module/math.frontier/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-analytics">ck-analytics</a></b></td>
   <td nowrap valign="top"></td>
@@ -962,7 +1034,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="math.variation">98</b></td>
+  <td nowrap valign="top"><a name="math.variation">105</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-analytics/tree/master/module/math.variation/module.py">math.variation</a></b> <i>(<a href="https://github.com/ctuning/ck-analytics/tree/master/module/math.variation/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-analytics">ck-analytics</a></b></td>
   <td nowrap valign="top"></td>
@@ -972,7 +1044,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="me">99</b></td>
+  <td nowrap valign="top"><a name="me">106</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-env/tree/master/module/me/module.py">me</a></b> <i>(<a href="https://github.com/ctuning/ck-env/tree/master/module/me/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-env">ck-env</a></b></td>
   <td nowrap valign="top"></td>
@@ -982,7 +1054,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="milepost">100</b></td>
+  <td nowrap valign="top"><a name="milepost">107</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/reproduce-milepost-project/tree/master/module/milepost/module.py">milepost</a></b> <i>(<a href="https://github.com/ctuning/reproduce-milepost-project/tree/master/module/milepost/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/reproduce-milepost-project">reproduce-milepost-project</a></b></td>
   <td nowrap valign="top">MILEPOST GCC basic pipeline</td>
@@ -992,17 +1064,17 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="misc">101</b></td>
+  <td nowrap valign="top"><a name="misc">108</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-env/tree/master/module/misc/module.py">misc</a></b> <i>(<a href="https://github.com/ctuning/ck-env/tree/master/module/misc/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-env">ck-env</a></b></td>
   <td nowrap valign="top"></td>
   <td valign="top">auxiliary functions shared by Grigori Fursin
 <ul>
-<li>"ck <i>add_key</i> misc" - add key to meta/files of different entries (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/misc/module.py#L241">API</a>&nbsp;)<li>"ck <i>clone_server_repo</i> misc" - download a whole repository from the server (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/misc/module.py#L0">API</a>&nbsp;)<li>"ck <i>list_kernel_functions</i> misc" - list CK kernel functions (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/misc/module.py#L653">API</a>&nbsp;)<li>"ck <i>list_modules</i> misc" - list modules (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/misc/module.py#L1244">API</a>&nbsp;)<li>"ck <i>list_repos</i> misc" - list repositories (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/misc/module.py#L897">API</a>&nbsp;)<li>"ck <i>merge_dicts</i> misc" - merge dictionaries in 2 files (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/misc/module.py#L172">API</a>&nbsp;)<li>"ck <i>preload_html_for_lists</i> misc" - preload HTMLs for lists of components (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/misc/module.py#L1512">API</a>&nbsp;)<li>"ck <i>prepare_entry_template</i> misc" - select template for a given module (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/misc/module.py#L340">API</a>&nbsp;)<li>"ck <i>process_all_files_recursively</i> misc" - process all files recursively using some action (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/misc/module.py#L110">API</a>&nbsp;)<li>"ck <i>refresh_json</i> misc" - update and sort json file (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/misc/module.py#L80">API</a>&nbsp;)<li>"ck <i>replace_string_in_file</i> misc" - replace string in a file (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/misc/module.py#L33">API</a>&nbsp;)<li>"ck <i>replace_strings_in_file</i> misc" - replace multiple strings in a given file (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/misc/module.py#L1566">API</a>&nbsp;)<li>"ck <i>select_string</i> misc" - given a list of strings, pick one by index OR substring match (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/misc/module.py#L480">API</a>&nbsp;)<li>"ck <i>select_uoa</i> misc" - select UOA (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/misc/module.py#L583">API</a>&nbsp;)<li>"ck <i>sort_json_file</i> misc" - sort JSON file (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/misc/module.py#L221">API</a>&nbsp;)<li>"ck <i>transfer</i> misc" - download or upload a bunch of CK entries between a local and a remote repo (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/misc/module.py#L0">API</a>&nbsp;)</ul>
+<li>"ck <i>add_key</i> misc" - add key to meta/files of different entries (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/misc/module.py#L241">API</a>&nbsp;)<li>"ck <i>clone_server_repo</i> misc" - download a whole repository from the server (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/misc/module.py#L0">API</a>&nbsp;)<li>"ck <i>list_kernel_functions</i> misc" - list CK kernel functions (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/misc/module.py#L653">API</a>&nbsp;)<li>"ck <i>list_modules</i> misc" - list modules (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/misc/module.py#L1248">API</a>&nbsp;)<li>"ck <i>list_repos</i> misc" - list repositories (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/misc/module.py#L897">API</a>&nbsp;)<li>"ck <i>merge_dicts</i> misc" - merge dictionaries in 2 files (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/misc/module.py#L172">API</a>&nbsp;)<li>"ck <i>preload_html_for_lists</i> misc" - preload HTMLs for lists of components (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/misc/module.py#L1520">API</a>&nbsp;)<li>"ck <i>prepare_entry_template</i> misc" - select template for a given module (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/misc/module.py#L340">API</a>&nbsp;)<li>"ck <i>process_all_files_recursively</i> misc" - process all files recursively using some action (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/misc/module.py#L110">API</a>&nbsp;)<li>"ck <i>refresh_json</i> misc" - update and sort json file (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/misc/module.py#L80">API</a>&nbsp;)<li>"ck <i>replace_string_in_file</i> misc" - replace string in a file (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/misc/module.py#L33">API</a>&nbsp;)<li>"ck <i>replace_strings_in_file</i> misc" - replace multiple strings in a given file (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/misc/module.py#L1574">API</a>&nbsp;)<li>"ck <i>select_string</i> misc" - given a list of strings, pick one by index OR substring match (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/misc/module.py#L480">API</a>&nbsp;)<li>"ck <i>select_uoa</i> misc" - select UOA (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/misc/module.py#L583">API</a>&nbsp;)<li>"ck <i>sort_json_file</i> misc" - sort JSON file (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/misc/module.py#L221">API</a>&nbsp;)<li>"ck <i>transfer</i> misc" - download or upload a bunch of CK entries between a local and a remote repo (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/misc/module.py#L0">API</a>&nbsp;)</ul>
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="mlperf.mobilenets">102</b></td>
+  <td nowrap valign="top"><a name="mlperf.mobilenets">109</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-tensorflow/tree/master/module/mlperf.mobilenets/module.py">mlperf.mobilenets</a></b> <i>(<a href="https://github.com/ctuning/ck-tensorflow/tree/master/module/mlperf.mobilenets/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-tensorflow">ck-tensorflow</a></b></td>
   <td nowrap valign="top"></td>
@@ -1012,7 +1084,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="mlperf.mobilenets.all">103</b></td>
+  <td nowrap valign="top"><a name="mlperf.mobilenets.all">110</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-tensorflow/tree/master/module/mlperf.mobilenets.all/module.py">mlperf.mobilenets.all</a></b> <i>(<a href="https://github.com/ctuning/ck-tensorflow/tree/master/module/mlperf.mobilenets.all/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-tensorflow">ck-tensorflow</a></b></td>
   <td nowrap valign="top"></td>
@@ -1022,7 +1094,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="model">104</b></td>
+  <td nowrap valign="top"><a name="model">111</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-analytics/tree/master/module/model/module.py">model</a></b> <i>(<a href="https://github.com/ctuning/ck-analytics/tree/master/module/model/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-analytics">ck-analytics</a></b></td>
   <td nowrap valign="top"></td>
@@ -1032,7 +1104,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="model.image.classification">105</b></td>
+  <td nowrap valign="top"><a name="model.image.classification">112</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-analytics/tree/master/module/model.image.classification/module.py">model.image.classification</a></b> <i>(<a href="https://github.com/ctuning/ck-analytics/tree/master/module/model.image.classification/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-analytics">ck-analytics</a></b></td>
   <td nowrap valign="top">universal image classification pipeline</td>
@@ -1042,7 +1114,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="model.r">106</b></td>
+  <td nowrap valign="top"><a name="model.r">113</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-analytics/tree/master/module/model.r/module.py">model.r</a></b> <i>(<a href="https://github.com/ctuning/ck-analytics/tree/master/module/model.r/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-analytics">ck-analytics</a></b></td>
   <td nowrap valign="top"></td>
@@ -1052,7 +1124,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="model.sklearn">107</b></td>
+  <td nowrap valign="top"><a name="model.sklearn">114</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-analytics/tree/master/module/model.sklearn/module.py">model.sklearn</a></b> <i>(<a href="https://github.com/ctuning/ck-analytics/tree/master/module/model.sklearn/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-analytics">ck-analytics</a></b></td>
   <td nowrap valign="top"></td>
@@ -1062,7 +1134,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="model.species">108</b></td>
+  <td nowrap valign="top"><a name="model.species">115</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-analytics/tree/master/module/model.species/module.py">model.species</a></b> <i>(<a href="https://github.com/ctuning/ck-analytics/tree/master/module/model.species/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-analytics">ck-analytics</a></b></td>
   <td nowrap valign="top"></td>
@@ -1070,7 +1142,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="model.tensorflowapi">109</b></td>
+  <td nowrap valign="top"><a name="model.tensorflowapi">116</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-tensorflow/tree/master/module/model.tensorflowapi/module.py">model.tensorflowapi</a></b> <i>(<a href="https://github.com/ctuning/ck-tensorflow/tree/master/module/model.tensorflowapi/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-tensorflow">ck-tensorflow</a></b></td>
   <td nowrap valign="top"></td>
@@ -1080,7 +1152,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="model.tf">110</b></td>
+  <td nowrap valign="top"><a name="model.tf">117</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-analytics/tree/master/module/model.tf/module.py">model.tf</a></b> <i>(<a href="https://github.com/ctuning/ck-analytics/tree/master/module/model.tf/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-analytics">ck-analytics</a></b></td>
   <td nowrap valign="top"></td>
@@ -1090,7 +1162,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="module">111</b></td>
+  <td nowrap valign="top"><a name="module">118</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck/tree/master/ck/repo/module/module/module.py">module</a></b> <i>(<a href="https://github.com/ctuning/ck/tree/master/ck/repo/module/module/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck/tree/master/ck/repo">default</a></b></td>
   <td nowrap valign="top"></td>
@@ -1100,7 +1172,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="opencl-bug">112</b></td>
+  <td nowrap valign="top"><a name="opencl-bug">119</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-clsmith/tree/master/module/opencl-bug/module.py">opencl-bug</a></b> <i>(<a href="https://github.com/ctuning/ck-clsmith/tree/master/module/opencl-bug/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-clsmith">ck-clsmith</a></b></td>
   <td nowrap valign="top"></td>
@@ -1110,7 +1182,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="organization">113</b></td>
+  <td nowrap valign="top"><a name="organization">120</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/organization/module.py">organization</a></b> <i>(<a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/organization/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-dissemination-modules.git">ck-dissemination-modules</a></b></td>
   <td nowrap valign="top"></td>
@@ -1118,7 +1190,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="os">114</b></td>
+  <td nowrap valign="top"><a name="os">121</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-env/tree/master/module/os/module.py">os</a></b> <i>(<a href="https://github.com/ctuning/ck-env/tree/master/module/os/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-env">ck-env</a></b></td>
   <td nowrap valign="top"></td>
@@ -1128,17 +1200,17 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="package">115</b></td>
+  <td nowrap valign="top"><a name="package">122</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-env/tree/master/module/package/module.py">package</a></b> <i>(<a href="https://github.com/ctuning/ck-env/tree/master/module/package/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-env">ck-env</a></b></td>
   <td nowrap valign="top"></td>
   <td valign="top">managing software packages (installing tools, registering in CK environments)
 <ul>
-<li>"ck <i>add</i> package" - add package with template (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/package/module.py#L2372">API</a>&nbsp;)<li>"ck <i>distribute</i> package" - prepare distribution (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/package/module.py#L2004">API</a>&nbsp;)<li>"ck <i>install</i> package" - install CK package (download a tool if needed, install it, and register environment (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/package/module.py#L43">API</a>&nbsp;)<li>"ck <i>prepare_install_path</i> package" - prepare install path for packages (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/package/module.py#L1972">API</a>&nbsp;)<li>"ck <i>rebuild_deps</i> package" - rebuild dependencies using packages (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/package/module.py#L1542">API</a>&nbsp;)<li>"ck <i>reinstall</i> package" - reinstall package if already installed (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/package/module.py#L2353">API</a>&nbsp;)<li>"ck <i>setup</i> package" - setup package (only register environment but do not install it) (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/package/module.py#L43">API</a>&nbsp;)<li>"ck <i>show</i> package" - show packages (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/package/module.py#L1648">API</a>&nbsp;)</ul>
+<li>"ck <i>add</i> package" - add package with template (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/package/module.py#L2387">API</a>&nbsp;)<li>"ck <i>distribute</i> package" - prepare distribution (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/package/module.py#L2019">API</a>&nbsp;)<li>"ck <i>install</i> package" - install CK package (download a tool if needed, install it, and register environment (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/package/module.py#L43">API</a>&nbsp;)<li>"ck <i>prepare_install_path</i> package" - prepare install path for packages (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/package/module.py#L1987">API</a>&nbsp;)<li>"ck <i>rebuild_deps</i> package" - rebuild dependencies using packages (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/package/module.py#L1553">API</a>&nbsp;)<li>"ck <i>reinstall</i> package" - reinstall package if already installed (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/package/module.py#L2368">API</a>&nbsp;)<li>"ck <i>setup</i> package" - setup package (only register environment but do not install it) (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/package/module.py#L43">API</a>&nbsp;)<li>"ck <i>show</i> package" - show packages (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/package/module.py#L1659">API</a>&nbsp;)</ul>
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="paper">116</b></td>
+  <td nowrap valign="top"><a name="paper">123</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/paper/module.py">paper</a></b> <i>(<a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/paper/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-dissemination-modules.git">ck-dissemination-modules</a></b></td>
   <td nowrap valign="top">workflow to preprocess interactive papers</td>
@@ -1148,7 +1220,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="person">117</b></td>
+  <td nowrap valign="top"><a name="person">124</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/person/module.py">person</a></b> <i>(<a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/person/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-dissemination-modules.git">ck-dissemination-modules</a></b></td>
   <td nowrap valign="top"></td>
@@ -1158,7 +1230,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="photo">118</b></td>
+  <td nowrap valign="top"><a name="photo">125</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/photo/module.py">photo</a></b> <i>(<a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/photo/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-dissemination-modules.git">ck-dissemination-modules</a></b></td>
   <td nowrap valign="top"></td>
@@ -1166,7 +1238,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="pipeline">119</b></td>
+  <td nowrap valign="top"><a name="pipeline">126</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-autotuning/tree/master/module/pipeline/module.py">pipeline</a></b> <i>(<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/pipeline/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-autotuning">ck-autotuning</a></b></td>
   <td nowrap valign="top"></td>
@@ -1176,7 +1248,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="pipeline.cmd">120</b></td>
+  <td nowrap valign="top"><a name="pipeline.cmd">127</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-autotuning/tree/master/module/pipeline.cmd/module.py">pipeline.cmd</a></b> <i>(<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/pipeline.cmd/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-autotuning">ck-autotuning</a></b></td>
   <td nowrap valign="top"></td>
@@ -1186,7 +1258,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="platform">121</b></td>
+  <td nowrap valign="top"><a name="platform">128</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-env/tree/master/module/platform/module.py">platform</a></b> <i>(<a href="https://github.com/ctuning/ck-env/tree/master/module/platform/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-env">ck-env</a></b></td>
   <td nowrap valign="top"></td>
@@ -1196,7 +1268,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="platform.cpu">122</b></td>
+  <td nowrap valign="top"><a name="platform.cpu">129</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-env/tree/master/module/platform.cpu/module.py">platform.cpu</a></b> <i>(<a href="https://github.com/ctuning/ck-env/tree/master/module/platform.cpu/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-env">ck-env</a></b></td>
   <td nowrap valign="top"></td>
@@ -1206,7 +1278,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="platform.dsp">123</b></td>
+  <td nowrap valign="top"><a name="platform.dsp">130</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-env/tree/master/module/platform.dsp/module.py">platform.dsp</a></b> <i>(<a href="https://github.com/ctuning/ck-env/tree/master/module/platform.dsp/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-env">ck-env</a></b></td>
   <td nowrap valign="top"></td>
@@ -1216,7 +1288,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="platform.gpgpu">124</b></td>
+  <td nowrap valign="top"><a name="platform.gpgpu">131</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-autotuning/tree/master/module/platform.gpgpu/module.py">platform.gpgpu</a></b> <i>(<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/platform.gpgpu/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-autotuning">ck-autotuning</a></b></td>
   <td nowrap valign="top"></td>
@@ -1226,7 +1298,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="platform.gpu">125</b></td>
+  <td nowrap valign="top"><a name="platform.gpu">132</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-env/tree/master/module/platform.gpu/module.py">platform.gpu</a></b> <i>(<a href="https://github.com/ctuning/ck-env/tree/master/module/platform.gpu/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-env">ck-env</a></b></td>
   <td nowrap valign="top"></td>
@@ -1236,7 +1308,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="platform.init">126</b></td>
+  <td nowrap valign="top"><a name="platform.init">133</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-env/tree/master/module/platform.init/module.py">platform.init</a></b> <i>(<a href="https://github.com/ctuning/ck-env/tree/master/module/platform.init/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-env">ck-env</a></b></td>
   <td nowrap valign="top"></td>
@@ -1244,7 +1316,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="platform.nn">127</b></td>
+  <td nowrap valign="top"><a name="platform.nn">134</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-env/tree/master/module/platform.nn/module.py">platform.nn</a></b> <i>(<a href="https://github.com/ctuning/ck-env/tree/master/module/platform.nn/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-env">ck-env</a></b></td>
   <td nowrap valign="top"></td>
@@ -1254,7 +1326,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="platform.npu">128</b></td>
+  <td nowrap valign="top"><a name="platform.npu">135</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-env/tree/master/module/platform.npu/module.py">platform.npu</a></b> <i>(<a href="https://github.com/ctuning/ck-env/tree/master/module/platform.npu/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-env">ck-env</a></b></td>
   <td nowrap valign="top"></td>
@@ -1264,7 +1336,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="platform.os">129</b></td>
+  <td nowrap valign="top"><a name="platform.os">136</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-env/tree/master/module/platform.os/module.py">platform.os</a></b> <i>(<a href="https://github.com/ctuning/ck-env/tree/master/module/platform.os/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-env">ck-env</a></b></td>
   <td nowrap valign="top"></td>
@@ -1274,7 +1346,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="proceedings.acm">130</b></td>
+  <td nowrap valign="top"><a name="proceedings.acm">137</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/proceedings.acm/module.py">proceedings.acm</a></b> <i>(<a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/proceedings.acm/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-dissemination-modules.git">ck-dissemination-modules</a></b></td>
   <td nowrap valign="top">pipeline to generate ACM ReQuEST proceedings (papers and artifacts)</td>
@@ -1284,17 +1356,17 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="program">131</b></td>
+  <td nowrap valign="top"><a name="program">138</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program/module.py">program</a></b> <i>(<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-autotuning">ck-autotuning</a></b></td>
   <td nowrap valign="top">program compilation, execution and validation pipeline (workflow)</td>
   <td valign="top">program compilation and execution workflow (pipeline)
 <ul>
-<li>"ck <i>add</i> program" - add program with templates (&nbsp;<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program/module.py#L7050">API</a>&nbsp;)<li>"ck <i>autotune</i> program" - universal, multi-objective, multi-dimensional software/hardware autotuning (&nbsp;<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program/module.py#L6186">API</a>&nbsp;)<li>"ck <i>benchmark</i> program" - benchmark program (run autotune with 1 iteration and full environment setup) (&nbsp;<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program/module.py#L6287">API</a>&nbsp;)<li>"ck <i>clean</i> program" - clean temporal files and directories of a given program (&nbsp;<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program/module.py#L3428">API</a>&nbsp;)<li>"ck <i>clean_tmp</i> program" - clean all tmp directories (&nbsp;<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program/module.py#L6143">API</a>&nbsp;)<li>"ck <i>compile</i> program" - compile a given program (&nbsp;<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program/module.py#L181">API</a>&nbsp;)<li>"ck <i>copy</i> program" - copy program (&nbsp;<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program/module.py#L6059">API</a>&nbsp;)<li>"ck <i>cp</i> program" - copy program (&nbsp;<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program/module.py#L6059">API</a>&nbsp;)<li>"ck <i>crowdtune</i> program" - crowdtune program (&nbsp;<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program/module.py#L6112">API</a>&nbsp;)<li>"ck <i>find_output</i> program" - find program output entry (&nbsp;<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program/module.py#L7006">API</a>&nbsp;)<li>"ck <i>pipeline</i> program" - universal program compilation and execution pipeline (workflow) (&nbsp;<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program/module.py#L3475">API</a>&nbsp;)<li>"ck <i>prepare_table_with_results</i> program" - prepare HTML/TEX table with results (&nbsp;<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program/module.py#L6760">API</a>&nbsp;)<li>"ck <i>process_in_dir</i> program" - process program in a given directory (clean, compile or run) (&nbsp;<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program/module.py#L181">API</a>&nbsp;)<li>"ck <i>run</i> program" - run a given program (&nbsp;<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program/module.py#L181">API</a>&nbsp;)<li>"ck <i>select_uoa</i> program" - select program UOA in console mode<li>"ck <i>show</i> program" - show all programs (workflows) (&nbsp;<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program/module.py#L7120">API</a>&nbsp;)<li>"ck <i>substitute_some_ck_keys</i> program" - substitute some CK reserved keys (&nbsp;<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program/module.py#L6001">API</a>&nbsp;)<li>"ck <i>xcrowdtune</i> program" - crowdtune programs via list (&nbsp;<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program/module.py#L6254">API</a>&nbsp;)</ul>
+<li>"ck <i>add</i> program" - add program with templates (&nbsp;<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program/module.py#L7053">API</a>&nbsp;)<li>"ck <i>autotune</i> program" - universal, multi-objective, multi-dimensional software/hardware autotuning (&nbsp;<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program/module.py#L6189">API</a>&nbsp;)<li>"ck <i>benchmark</i> program" - benchmark program (run autotune with 1 iteration and full environment setup) (&nbsp;<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program/module.py#L6290">API</a>&nbsp;)<li>"ck <i>clean</i> program" - clean temporal files and directories of a given program (&nbsp;<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program/module.py#L3431">API</a>&nbsp;)<li>"ck <i>clean_tmp</i> program" - clean all tmp directories (&nbsp;<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program/module.py#L6146">API</a>&nbsp;)<li>"ck <i>compile</i> program" - compile a given program (&nbsp;<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program/module.py#L181">API</a>&nbsp;)<li>"ck <i>copy</i> program" - copy program (&nbsp;<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program/module.py#L6062">API</a>&nbsp;)<li>"ck <i>cp</i> program" - copy program (&nbsp;<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program/module.py#L6062">API</a>&nbsp;)<li>"ck <i>crowdtune</i> program" - crowdtune program (&nbsp;<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program/module.py#L6115">API</a>&nbsp;)<li>"ck <i>find_output</i> program" - find program output entry (&nbsp;<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program/module.py#L7009">API</a>&nbsp;)<li>"ck <i>pipeline</i> program" - universal program compilation and execution pipeline (workflow) (&nbsp;<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program/module.py#L3478">API</a>&nbsp;)<li>"ck <i>prepare_table_with_results</i> program" - prepare HTML/TEX table with results (&nbsp;<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program/module.py#L6763">API</a>&nbsp;)<li>"ck <i>process_in_dir</i> program" - process program in a given directory (clean, compile or run) (&nbsp;<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program/module.py#L181">API</a>&nbsp;)<li>"ck <i>run</i> program" - run a given program (&nbsp;<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program/module.py#L181">API</a>&nbsp;)<li>"ck <i>select_uoa</i> program" - select program UOA in console mode<li>"ck <i>show</i> program" - show all programs (workflows) (&nbsp;<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program/module.py#L7123">API</a>&nbsp;)<li>"ck <i>substitute_some_ck_keys</i> program" - substitute some CK reserved keys (&nbsp;<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program/module.py#L6004">API</a>&nbsp;)<li>"ck <i>xcrowdtune</i> program" - crowdtune programs via list (&nbsp;<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program/module.py#L6257">API</a>&nbsp;)</ul>
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="program.behavior">132</b></td>
+  <td nowrap valign="top"><a name="program.behavior">139</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program.behavior/module.py">program.behavior</a></b> <i>(<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program.behavior/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-autotuning">ck-autotuning</a></b></td>
   <td nowrap valign="top"></td>
@@ -1304,7 +1376,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="program.dynamic.features">133</b></td>
+  <td nowrap valign="top"><a name="program.dynamic.features">140</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program.dynamic.features/module.py">program.dynamic.features</a></b> <i>(<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program.dynamic.features/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-autotuning">ck-autotuning</a></b></td>
   <td nowrap valign="top"></td>
@@ -1312,7 +1384,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="program.experiment.speedup">134</b></td>
+  <td nowrap valign="top"><a name="program.experiment.speedup">141</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program.experiment.speedup/module.py">program.experiment.speedup</a></b> <i>(<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program.experiment.speedup/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-autotuning">ck-autotuning</a></b></td>
   <td nowrap valign="top"></td>
@@ -1322,7 +1394,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="program.optimization">135</b></td>
+  <td nowrap valign="top"><a name="program.optimization">142</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/program.optimization/module.py">program.optimization</a></b> <i>(<a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/program.optimization/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowdtuning">ck-crowdtuning</a></b></td>
   <td nowrap valign="top">program optimization front-end (workflow)</td>
@@ -1332,7 +1404,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="program.optimization.mobile">136</b></td>
+  <td nowrap valign="top"><a name="program.optimization.mobile">143</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/program.optimization.mobile/module.py">program.optimization.mobile</a></b> <i>(<a href="https://github.com/ctuning/ck-crowdtuning/tree/master/module/program.optimization.mobile/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-crowdtuning">ck-crowdtuning</a></b></td>
   <td nowrap valign="top">program crowd-optimization front-end (workflow) across mobile devices</td>
@@ -1342,7 +1414,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="program.output">137</b></td>
+  <td nowrap valign="top"><a name="program.output">144</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program.output/module.py">program.output</a></b> <i>(<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program.output/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-autotuning">ck-autotuning</a></b></td>
   <td nowrap valign="top"></td>
@@ -1352,7 +1424,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="program.species">138</b></td>
+  <td nowrap valign="top"><a name="program.species">145</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program.species/module.py">program.species</a></b> <i>(<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program.species/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-autotuning">ck-autotuning</a></b></td>
   <td nowrap valign="top"></td>
@@ -1360,7 +1432,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="program.static.features">139</b></td>
+  <td nowrap valign="top"><a name="program.static.features">146</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program.static.features/module.py">program.static.features</a></b> <i>(<a href="https://github.com/ctuning/ck-autotuning/tree/master/module/program.static.features/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-autotuning">ck-autotuning</a></b></td>
   <td nowrap valign="top"></td>
@@ -1370,7 +1442,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="qml">140</b></td>
+  <td nowrap valign="top"><a name="qml">147</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-quantum/tree/master/module/qml/module.py">qml</a></b> <i>(<a href="https://github.com/ctuning/ck-quantum/tree/master/module/qml/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-quantum">ck-quantum</a></b></td>
   <td nowrap valign="top"></td>
@@ -1380,7 +1452,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="qr-code">141</b></td>
+  <td nowrap valign="top"><a name="qr-code">148</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-web/tree/master/module/qr-code/module.py">qr-code</a></b> <i>(<a href="https://github.com/ctuning/ck-web/tree/master/module/qr-code/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-web.git">ck-web</a></b></td>
   <td nowrap valign="top"></td>
@@ -1390,7 +1462,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="repo">142</b></td>
+  <td nowrap valign="top"><a name="repo">149</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck/tree/master/ck/repo/module/repo/module.py">repo</a></b> <i>(<a href="https://github.com/ctuning/ck/tree/master/ck/repo/module/repo/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck/tree/master/ck/repo">default</a></b></td>
   <td nowrap valign="top"></td>
@@ -1400,7 +1472,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="report">143</b></td>
+  <td nowrap valign="top"><a name="report">150</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-analytics/tree/master/module/report/module.py">report</a></b> <i>(<a href="https://github.com/ctuning/ck-analytics/tree/master/module/report/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-analytics">ck-analytics</a></b></td>
   <td nowrap valign="top"></td>
@@ -1410,7 +1482,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="request.asplos18">144</b></td>
+  <td nowrap valign="top"><a name="request.asplos18">151</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-request/tree/master/module/request.asplos18/module.py">request.asplos18</a></b> <i>(<a href="https://github.com/ctuning/ck-request/tree/master/module/request.asplos18/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-request">ck-request</a></b></td>
   <td nowrap valign="top"></td>
@@ -1420,7 +1492,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="research.topic">145</b></td>
+  <td nowrap valign="top"><a name="research.topic">152</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/research.topic/module.py">research.topic</a></b> <i>(<a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/research.topic/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-dissemination-modules.git">ck-dissemination-modules</a></b></td>
   <td nowrap valign="top"></td>
@@ -1428,7 +1500,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="result">146</b></td>
+  <td nowrap valign="top"><a name="result">153</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-env/tree/master/module/result/module.py">result</a></b> <i>(<a href="https://github.com/ctuning/ck-env/tree/master/module/result/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-env">ck-env</a></b></td>
   <td nowrap valign="top"></td>
@@ -1436,7 +1508,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="script">147</b></td>
+  <td nowrap valign="top"><a name="script">154</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-env/tree/master/module/script/module.py">script</a></b> <i>(<a href="https://github.com/ctuning/ck-env/tree/master/module/script/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-env">ck-env</a></b></td>
   <td nowrap valign="top"></td>
@@ -1446,7 +1518,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="slide">148</b></td>
+  <td nowrap valign="top"><a name="slide">155</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/slide/module.py">slide</a></b> <i>(<a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/slide/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-dissemination-modules.git">ck-dissemination-modules</a></b></td>
   <td nowrap valign="top"></td>
@@ -1456,17 +1528,17 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="soft">149</b></td>
+  <td nowrap valign="top"><a name="soft">156</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-env/tree/master/module/soft/module.py">soft</a></b> <i>(<a href="https://github.com/ctuning/ck-env/tree/master/module/soft/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-env">ck-env</a></b></td>
   <td nowrap valign="top"></td>
   <td valign="top">managing software (registering in CK environment)
 <ul>
-<li>"ck <i>add</i> soft" - add software detection plugin with template (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/soft/module.py#L2883">API</a>&nbsp;)<li>"ck <i>check</i> soft" - check is given software is already installed and register it in the CK or install it if package exists (the same as 'detect') (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/soft/module.py#L1384">API</a>&nbsp;)<li>"ck <i>check_target</i> soft" - check that host and target OS is supported (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/soft/module.py#L2296">API</a>&nbsp;)<li>"ck <i>compare_versions</i> soft" - compare two versions (in list) (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/soft/module.py#L2778">API</a>&nbsp;)<li>"ck <i>detect</i> soft" - detect is given software is already installed and register it in the CK or install it if package exists (the same as 'check') (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/soft/module.py#L1384">API</a>&nbsp;)<li>"ck <i>find_config_file</i> soft" - find installation JSON file (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/soft/module.py#L2715">API</a>&nbsp;)<li>"ck <i>get_version</i> soft" - low-level function to get version (will be substituted) (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/soft/module.py#L2028">API</a>&nbsp;)<li>"ck <i>internal_detect</i> soft" - detect version of a given software (internal) (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/soft/module.py#L45">API</a>&nbsp;)<li>"ck <i>list_all_files</i> soft" - list all files including directories (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/soft/module.py#L1297">API</a>&nbsp;)<li>"ck <i>print_help</i> soft" - print help for this software entry (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/soft/module.py#L2228">API</a>&nbsp;)<li>"ck <i>search_tool</i> soft" - search tool in pre-defined paths (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/soft/module.py#L1197">API</a>&nbsp;)<li>"ck <i>search_version</i> soft" - search for soft version in some files (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/soft/module.py#L2961">API</a>&nbsp;)<li>"ck <i>setup</i> soft" - setup CK environment for a given software (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/soft/module.py#L241">API</a>&nbsp;)<li>"ck <i>show</i> soft" - show available software descriptions (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/soft/module.py#L2401">API</a>&nbsp;)<li>"ck <i>split_version</i> soft" - split version (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/soft/module.py#L2362">API</a>&nbsp;)</ul>
+<li>"ck <i>add</i> soft" - add software detection plugin with template (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/soft/module.py#L2886">API</a>&nbsp;)<li>"ck <i>check</i> soft" - check is given software is already installed and register it in the CK or install it if package exists (the same as 'detect') (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/soft/module.py#L1384">API</a>&nbsp;)<li>"ck <i>check_target</i> soft" - check that host and target OS is supported (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/soft/module.py#L2296">API</a>&nbsp;)<li>"ck <i>compare_versions</i> soft" - compare two versions (in list) (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/soft/module.py#L2781">API</a>&nbsp;)<li>"ck <i>detect</i> soft" - detect is given software is already installed and register it in the CK or install it if package exists (the same as 'check') (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/soft/module.py#L1384">API</a>&nbsp;)<li>"ck <i>find_config_file</i> soft" - find installation JSON file (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/soft/module.py#L2718">API</a>&nbsp;)<li>"ck <i>get_version</i> soft" - low-level function to get version (will be substituted) (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/soft/module.py#L2028">API</a>&nbsp;)<li>"ck <i>internal_detect</i> soft" - detect version of a given software (internal) (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/soft/module.py#L45">API</a>&nbsp;)<li>"ck <i>list_all_files</i> soft" - list all files including directories (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/soft/module.py#L1297">API</a>&nbsp;)<li>"ck <i>print_help</i> soft" - print help for this software entry (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/soft/module.py#L2228">API</a>&nbsp;)<li>"ck <i>search_tool</i> soft" - search tool in pre-defined paths (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/soft/module.py#L1197">API</a>&nbsp;)<li>"ck <i>search_version</i> soft" - search for soft version in some files (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/soft/module.py#L2964">API</a>&nbsp;)<li>"ck <i>setup</i> soft" - setup CK environment for a given software (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/soft/module.py#L241">API</a>&nbsp;)<li>"ck <i>show</i> soft" - show available software descriptions (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/soft/module.py#L2401">API</a>&nbsp;)<li>"ck <i>split_version</i> soft" - split version (&nbsp;<a href="https://github.com/ctuning/ck-env/tree/master/module/soft/module.py#L2362">API</a>&nbsp;)</ul>
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="table">150</b></td>
+  <td nowrap valign="top"><a name="table">157</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-analytics/tree/master/module/table/module.py">table</a></b> <i>(<a href="https://github.com/ctuning/ck-analytics/tree/master/module/table/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-analytics">ck-analytics</a></b></td>
   <td nowrap valign="top"></td>
@@ -1476,7 +1548,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="tensorflow">151</b></td>
+  <td nowrap valign="top"><a name="tensorflow">158</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-tensorflow/tree/master/module/tensorflow/module.py">tensorflow</a></b> <i>(<a href="https://github.com/ctuning/ck-tensorflow/tree/master/module/tensorflow/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-tensorflow">ck-tensorflow</a></b></td>
   <td nowrap valign="top">TensorFlow front-end</td>
@@ -1486,7 +1558,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="test">152</b></td>
+  <td nowrap valign="top"><a name="test">159</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck/tree/master/ck/repo/module/test/module.py">test</a></b> <i>(<a href="https://github.com/ctuning/ck/tree/master/ck/repo/module/test/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck/tree/master/ck/repo">default</a></b></td>
   <td nowrap valign="top"></td>
@@ -1496,7 +1568,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="tmp">153</b></td>
+  <td nowrap valign="top"><a name="tmp">160</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck/tree/master/ck/repo/module/tmp/module.py">tmp</a></b> <i>(<a href="https://github.com/ctuning/ck/tree/master/ck/repo/module/tmp/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck/tree/master/ck/repo">default</a></b></td>
   <td nowrap valign="top"></td>
@@ -1504,7 +1576,17 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="video">154</b></td>
+  <td nowrap valign="top"><a name="user">161</b></td>
+  <td nowrap valign="top"><a href="https://github.com/ctuning/ck-web/tree/master/module/user/module.py">user</a></b> <i>(<a href="https://github.com/ctuning/ck-web/tree/master/module/user/.cm/meta.json">CK meta</a>)</i></td>
+  <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-web.git">ck-web</a></b></td>
+  <td nowrap valign="top"></td>
+  <td valign="top">web-based user auth
+<ul>
+<li>"ck <i>auth</i> user" - authentication of a user (&nbsp;<a href="https://github.com/ctuning/ck-web/tree/master/module/user/module.py#L33">API</a>&nbsp;)<li>"ck <i>create</i> user" - create account (&nbsp;<a href="https://github.com/ctuning/ck-web/tree/master/module/user/module.py#L104">API</a>&nbsp;)<li>"ck <i>renew</i> user" - renew user (&nbsp;<a href="https://github.com/ctuning/ck-web/tree/master/module/user/module.py#L190">API</a>&nbsp;)</ul>
+</td>
+ </tr>
+ <tr>
+  <td nowrap valign="top"><a name="video">162</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/video/module.py">video</a></b> <i>(<a href="https://github.com/ctuning/ck-dissemination-modules/tree/master/module/video/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-dissemination-modules.git">ck-dissemination-modules</a></b></td>
   <td nowrap valign="top"></td>
@@ -1512,7 +1594,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="vqe">155</b></td>
+  <td nowrap valign="top"><a name="vqe">163</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-quantum/tree/master/module/vqe/module.py">vqe</a></b> <i>(<a href="https://github.com/ctuning/ck-quantum/tree/master/module/vqe/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-quantum">ck-quantum</a></b></td>
   <td nowrap valign="top">VQE quantum competition pipeline</td>
@@ -1522,7 +1604,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="wa">156</b></td>
+  <td nowrap valign="top"><a name="wa">164</b></td>
   <td nowrap valign="top"><a href="https://github.com/dividiti/ck-wa/tree/master/module/wa/module.py">wa</a></b> <i>(<a href="https://github.com/dividiti/ck-wa/tree/master/module/wa/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/dividiti/ck-wa">ck-wa</a></b></td>
   <td nowrap valign="top">Arm workload automation workflow</td>
@@ -1532,7 +1614,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="wa-device">157</b></td>
+  <td nowrap valign="top"><a name="wa-device">165</b></td>
   <td nowrap valign="top"><a href="https://github.com/dividiti/ck-wa/tree/master/module/wa-device/module.py">wa-device</a></b> <i>(<a href="https://github.com/dividiti/ck-wa/tree/master/module/wa-device/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/dividiti/ck-wa">ck-wa</a></b></td>
   <td nowrap valign="top"></td>
@@ -1540,7 +1622,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="wa-params">158</b></td>
+  <td nowrap valign="top"><a name="wa-params">166</b></td>
   <td nowrap valign="top"><a href="https://github.com/dividiti/ck-wa/tree/master/module/wa-params/module.py">wa-params</a></b> <i>(<a href="https://github.com/dividiti/ck-wa/tree/master/module/wa-params/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/dividiti/ck-wa">ck-wa</a></b></td>
   <td nowrap valign="top"></td>
@@ -1548,7 +1630,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="wa-result">159</b></td>
+  <td nowrap valign="top"><a name="wa-result">167</b></td>
   <td nowrap valign="top"><a href="https://github.com/dividiti/ck-wa/tree/master/module/wa-result/module.py">wa-result</a></b> <i>(<a href="https://github.com/dividiti/ck-wa/tree/master/module/wa-result/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/dividiti/ck-wa">ck-wa</a></b></td>
   <td nowrap valign="top"></td>
@@ -1558,7 +1640,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="wa-scenario">160</b></td>
+  <td nowrap valign="top"><a name="wa-scenario">168</b></td>
   <td nowrap valign="top"><a href="https://github.com/dividiti/ck-wa/tree/master/module/wa-scenario/module.py">wa-scenario</a></b> <i>(<a href="https://github.com/dividiti/ck-wa/tree/master/module/wa-scenario/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/dividiti/ck-wa">ck-wa</a></b></td>
   <td nowrap valign="top"></td>
@@ -1568,7 +1650,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="wa-tool">161</b></td>
+  <td nowrap valign="top"><a name="wa-tool">169</b></td>
   <td nowrap valign="top"><a href="https://github.com/dividiti/ck-wa/tree/master/module/wa-tool/module.py">wa-tool</a></b> <i>(<a href="https://github.com/dividiti/ck-wa/tree/master/module/wa-tool/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/dividiti/ck-wa">ck-wa</a></b></td>
   <td nowrap valign="top"></td>
@@ -1576,7 +1658,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="web">162</b></td>
+  <td nowrap valign="top"><a name="web">170</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck/tree/master/ck/repo/module/web/module.py">web</a></b> <i>(<a href="https://github.com/ctuning/ck/tree/master/ck/repo/module/web/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck/tree/master/ck/repo">default</a></b></td>
   <td nowrap valign="top"></td>
@@ -1586,7 +1668,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="wfe">163</b></td>
+  <td nowrap valign="top"><a name="wfe">171</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-web/tree/master/module/wfe/module.py">wfe</a></b> <i>(<a href="https://github.com/ctuning/ck-web/tree/master/module/wfe/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-web.git">ck-web</a></b></td>
   <td nowrap valign="top"></td>
@@ -1596,7 +1678,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="workflow-from-cgo2017-paper">164</b></td>
+  <td nowrap valign="top"><a name="workflow-from-cgo2017-paper">172</b></td>
   <td nowrap valign="top"><a href="https://github.com/SamAinsworth/reproduce-cgo2017-paper/tree/master/module/workflow-from-cgo2017-paper/module.py">workflow-from-cgo2017-paper</a></b> <i>(<a href="https://github.com/SamAinsworth/reproduce-cgo2017-paper/tree/master/module/workflow-from-cgo2017-paper/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/SamAinsworth/reproduce-cgo2017-paper">reproduce-cgo2017-paper</a></b></td>
   <td nowrap valign="top"></td>
@@ -1606,7 +1688,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="workflow-sysml19-aggregathor">165</b></td>
+  <td nowrap valign="top"><a name="workflow-sysml19-aggregathor">173</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/reproduce-sysml19-paper-aggregathor/tree/master/module/workflow-sysml19-aggregathor/module.py">workflow-sysml19-aggregathor</a></b> <i>(<a href="https://github.com/ctuning/reproduce-sysml19-paper-aggregathor/tree/master/module/workflow-sysml19-aggregathor/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/reproduce-sysml19-paper-aggregathor">reproduce-sysml19-paper-aggregathor</a></b></td>
   <td nowrap valign="top"></td>
@@ -1616,7 +1698,7 @@ See <a href="https://github.com/ctuning/ck/wiki">CK documentation</a>,
 </td>
  </tr>
  <tr>
-  <td nowrap valign="top"><a name="xml">166</b></td>
+  <td nowrap valign="top"><a name="xml">174</b></td>
   <td nowrap valign="top"><a href="https://github.com/ctuning/ck-env/tree/master/module/xml/module.py">xml</a></b> <i>(<a href="https://github.com/ctuning/ck-env/tree/master/module/xml/.cm/meta.json">CK meta</a>)</i></td>
   <td nowrap valign="top"><b><a href="https://github.com/ctuning/ck-env">ck-env</a></b></td>
   <td nowrap valign="top"></td>
