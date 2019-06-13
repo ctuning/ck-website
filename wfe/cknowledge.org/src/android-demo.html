@@ -1,0 +1,79 @@
+{% set page = 'android-apps' %}
+{% set title = 'Android application to crowdsource AI/SW/HW co-design experiments' %}
+{% extends 'ck.html' %}
+
+{% block content %}
+
+    <div class="container pt-3 pt-md-5 pb-5 mb-auto">
+      <h1>Android demo of real AI apps automatically assembled from CK components</h1>
+
+      <p>
+      You can download and install the latest version of our simple Android demo
+      to participate in collaborative benchmarking, optimization, autotuning 
+      and co-design of AI-based applications: <a href="http://cKnowledge.org/ai/android/crowdsource-ai-co-design-2.12.apk"><b>APK Version 2.12</b></a>.<br>
+
+      <center>
+       <div>
+        <img src="_resources/ck-android-app1.jpg" width="200">
+        <img src="_resources/ck-android-app2.jpg" width="200">
+       </div>
+      </center>
+
+      <p><p>
+      <i>
+      Just make sure that your Android device is configured to allow
+      installation from sources other than the Play Store before
+      downloading and installing our CK-based Android apps.
+      You can check it as follows:
+
+      <ul>
+       <li>
+        Go to "Settings" of your Android device
+       </li>
+       <li>
+        Tap on "Lock screen and security" or "Security" (depending on the version of your Android device)
+       </li>
+       <li>
+        Check the box next to "Unknown sources" (Allow installation of apps from sources other than the Play Store). 
+        Note that you can always revert it back to original setting after installing our apps.
+       </li>
+      </ul>
+      </i>
+
+      <p>
+      You can see all aggregated results from these experiments (speed, accuracy, costs) across diverse mobile phones 
+      in the <a href="http://cKnowledge.org/repo-beta">public repository</a>
+      (preview <a href="http://cKnowledge.org/dashboard">a new beta version</a> of this repository).
+
+      <p>
+      Our applicaiton downloads slightly modified AI pipelines assembled from cKnowledge components
+      (frameworks, models, datasets) and runs them across diverse platforms and environments provided by volunteers 
+      similar to <a href="https://en.wikipedia.org/wiki/SETI@home">SETI@home</a> 
+      to collaboratively find the most efficient AI solutions in terms of speed,
+      accuracy, costs and other metrics or automatically detect software and hardware bugs
+      (see <a href="http://cKnowledge.org/rpi-crowd-tuning">paper 1</a> 
+       and <a href="https://arxiv.org/abs/1506.06256">paper 2</a>).
+      </i>
+
+      <p>
+      We use this open-source technology is used in the open and reproducible <a href="request.html">ACM ReQuEST tournaments</a> 
+      to co-design Pareto-efficient deep learning stacks (speed, accuracy, costs)
+      and in the <a href="http://cKnowledge.org/rpi-crowd-tuning">open project with Raspberry Pi foundation</a> 
+      to crowdsource compiler autotuning and machine learning!
+
+      <p>
+      You can check out another Android application to help crowdsource benchmarking and autotuning of popular compilers (LLVM, GCC):
+
+        <a href="http://cKnowledge.org/ai/android/crowdsource-compiler-autotuning-2.5.apk">Version 2.5</a>
+        &nbsp;&nbsp;[&nbsp;<a href="http://cKnowledge.org/gcc-crowd-benchmarking-results">View GCC results</a>&nbsp;,
+        &nbsp;<a href="http://cKnowledge.org/llvm-crowd-benchmarking-results">View LLVM results</a>&nbsp;,
+        &nbsp;<a href="https://github.com/ctuning/crowdsource-experiments-using-android-devices">See open sources</a>&nbsp;,
+        &nbsp;<a href="http://cKnowledge.org/rpi-crowd-tuning">View interactive report (Raspberry Pi foundation)</a>&nbsp;]
+
+      <p>
+      Please feel free to get in touch with <a href="contacts.html">the CK community</a> 
+      to provide your feedback or discuss results!
+
+    </div>
+
+{% endblock %}
