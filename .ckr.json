@@ -1,11 +1,10 @@
 {
-  "data_uoa": "ck-website",
-  "data_uid": "2a0455ea3185e35f",
   "data_alias": "ck-website",
   "data_name": "ck-website",
+  "data_uid": "2a0455ea3185e35f",
+  "data_uoa": "ck-website",
   "dict": {
-    "shared": "git",
-    "url": "https://github.com/ctuning/ck-website",
+    "desc": "CK components for <a href=\"http://cKnowledge.org\">cKnowledge.org</a>.",
     "repo_deps": [
       {
         "repo_uoa": "ck-env"
@@ -13,6 +12,8 @@
       {
         "repo_uoa": "ck-web"
       }
-    ]
+    ],
+    "shared": "git",
+    "url": "https://github.com/ctuning/ck-website"
   }
 }

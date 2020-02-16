@@ -48,14 +48,14 @@
         {% if page=='partners' %}
         <nav class="subnav navbar-nav-scroll">
         <ul id="partners-hor-scroll" class="navbar-nav flex-row">
-                <li class="subnav-menu-item" id="link-gm">
-                    <a href="#gm">General Motors</a>
-                </li>
                 <li class="subnav-menu-item anchor-link-active" id="link-mlperf">
                     <a href="#mlperf">MLPerf</a>
                 </li>
+                <li class="subnav-menu-item" id="link-gm">
+                    <a href="#gm">General Motors</a>
+                </li>
                 <li class="subnav-menu-item" id="link-arm">
-                    <a href="#arm">Arm</a>
+                    <a href="#arm">Arm & Linaro</a>
                 </li>
                 <li class="subnav-menu-item" id="link-acm">
                     <a href="#acm">ACM</a>
@@ -107,11 +107,27 @@
                 <li class="subnav-menu-item" id="link-dividiti">
                     <a href="#dividiti">dividiti</a>
                 </li>
+                <li class="subnav-menu-item" id="link-codereef">
+                    <a href="#codereef">CodeReef</a>
+                </li>
             </ul>
             <div id="partners-arrow-left" class="submenu-arrow"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
             <div id="partners-arrow-right" class="submenu-arrow"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
         </nav>
         {% endif %}
-        {% if page=='repo' %}<div id="ck-repo-widget-header"></div>{% endif %}
+        {% if page=='repo' %}
+
+          <div style="width:100%;text-align:center">
+           <hr>
+            <i>
+             CK dashboards are now available at the <a href="https://codereef.ai/portal/search/?q=%22reproduced-results%22"><b><u>open CodeReef platform</u></b></a>.
+             Check the <a href="https://CodeReef.ai/static/docs"><b><u>CodeReef documentation</u></b></a> 
+             to learn how to create your own dashboards and <a href="https://CodeReef.ai/demo"><b><u>crowdsource benchmarking</u></b></a>!
+            </i>
+           <div style="padding:6px;"></div>
+          </div>
+
+          <div id="ck-repo-widget-header"></div>
+        {% endif %}
     </nav>
 {% endmacro %}
