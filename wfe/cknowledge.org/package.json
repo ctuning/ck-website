@@ -35,6 +35,6 @@
   "author": "cTuning foundation",
   "license": "ISC",
   "dependencies": {
-    "npm": "^6.3.0"
+    "npm": "^6.14.6"
   }
 }
